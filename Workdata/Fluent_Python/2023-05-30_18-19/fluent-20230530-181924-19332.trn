@@ -1,0 +1,272 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n3    wenzheshang  4/12  Windows-x64  16324  Intel(R) Core(TM) i7-8750H 
+n2    wenzheshang  3/12  Windows-x64  19032  Intel(R) Core(TM) i7-8750H 
+n1    wenzheshang  2/12  Windows-x64  17064  Intel(R) Core(TM) i7-8750H 
+n0*   wenzheshang  1/12  Windows-x64  18864  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  12692  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\pareto_front\\Workdata\\Fluent_Python\\2023-05-30_18-19\\cleanup-fluent-wenzheshang-12692.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e300002000000000000006c000000010102000e0000003137322e31382e37362e31343300f5781b00000014010f00525354cdcd7564c6a109000100000001000000020000000002000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102000d0000003137322e32362e3137362e310000f5781b00000014010f00525354cdcd7564c6a109000100000001000000020000000002000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e300002000000000000006c000000010102000e0000003137322e31382e37362e31343300f3781b00000014010f00525354cdcd7564f599090000000000010000000100000000020000000000000008000000010108b1004f41540100000018000000010108b10100010001000000010001050901010000000000000000006c000000010102000d0000003137322e32362e3137362e310000f3781b00000014010f00525354cdcd7564f599090000000000010000000100000000020000000000000008000000010108b1004f41540100000018000000010108b10100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e300002000000000000006c000000010102000e0000003137322e31382e37362e31343300f3781b00000014010f00525354cdcd7564f599090000000000010000000100000000020000000000000008000000010108b1004f41540100000018000000010108b10100010001000000010001050901010000000000000000006c000000010102000d0000003137322e32362e3137362e310000f3781b00000014010f00525354cdcd7564f599090000000000010000000100000000020000000000000008000000010108b1004f41540100000018000000010108b10100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/CFD_study/case3/case3_files/dp0/FFF/MECH/FFF.1.msh"...
+
+Buffering for file scan...
+
+  242254 nodes, binary.
+   24802 nodes, binary.
+  751010 quadrilateral interior faces, zone  1, binary.
+    3900 quadrilateral wall faces, zone  5, binary.
+    3900 quadrilateral wall faces, zone  6, binary.
+    4200 quadrilateral wall faces, zone  7, binary.
+    4200 quadrilateral wall faces, zone  8, binary.
+    3700 quadrilateral wall faces, zone  9, binary.
+    2794 quadrilateral wall faces, zone 10, binary.
+     300 quadrilateral velocity-inlet faces, zone 11, binary.
+     300 quadrilateral pressure-outlet faces, zone 12, binary.
+     906 quadrilateral wall faces, zone 13, binary.
+     150 quadrilateral wall faces, zone 14, binary.
+     150 quadrilateral wall faces, zone 15, binary.
+     150 quadrilateral wall faces, zone 16, binary.
+     150 quadrilateral wall faces, zone 17, binary.
+  254470 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts....,
+		faces....,
+		nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 50560/1224 = 41.3072
+     materials,
+     interface,
+     domains,
+     zones,
+	eb
+	wb
+	sb
+	nb
+	ub
+	outlet
+	inlet
+	dw
+	uw
+	ww
+	ew
+	sw
+	nw
+	fuild
+	interior-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/model/dpm/injections/create-injection injection-0 no yes surface no Available surfaces: (dw eb ew inlet nb nw outlet sb sw ub uw wb ww)
+Chosen: ub () no no no no no no no 0 0.6 0 1e-6 303.15 1e-3
+The injection settings have been assigned. ---
+Please note that more options and settings may be available in the
+TUI menu: /define[/models/dpm]/injections/injection-properties/set
+At least the drag-parameters should be set there for all particles having any mass;
+for droplets, e.g. breakup parameters may be available there, too.
+define/models/dpm/interaction/coupled-calculations? no/define/boundary/velocity-inlet/i(inlet)
+nlet no no yes yes no 1.111210035091208 no 0 no 293.15 no no yes 5 10
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+/define/boundary/zone-type outlet outflow/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ew 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ww 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+sw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+nw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+uw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+eb 0 no 0 no yes temperature no 303.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+wb 0 no 0 no yes temperature no 303.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+sb 0 no 0 no yes temperature no 303.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+nb 0 no 0 no yes temperature no 303.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ub 0 no 0 no yes temperature no 303.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+dw 0 no 0 no yes temperature no 303.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/solve/set/p-v-coupling 20
+ Switching OFF pseudo transient formulation.
+solve/set/discretization-scheme/pressure 14solve/set/discretization-scheme/mom 1solve/set/discretization-scheme/k 1solve/set/discretization-scheme/epsilon 1solve/set/under-relaxation/k 0.7solve/set/under-relaxation/epsilon 0.7/solve/initialize/set-hyb-initialization/general-settings 30 
+Explicit URF for scalar equation-01 
+Explicit URF for scalar equation-11 
+Current reference frame : Relative to cell zonerelative no no no/solve/initialize/compute-defaults/all-zonessolve iterate 500
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		1.000000e+00
+	2		1.343695e-04
+	3		4.505809e-05
+	4		3.914499e-05
+	5		2.320021e-05
+	6		2.106047e-05
+	7		1.477001e-05
+	8		1.304958e-05
+	9		9.991141e-06
+	10		8.610314e-06
+	11		6.912719e-06
+	12		5.891346e-06
+	13		4.842240e-06
+	14		4.066040e-06
+	15		3.388872e-06
+	16		2.860628e-06
+	17		2.396652e-06
+	18		2.031124e-06
+	19		1.710744e-06
+	20		1.452301e-06
+	21		1.228987e-06
+	22		1.044774e-06
+	23		8.880460e-07
+	24		7.554063e-07
+	25		6.449925e-07
+	26		5.493038e-07
+	27		4.705236e-07
+	28		4.012968e-07
+	29		3.446098e-07
+	30		2.943230e-07
+
+Hybrid initialization is done.
+<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+     1  1.0000e+00  8.6939e-02  5.5930e-02  1.6754e-03  7.8961e-05  3.4033e-01  3.0463e-01  0:08:19  499
+<aaslistener> 
+     2  1.0000e+00  7.0177e-02  3.7769e-02  2.2089e-03  2.5694e-05  3.6390e-01  3.2548e-01  0:09:58  498
+<aaslistener> 
+     3  6.8352e-01  6.4051e-02  3.8560e-02  1.7934e-03  1.9932e-05  3.1754e-01  3.0041e-01  0:07:57  497
+<aaslistener> 
+     4  6.5816e-01  5.9850e-02  2.9880e-02  1.7148e-03  1.5106e-05  2.1357e-01  2.3972e-01  0:08:00  496
+<aaslistener> 
+     5  6.1292e-01  5.6477e-02  2.3989e-02  1.3699e-03  1.1222e-05  1.3389e-01  1.9996e-01  0:08:02  495
+<aaslistener> 
+     6  5.8094e-01  5.0947e-02  2.2587e-02  1.2895e-03  8.5249e-06  1.0907e-01  1.8878e-01  0:06:25  494
+<aaslistener> 
+     7  5.7578e-01  4.5305e-02  2.2134e-02  1.2325e-03  7.4674e-06  1.0213e-01  2.0442e-01  0:06:46  493
+<aaslistener> 
+     8  5.7018e-01  4.0285e-02  2.2585e-02  1.3590e-03  7.0993e-06  9.7243e-02  1.8444e-01  0:07:03  492
+<aaslistener> 
+     9  5.8694e-01  3.8331e-02  2.2231e-02  1.3827e-03  8.0936e-06  1.0049e-01  1.8399e-01  0:05:37  491
+Done.
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Models|Discrete Phase (On)|Injections|injection-0"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Models|Discrete Phase (On)|Injections|injection-0"))
+(cx-gui-do cx-activate-item "NavigationPane*List_Tree1")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Models|Discrete Phase (On)|Injections|injection-0"))
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 1)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 2)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 3)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 4)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 5)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 6)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 7)
+(cx-gui-do cx-activate-tab-index "Set Injection Properties*Frame4*Frame1" 0)
+(cx-gui-do cx-activate-item "Set Injection Properties*PanelButtons*PushButton2(Cancel)")

@@ -1,0 +1,284 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n3    wenzheshang  4/12  Windows-x64  636    Intel(R) Core(TM) i7-8750H 
+n2    wenzheshang  3/12  Windows-x64  6904   Intel(R) Core(TM) i7-8750H 
+n1    wenzheshang  2/12  Windows-x64  11692  Intel(R) Core(TM) i7-8750H 
+n0*   wenzheshang  1/12  Windows-x64  23268  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  5468   Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\pareto_front\\Workdata\\Fluent_Python\\2023-05-29_22-20\\cleanup-fluent-wenzheshang-5468.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e300002000000000000006c000000010102ff0e0000003137322e31382e37362e3134330070091b00000014010f00525354b8b4746471150a00010000000100000002000000ff02000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102ff0d0000003137322e31382e3134342e31000070091b00000014010f00525354b8b4746471150a00010000000100000002000000ff02000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e300002000000000000006c000000010102000e0000003137322e31382e37362e313433006e091b00000014010f00525354b8b4746489110a000000000001000000010000000002000000000000000800000001011e66004f4154010000001800000001011e660100010001000000010001050901010000000000000000006c000000010102000d0000003137322e31382e3134342e3100006e091b00000014010f00525354b8b4746489110a000000000001000000010000000002000000000000000800000001011e66004f4154010000001800000001011e660100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e300002000000000000006c000000010102000e0000003137322e31382e37362e313433006e091b00000014010f00525354b8b4746489110a000000000001000000010000000002000000000000000800000001011e66004f4154010000001800000001011e660100010001000000010001050901010000000000000000006c000000010102000d0000003137322e31382e3134342e3100006e091b00000014010f00525354b8b4746489110a000000000001000000010000000002000000000000000800000001011e66004f4154010000001800000001011e660100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/CFD_study/case3/case3_files/dp0/FFF/MECH/FFF.1.msh"...
+
+Buffering for file scan...
+
+  242254 nodes, binary.
+   24802 nodes, binary.
+  751010 quadrilateral interior faces, zone  1, binary.
+    3900 quadrilateral wall faces, zone  5, binary.
+    3900 quadrilateral wall faces, zone  6, binary.
+    4200 quadrilateral wall faces, zone  7, binary.
+    4200 quadrilateral wall faces, zone  8, binary.
+    3700 quadrilateral wall faces, zone  9, binary.
+    2794 quadrilateral wall faces, zone 10, binary.
+     300 quadrilateral velocity-inlet faces, zone 11, binary.
+     300 quadrilateral pressure-outlet faces, zone 12, binary.
+     906 quadrilateral wall faces, zone 13, binary.
+     150 quadrilateral wall faces, zone 14, binary.
+     150 quadrilateral wall faces, zone 15, binary.
+     150 quadrilateral wall faces, zone 16, binary.
+     150 quadrilateral wall faces, zone 17, binary.
+  254470 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts....,
+		faces....,
+		nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 50560/1224 = 41.3072
+     materials,
+     interface,
+     domains,
+     zones,
+	eb
+	wb
+	sb
+	nb
+	ub
+	outlet
+	inlet
+	dw
+	uw
+	ww
+	ew
+	sw
+	nw
+	fuild
+	interior-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8define/models/dpm/interaction/coupled-calculations? yes/define/model/dpm/injections/create-injection injection-0 no yes surface no Available surfaces: (dw eb ew inlet nb nw outlet sb sw ub uw wb ww)
+Chosen: inlet () no no no no no no no 0 1.38 0 1e-6 293.15 1e-3
+The injection settings have been assigned. ---
+Please note that more options and settings may be available in the
+TUI menu: /define[/models/dpm]/injections/injection-properties/set
+At least the drag-parameters should be set there for all particles having any mass;
+for droplets, e.g. breakup parameters may be available there, too.
+/define/boundary/velocity-inlet/i(inlet)
+nlet no no yes yes no 2.3807913111467283 no 0 no 293.15 no no yes 5 10
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+/define/boundary/zone-type outlet outflow/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ew 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ww 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+sw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+nw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+uw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+dw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+eb 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+wb 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+sb 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+nb 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ub 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1solve/initialize/set-hyb-initialization/general-settings 30 
+Explicit URF for scalar equation-01 
+Explicit URF for scalar equation-11 
+Current reference frame : Relative to cell zonerelative no no no/solve/initialize/compute-defaults/all-zonessolve iterate 500
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		1.000000e+00
+	2		1.338210e-04
+	3		4.473638e-05
+	4		3.892071e-05
+	5		2.443658e-05
+	6		2.162925e-05
+	7		1.590688e-05
+	8		1.391614e-05
+	9		1.094175e-05
+	10		9.468938e-06
+	11		7.711780e-06
+	12		6.656565e-06
+	13		5.512308e-06
+	14		4.706334e-06
+	15		3.967311e-06
+	16		3.405101e-06
+	17		2.883680e-06
+	18		2.480441e-06
+	19		2.109567e-06
+	20		1.816832e-06
+	21		1.550871e-06
+	22		1.337487e-06
+	23		1.144967e-06
+	24		9.884691e-07
+	25		8.485548e-07
+	26		7.333582e-07
+	27		6.307259e-07
+	28		5.456934e-07
+	29		4.700355e-07
+	30		4.072376e-07
+
+Hybrid initialization is done.
+<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+     1  1.0000e+00  1.4102e-01  1.0012e-01  2.6854e-03  0.0000e+00  6.9190e-01  5.2761e-01  0:08:19  499
+<aaslistener> 
+     2  7.9899e-01  9.9964e-02  6.4781e-02  1.4316e-03  0.0000e+00  5.6549e-01  4.1655e-01  0:09:58  498
+<aaslistener> 
+     3  8.2532e-01  6.6711e-02  2.4862e-02  1.0920e-03  0.0000e+00  3.4102e-01  2.6530e-01  0:11:16  497
+<aaslistener> 
+     4  1.0000e+00  4.2240e-02  1.4887e-02  1.2648e-03  0.0000e+00  2.1970e-01  4.7921e-01  0:10:39  496
+<aaslistener> 
+     5  1.0000e+00  2.9062e-02  9.7818e-03  1.2616e-03  0.0000e+00  2.5099e-01  8.4296e-01  0:11:48  495
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 78 cells 
+<aaslistener> 
+     6  1.0933e+00  1.3762e-02  8.3602e-03  7.4745e-04  2.5782e-16  4.1552e-02  2.6926e-01  0:12:43  494
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 738 cells 
+<aaslistener> 
+     7  1.1664e+00  6.4858e-03  3.8100e-03  9.2385e-04  1.9691e-16  2.5244e-02  8.7443e-02  0:11:48  493
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 421 cells 
+<aaslistener> 
+     8  1.4548e+00  1.1897e-02  8.3476e-03  2.3188e-03  1.7869e-16  3.7323e-02  3.7802e-02  0:12:42  492
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 125 cells 
+<aaslistener> 
+     9  1.3968e+00  1.2296e-02  8.5039e-03  3.0444e-03  1.7645e-16  5.0938e-02  4.1163e-02  0:11:46  491
+
+DPM Iteration ....
+number tracked = 300, escaped = 285, incomplete = 15
+<aaslistener> 
+    10  1.2949e+00  7.2439e-03  5.3705e-03  2.2635e-03  1.6475e-16  2.6143e-02  2.5993e-02  0:15:56  490
+        Stabilizing pressure coupled to enhance linear solver robustness.
+        Stabilizing k to enhance linear solver robustness.
+        Negative k in 9884 cells after linear solve.
+        Stabilizing temperature to enhance linear solver robustness.
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 230072 cells 
+<aaslistener> 
+    11  1.2099e+00  6.7385e-04  1.1971e-03  2.1143e-04  1.0806e-15  6.2862e+03  5.3719e+08  0:42:04  489
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 217976 cells 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    12  3.8069e+04  4.5564e-01  4.8877e-01  3.7753e-01  3.8954e-16  7.0835e-01  2.1555e+03  0:35:12  488
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 183004 cells 
+<aaslistener> 
+    13  2.4131e+04  3.3546e-01  3.8945e-01  3.1739e-01  2.4999e-16  4.5984e-01  4.8925e-01  0:31:21  487
+
+ turbulent viscosity limited to viscosity ratio of 1.000000e+05 in 156372 cells 
+<aaslistener> 
+    14  2.2623e+04  3.1726e-01  3.2098e-01  3.2193e-01  2.2294e-16  2.6050e-01  4.5126e-01  0:26:39  486

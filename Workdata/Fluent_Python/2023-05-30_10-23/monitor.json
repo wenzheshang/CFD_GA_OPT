@@ -1,0 +1,135 @@
+[
+	{
+		"monitorType":	"ResidualMonitor",
+		"name":	"convergence-residuals",
+		"residualsBufferInterval":	1,
+		"settings":
+		{
+			"continuity":
+			{
+				"monitorActive":true
+				,"checkConvergence":true
+				,"absoluteCriteria":0.001
+				,"relativeCriteria":0.05
+			}
+			,"x-velocity":
+			{
+				"monitorActive":true
+				,"checkConvergence":true
+				,"absoluteCriteria":0.001
+				,"relativeCriteria":0.05
+			}
+			,"y-velocity":
+			{
+				"monitorActive":true
+				,"checkConvergence":true
+				,"absoluteCriteria":0.001
+				,"relativeCriteria":0.05
+			}
+			,"z-velocity":
+			{
+				"monitorActive":true
+				,"checkConvergence":true
+				,"absoluteCriteria":0.001
+				,"relativeCriteria":0.05
+			}
+			,"energy":
+			{
+				"monitorActive":true
+				,"checkConvergence":true
+				,"absoluteCriteria":1e-06
+				,"relativeCriteria":0.05
+			}
+			,"k":
+			{
+				"monitorActive":true
+				,"checkConvergence":true
+				,"absoluteCriteria":0.001
+				,"relativeCriteria":0.05
+			}
+			,"epsilon":
+			{
+				"monitorActive":true
+				,"checkConvergence":true
+				,"absoluteCriteria":0.001
+				,"relativeCriteria":0.05
+			}
+		},
+		"plottingWindowIndex":	0,
+		"residualNames":	["continuity","x-velocity","y-velocity","z-velocity","energy","k","epsilon"],
+		"xAxisUnit":	"Iteration"
+		,"persistedData":
+		{
+			"title":"Convergence Residuals"
+			,"currentIterationNo":4
+			,"header":
+			[
+				"Iteration"
+				,"continuity"
+				,"x-velocity"
+				,"y-velocity"
+				,"z-velocity"
+				,"energy"
+				,"k"
+				,"epsilon"
+			]
+			,"Iteration":
+			[
+				                        1
+				,                        2
+				,                        3
+				,                        4
+			]
+			,"continuity":
+			[
+				  1.00000000000000000e+00
+				,  1.00000000000000000e+00
+				,  7.34192703216883791e-01
+				,  6.89872059214095223e-01
+			]
+			,"x-velocity":
+			[
+				  6.96910817533002852e-02
+				,  5.52010171734370128e-02
+				,  5.13627994588696374e-02
+				,  5.08761961377883765e-02
+			]
+			,"y-velocity":
+			[
+				  4.60261196458695218e-02
+				,  3.10102467435945106e-02
+				,  3.22379930534047870e-02
+				,  2.68392463143670990e-02
+			]
+			,"z-velocity":
+			[
+				  1.58049830347190738e-03
+				,  2.01326758328328713e-03
+				,  1.55147723593094221e-03
+				,  1.50013578832814765e-03
+			]
+			,"energy":
+			[
+				  6.56956056325403749e-05
+				,  1.91226144330431824e-05
+				,  1.63821362550965475e-05
+				,  1.41316257001303601e-05
+			]
+			,"k":
+			[
+				  1.88273605394160937e-01
+				,  1.98837257186533695e-01
+				,  1.91842932463420129e-01
+				,  1.62453643370787271e-01
+			]
+			,"epsilon":
+			[
+				  2.15771891363270740e-01
+				,  2.05076931583718036e-01
+				,  2.07848111455385509e-01
+				,  1.92357639260290508e-01
+			]
+		}
+	}
+
+]

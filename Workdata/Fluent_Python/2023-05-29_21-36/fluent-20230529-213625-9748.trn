@@ -1,0 +1,244 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n0    wenzheshang  1/12  Windows-x64  12708  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  16560  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\pareto_front\\Workdata\\Fluent_Python\\2023-05-29_21-36\\cleanup-fluent-wenzheshang-16560.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e300002000000000000006c000000010102000e0000003137322e31382e37362e3134330017761b00000014010f0052535474aa7464742800000100000001000000020000000002000000000000000800000001005200004f41540100000018000000010052000100010001000000010001050901010000000000000000006c000000010102000d0000003137322e31382e3134342e31000017761b00000014010f0052535474aa7464742800000100000001000000020000000002000000000000000800000001005200004f41540100000018000000010052000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e300002000000000000006c000000010102000e0000003137322e31382e37362e3134330015761b00000014010f0052535474aa746465200000000000000100000001000000000200000000000000080000000101a190004f415401000000180000000101a1900100010001000000010001050901010000000000000000006c000000010102000d0000003137322e31382e3134342e31000015761b00000014010f0052535474aa746465200000000000000100000001000000000200000000000000080000000101a190004f415401000000180000000101a1900100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e300002000000000000006c000000010102000e0000003137322e31382e37362e3134330015761b00000014010f0052535474aa746465200000000000000100000001000000000200000000000000080000000101a190004f415401000000180000000101a1900100010001000000010001050901010000000000000000006c000000010102000d0000003137322e31382e3134342e31000015761b00000014010f0052535474aa746465200000000000000100000001000000000200000000000000080000000101a190004f415401000000180000000101a1900100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/CFD_study/case3/case3_files/dp0/FFF/MECH/FFF.1.msh"...
+
+Buffering for file scan...
+
+  242254 nodes, binary.
+   24802 nodes, binary.
+  751010 quadrilateral interior faces, zone  1, binary.
+    3900 quadrilateral wall faces, zone  5, binary.
+    3900 quadrilateral wall faces, zone  6, binary.
+    4200 quadrilateral wall faces, zone  7, binary.
+    4200 quadrilateral wall faces, zone  8, binary.
+    3700 quadrilateral wall faces, zone  9, binary.
+    2794 quadrilateral wall faces, zone 10, binary.
+     300 quadrilateral velocity-inlet faces, zone 11, binary.
+     300 quadrilateral pressure-outlet faces, zone 12, binary.
+     906 quadrilateral wall faces, zone 13, binary.
+     150 quadrilateral wall faces, zone 14, binary.
+     150 quadrilateral wall faces, zone 15, binary.
+     150 quadrilateral wall faces, zone 16, binary.
+     150 quadrilateral wall faces, zone 17, binary.
+  254470 hexahedral cells, zone  4, binary.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+     zones,
+	eb
+	wb
+	sb
+	nb
+	ub
+	outlet
+	inlet
+	dw
+	uw
+	ww
+	ew
+	sw
+	nw
+	fuild
+	interior-fuild
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8define/models/dpm/interaction/coupled-calculations? yes/define/model/dpm/injections/create-injection injection-0 no yes surface no Available surfaces: (dw eb ew inlet nb nw outlet sb sw ub uw wb ww)
+Chosen: inlet () no no no no no no no 0 1.38 0 1e-6 293.15 1e-3
+The injection settings have been assigned. ---
+Please note that more options and settings may be available in the
+TUI menu: /define[/models/dpm]/injections/injection-properties/set
+At least the drag-parameters should be set there for all particles having any mass;
+for droplets, e.g. breakup parameters may be available there, too.
+/define/boundary/velocity-inlet/i(inlet)
+nlet no no yes yes no 2.3807913111467283 no 0 no 293.15 no no yes 5 10
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+/define/boundary/zone-type outlet outflow/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ew 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ww 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+sw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+nw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+uw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+dw 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+eb 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+wb 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+sb 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+nb 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+ub 0 no 0 no yes temperature no 293.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (nw sw ew ww uw dw ub nb sb wb eb)
+db Invalid zone.
+0 Invalid zone.
+no Invalid zone.
+0 Invalid zone.
+no Invalid zone.
+yes Invalid zone.
+temperature Invalid zone.
+no Invalid zone.
+293.15 Invalid zone.
+no Invalid zone.
+no Invalid zone.
+no Invalid zone.
+no Invalid zone.
+0 Invalid zone.
+no Invalid zone.
+0.5 Invalid zone.
+no Invalid zone.
+polynomial Invalid zone.
+1 Invalid zone.
+1 Invalid zone.
+polynomial Invalid zone.
+1 Invalid zone.
+1 Invalid zone.
+no Invalid zone.
+1
+Error: CAR: invalid argument [1]: wrong type [not a pair]
+Error Object: #f
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Wall|dw (wall, id=10)"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Wall|dw (wall, id=10)"))
+(cx-gui-do cx-activate-item "NavigationPane*List_Tree1")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*List_Tree1" (list "Setup|Boundary Conditions|Wall|dw (wall, id=10)"))
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 1)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 2)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 3)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 4)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 5)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 6)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 7)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 8)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 9)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 1)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 2)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 3)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 4)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 5)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4*Frame8(Wall Film)*Frame1*Frame2" 0)
+(cx-gui-do cx-enable-apply-button "Wall")
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 1)
+(cx-gui-do cx-activate-tab-index "Wall*Frame4" 4)
+(cx-gui-do cx-activate-item "Wall*PanelButtons*PushButton2(Cancel)")

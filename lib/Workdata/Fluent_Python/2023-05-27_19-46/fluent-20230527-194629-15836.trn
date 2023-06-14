@@ -1,0 +1,171 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n0    wenzheshang  1/12  Windows-x64  10764  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  15424  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\pareto_front\\lib\\Workdata\\Fluent_Python\\2023-05-27_19-46\\cleanup-fluent-wenzheshang-15424.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e3000020000000000000070000000010102000f0000003137322e31382e3130352e32323600cbffcb00001b00000014010f00525354abed7164ce710e000100000001000000020000000002000000000000000800000001000000004f41540100000018000000010000000100010001000000010001050901010000000000000000006c000000010102000d0000003137322e31382e3134342e310036ffcb1b00000014010f00525354abed7164ce710e000100000001000000020000000202000000000000000800000001005200004f41540100000018000000010000000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e31382e3130352e32323600cbfdcb00001b00000014010f00525354abed7164ef6d0e00000000000100000001000000000200000000000000080000000101d655004f415401000000180000000101d6550100010001000000010001050901010000000000000000006c000000010102000d0000003137322e31382e3134342e310036fdcb1b00000014010f00525354abed7164ef6d0e00000000000100000001000000010200000000000000080000000101d655004f415401000000180000000101d6550100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e3000020000000000000070000000010102000f0000003137322e31382e3130352e32323600cbfdcb00001b00000014010f00525354abed7164ef6d0e00000000000100000001000000000200000000000000080000000101d655004f415401000000180000000101d6550100010001000000010001050901010000000000000000006c000000010102000d0000003137322e31382e3134342e310036fdcb1b00000014010f00525354abed7164ef6d0e00000000000100000001000000010200000000000000080000000101d655004f415401000000180000000101d6550100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+Reading "\"| gunzip -c \\"F:/Thinking/CFD_study/case3/case3_files/dp0/FFF/Fluent/FFF-10.cas.gz\\"\""...
+
+Buffering for file scan...
+
+
+
+   82764 hexahedral cells, zone  4, binary.
+Warning: reading 4 partition grid onto 1 compute node machine.
+         Combining every 4 partitions.
+   82764 cell partition ids, zone  4, 1 partitions, binary.
+  242264 quadrilateral interior faces, zone  1, binary.
+    1716 quadrilateral wall faces, zone  5, binary.
+    1716 quadrilateral wall faces, zone  8, binary.
+    1936 quadrilateral wall faces, zone  9, binary.
+    1936 quadrilateral wall faces, zone 10, binary.
+    1936 quadrilateral wall faces, zone 11, binary.
+    1452 quadrilateral wall faces, zone 12, binary.
+     220 quadrilateral velocity-inlet faces, zone 37, binary.
+     220 quadrilateral outflow faces, zone 38, binary.
+     484 quadrilateral wall faces, zone 13, binary.
+     110 quadrilateral wall faces, zone 14, binary.
+     110 quadrilateral wall faces, zone 15, binary.
+     110 quadrilateral wall faces, zone 16, binary.
+     110 quadrilateral wall faces, zone 17, binary.
+   88920 nodes, binary.
+88920 node flags, binary.
+
+Warning: this is a double-precision solver.
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	eb
+	wb
+	sb
+	nb
+	ub
+	inlet
+	dw
+	uw
+	ww
+	ew
+	sw
+	nw
+	interior-fuild
+	outlet
+	fuild
+     parallel,
+
+Note: 3d, pressure-based, RNG k-epsilon case read into
+      3d, double precision, pressure-based, RNG k-epsilon solver.
+
+
+
+Done.
+
+Preparing mesh for display...
+Done.
+/define/user-defined/compiled-function/compile/l
+ibudf yes 
+ Give C-Source file names:
+calculate_N_avg.c calculate_vd.c
+ Give header file names:
+Copied f:\Thinking\program\pareto_front\lib\Workdata\Fluent_Python\2023-05-27_19-46/F:\Thinking\CFD_study\case3\case3_files\dp0\FFF\Fluent\calculate_N_avg.c to libudf\\src
+Copied f:\Thinking\program\pareto_front\lib\Workdata\Fluent_Python\2023-05-27_19-46/F:\Thinking\CFD_study\case3\case3_files\dp0\FFF\Fluent\calculate_vd.c to libudf\\src
+
+****************************************************************************
+****************************************************************************
+** WARNING: This session is running in parallel -t1 mode.                 **
+**          Some UDF source code appears not to have been parallelised.   **
+**          Please make sure all UDFs are appropriate for parallel        **
+**          processing. Launch Fluent with a -t... command line flag      **
+**          and/or add e.g. '#if PARALLEL ... #endif' to the source       **
+**          code file to suppress this message in future sessions.        **
+**          If you encounter any issues, please re-run with -t0 flag.     **
+****************************************************************************
+****************************************************************************Creating user_nt.udf file for 3ddp_host ...
+(system "copy "F:\ANASYS\ANSYS Inc\v202\fluent"\fluent20.2.0\src\udf\makefile_nt.udf "libudf\\win64\3ddp_host\makefile" ")
+已复制         1 个文件。
+(chdir "libudf")(chdir "win64\\3ddp_host")# Generating ud_io1.h
+calculate_N_avg.c
+calculate_vd.c
+正在生成代码...
+# Generating udf_names.c because of makefile calculate_N_avg.obj calculate_vd.obj
+udf_names.c
+# Linking libudf.dll because of makefile user_nt.udf udf_names.obj calculate_N_avg.obj calculate_vd.obj
+Microsoft (R) Incremental Linker Version 14.00.23026.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+  正在创建库 libudf.lib 和对象 libudf.exp
+
+****************************************************************************
+****************************************************************************
+** WARNING: This session is running in parallel -t1 mode.                 **
+**          Some UDF source code appears not to have been parallelised.   **
+**          Please make sure all UDFs are appropriate for parallel        **
+**          processing. Launch Fluent with a -t... command line flag      **
+**          and/or add e.g. '#if PARALLEL ... #endif' to the source       **
+**          code file to suppress this message in future sessions.        **
+**          If you encounter any issues, please re-run with -t0 flag.     **
+****************************************************************************
+****************************************************************************Creating user_nt.udf file for 3ddp_node ...
+(system "copy "F:\ANASYS\ANSYS Inc\v202\fluent"\fluent20.2.0\src\udf\makefile_nt.udf "libudf\\win64\3ddp_node\makefile" ")
+已复制         1 个文件。
+(chdir "libudf")(chdir "win64\\3ddp_node")# Generating ud_io1.h
+calculate_N_avg.c
+calculate_vd.c
+正在生成代码...
+# Generating udf_names.c because of makefile calculate_N_avg.obj calculate_vd.obj
+udf_names.c
+# Linking libudf.dll because of makefile user_nt.udf udf_names.obj calculate_N_avg.obj calculate_vd.obj
+Microsoft (R) Incremental Linker Version 14.00.23026.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+  正在创建库 libudf.lib 和对象 libudf.exp
+
+Done.
+/define/user-defined/compiled-function load libudf
+wenzheshang: Opening library "f:\\Thinking\\program\\pareto_front\\lib\\Workdata\\Fluent_Python\\2023-05-27_19-46\\libudf"...Done.
+
+wenzheshang: Opening library "f:\\Thinking\\program\\pareto_front\\lib\\Workdata\\Fluent_Python\\2023-05-27_19-46\\libudf"...
+	calculate_N_avg
+	calculate_vd
+Done.
+

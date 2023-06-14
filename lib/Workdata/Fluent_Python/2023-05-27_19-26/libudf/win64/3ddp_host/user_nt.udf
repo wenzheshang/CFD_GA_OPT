@@ -1,0 +1,6 @@
+CSOURCES= $(SRC)calculate_N_avg $(SRC)calculate_vd
+HSOURCES=
+VERSION=3ddp_host
+PARALLEL_NODE=none
+HOST_FLAGS=-DUSE_UDF_HOST_DUMMY
+GPU_SUPPORT=off

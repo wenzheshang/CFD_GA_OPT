@@ -1,0 +1,8 @@
+                          "Volume Integral Report"
+
+         Volume-Weighted Average
+               DPM Concentration              (kg/m3)
+-------------------------------- --------------------
+                           fuild         0.0080096542
+                ---------------- --------------------
+                             Net         0.0080096542
