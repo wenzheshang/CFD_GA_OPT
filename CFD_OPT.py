@@ -5,24 +5,13 @@ import numpy
 from deap import base, creator, tools, algorithms
 import matplotlib.pyplot as plt
 
+from Counter_run_time import CallingCounter
+from Modelica_simu import simulate
 from fluent_corba import CORBA
-import string
 import time
 import pathlib
 import os, sys
 import subprocess
-
-#r = {'rank': 0} #记录优化次数
-
-#装饰器类，统计函数执行次数
-class CallingCounter(object):
-    def __init__ (self, func):
-        self.func = func
-        self.count = 0
-
-    def __call__ (self, *args, **kwargs):
-        self.count += 1
-        return self.func(*args, **kwargs)
 
 #可传参的调用脚本进行后处理的批处理
 def paraview_post_bat(save_path, open_path, **kwargs):
@@ -85,17 +74,19 @@ def CFD_simu(**kwargs):
 
  #################################################保存cgns后处理结果########################################################
     scheme.doMenuCommand("/file/export/cgns version_"+str(CFD_simu.count)+" no velocity dpm-concentration no")
-    paraview_post_bat('F:/Thinking/program/pareto_front/Workdata/pic_result/', str(workPath)+'/version_'+str(CFD_simu.count)+'.cgns',
-                        file_name1 = 'velocity_'+str(CFD_simu.count), file_name2 = 'dpm_'+str(CFD_simu.count))
+    paraview_post_bat(str(savepic)+'/', str(workPath)+'/version_'+str(CFD_simu.count)+'.cgns',
+                        file_name1 = 'velocity_'+str(CFD_simu.count)+'_'+str(BoundaryV), 
+                        file_name2 = 'dpm_'+str(CFD_simu.count)+'_'+str(BoundaryV))
 
  #####################################################保存结果########################################################
  
     run_id = str(CFD_simu.count)
-    scheme.doMenuCommandToString('/report/fluxes/mass-flow no inlet* () yes simu_'+run_id+'.txt')#质量流量保存到文件里
+    scheme.doMenuCommandToString('/report/fluxes/mass-flow no inlet* () yes massflow_'+run_id+'.txt')#质量流量保存到文件里
     #scheme.doMenuCommandToString('/report/dpm-sample injection-0 () outlet () plane-16 () no no')
     scheme.doMenuCommandToString('/report/volume-integrals/volume-avg fuild () dpm-concentration yes dpm_'+run_id+'.txt')#质量浓度保存到文件里
+    scheme.doMenuCommandToString('/report/volume-integrals/mass-avg fuild () temperature yes Temperature_'+run_id+'.txt')
 
-    f = open(os.path.join(workPath,'simu_'+run_id+'.txt'), 'r', encoding='utf-8')
+    f = open(os.path.join(workPath,'massflow_'+run_id+'.txt'), 'r', encoding='utf-8')
     line = f.read()
     item = line.split()
     mf_index = item.index('inlet')+1
@@ -108,8 +99,20 @@ def CFD_simu(**kwargs):
     contam = float(dpmem[dpm_index])
 
     
+    Tem = open(os.path.join(workPath,'Temperature_'+run_id+'.txt'), 'r', encoding='utf-8')
+    l_T = Tem.read()
+    item_T = l_T.split()
+    T_index = item_T.index('fuild')+1
+    Temperature = float(item_T[T_index])
 
-    return massflow, contam
+    Energy = simulate(model = 'F:/Thinking/dymolaModel/Vadilation.mo', 
+                        problem_name = 'Vadilation.OPT_Modelica', 
+                        dir = dir_result, 
+                        endT = 100, 
+                        variable = ['SupplyAir.m_flow','SupplyAir.T','CFD_roo.Room_MeanT'], 
+                        value = [massflow, BoundaryT, Temperature])
+
+    return massflow, contam, Energy
 
 def main():
     IND_size = 2
@@ -117,7 +120,7 @@ def main():
     # MAX = 10
     #random.seed(64)
 
-    creator.create('FitnessMin', base.Fitness, weights = (-1.0, -1.0))
+    creator.create('FitnessMin', base.Fitness, weights = (-1.0, -1.0, -1.0))
     creator.create('Individual', list, fitness = creator.FitnessMin)   
 
     toolbox = base.Toolbox()
@@ -132,9 +135,9 @@ def main():
     @CallingCounter
     def evaluate(individual):
         cfdv = individual[0]+individual[1]
-        flow, contam = CFD_simu(velocity=cfdv, temperature = 293.15)
+        flow, contam, Energy = CFD_simu(velocity=cfdv, temperature = 293.15)
            
-        return flow, contam
+        return flow, contam, Energy
 
     toolbox.register("evaluate", evaluate)
     toolbox.register('mate', tools.cxTwoPoint)
@@ -169,12 +172,20 @@ if __name__=='__main__':
     now_time = time.strftime('%Y-%m-%d_%H-%M', time.localtime())
     cur_path =  os.path.abspath(os.path.dirname(__file__))
     root_path = cur_path
-    workPath =pathlib.Path(root_path+"/Workdata/Fluent_Python/"+now_time)
+    workPath = pathlib.Path(root_path+"/Workdata/Fluent_Python/"+now_time)
 
     folder1 = os.path.exists(workPath)
 
     if not folder1:
         os.makedirs(pathlib.Path(root_path+"/Workdata/Fluent_Python/"+now_time))
+        os.makedirs(pathlib.Path(root_path+"/Workdata/Fluent_Python/"+now_time+"/savepic"))
+    
+    savepic = pathlib.Path(root_path+"/Workdata/Fluent_Python/"+now_time+"/savepic")
+
+    dir_result =root_path+"/Workdata/Dymola_python/"+now_time
+    folder = os.path.exists(dir_result)
+    if not folder:
+        os.makedirs(dir_result)
 
     aasFilePath = workPath/"aaS_FluentId.txt"
     for file in workPath.glob("aaS*.txt"):
@@ -195,7 +206,7 @@ if __name__=='__main__':
 
     # 启动Fluent软件,使用-hidden可以隐藏fluent的GUI界面
     if fluent_exist:
-        fluentProcess = subprocess.Popen(f'"{fluentExe}" 3ddp -aas -t4', shell=True, cwd=str(workPath))#-hidden
+        fluentProcess = subprocess.Popen(f'"{fluentExe}" 3ddp -hidden -aas -t4', shell=True, cwd=str(workPath))#-hidden
     else:
         error = 'no right fluent verison exist on this machine'
         starterror =  open(os.path.join(workPath,'startError.txt'),'w')
@@ -241,15 +252,17 @@ if __name__=='__main__':
     gen = []
     fit_flow = []
     fit_contam = []
+    fit_energy = []
 
     for ind in hof:
         i += 1
         fit_flow += [ind.fitness.values[0]]
         fit_contam += [ind.fitness.values[1]]
+        fit_energy += [ind.fitness.values[2]]
         gen += [i]
 
-    fig, ax1 = plt.subplots()
-    line1 = ax1.plot(fit_flow, fit_contam, "b-", label="CFD Paerto front")
+    fig, ax1 = plt.subplots(1,3,1)
+    line1 = ax1.plot(fit_flow, fit_contam, "b-", label="CFD Paerto front1")
     ax1.set_xlabel("flow")
     ax1.set_ylabel("contam", color="b")
     for tl in ax1.get_yticklabels():
@@ -258,5 +271,27 @@ if __name__=='__main__':
     lns = line1
     labs = [l.get_label() for l in lns]
     ax1.legend(lns, labs, loc="center right")
+ ################################################################################
+    fig, ax2 = plt.subplots(1,3,2)
+    line2 = ax2.plot(fit_flow, fit_energy, "b-", label="CFD Paerto front2")
+    ax2.set_xlabel("flow")
+    ax2.set_ylabel("energy", color="b")
+    for tl in ax2.get_yticklabels():
+        tl.set_color("b")
 
+    lns2 = line2
+    labs2 = [l.get_label() for l in lns2]
+    ax2.legend(lns2, labs2, loc="center right")
+ ################################################################################
+    fig, ax3 = plt.subplots(1,3,3)
+    line3 = ax3.plot(fit_energy, fit_contam, "b-", label="CFD Paerto front3")
+    ax3.set_xlabel("energy")
+    ax3.set_ylabel("contam", color="b")
+    for tl in ax3.get_yticklabels():
+        tl.set_color("b")
+
+    lns3 = line3
+    labs3 = [l.get_label() for l in lns3]
+    ax3.legend(lns3, labs3, loc="center right")
+ ################################################################################
     plt.show()
