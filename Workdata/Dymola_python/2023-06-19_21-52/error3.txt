@@ -1,0 +1,55 @@
+Translation of <a href="Modelica://AirBraytonCycle.ABC_test_verify">AirBraytonCycle.ABC_test_verify</a>:
+The DAE has 793 scalar unknowns and 793 scalar equations.
+Warning: The initial conditions are not fully specified.
+Dymola has selected default initial conditions.
+Warning: Assuming fixed start value for the continuous states:
+    compressor.charMap.m_flow(start = compressor.charMap.mflow_start)
+
+
+Statistics
+
+Original Model
+  Number of components: 126
+  Variables: 925
+  Constants: 1 (1 scalars)
+  Parameters: 298 (447 scalars)
+  Unknowns: 626 (908 scalars)
+  Differentiated variables: 11 scalars
+  Equations: 545
+  Nontrivial: 395
+Translated Model
+  Constants: 188 scalars
+  Free parameters: 218 scalars
+  Parameter depending: 346 scalars
+  Continuous time states: 7 scalars
+  Time-varying variables: 196 scalars
+  Alias variables: 408 scalars
+  Assumed default initial conditions: 1
+  Number of mixed real/discrete systems of equations: 0
+  Sizes of linear systems of equations: { }
+  Sizes after manipulation of the linear systems: { }
+  Sizes of nonlinear systems of equations: {50, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+  Sizes after manipulation of the nonlinear systems: {6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+  Number of numerical Jacobians: 1
+  Initialization problem
+    Sizes of nonlinear systems of equations: {1, 1, 7, 81}
+    Sizes after manipulation of the nonlinear systems: {1, 1, 2, 8}
+    Number of numerical Jacobians: 1
+
+Selected continuous time states
+Statically selected continuous time states
+  compressor.charMap.m_flow
+  compressor_speed.phi
+  compressor_speed.w
+  PID.D.x
+  PID.I.y
+  turbine_speed.phi
+  turbine_speed.w
+
+Warning: Some variables are iteration variables of the initialization problem:
+but they are not given any explicit start values. Zero will be used.
+Iteration variables:
+<a href="Modelica://AirBraytonCycle.ABC_test_verify#diagram$PID.gainPID:y">PID.gainPID.y</a>
+Warning: WARNINGS have been issued.
+Error: cannot read variable "Set_T.T" in call to simulateExtendedModel
+ = false, {}

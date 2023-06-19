@@ -17,8 +17,10 @@ def simulate(**kwargs):
         modelicaPath = pathlib.Path(os.environ["DymolaPath"])
         #Library import
         dirBuilding = os.path.join(modelicaPath,"Modelica/Library/Buildings-v8.0.0/Buildings 8.0.0")
+        dirModelon = os.path.join(modelicaPath,"Modelica/Library/Modelon 2.6")
         #open Library
         dymola.openModel(path=os.path.join(dirBuilding, 'package.mo'))
+        dymola.openModel(path=os.path.join(dirModelon, 'package.moe'))
         dymola.openModel(k['model'])
         problemName = k['problem_name']
         endT = k['endT']
@@ -87,6 +89,6 @@ def simulate(**kwargs):
         mydataframe.to_csv(os.path.join(k['dir'], result_name+'.csv'))#将所有结果保存到.csv文件中，以备下次读取
 
 
-        (te,energyconsumption) = r.values('Energy')
+        (te,energyconsumption) = r.values('EnergyConsumption')
 
     return energyconsumption[-1]

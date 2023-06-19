@@ -12,6 +12,7 @@ import time
 import pathlib
 import os, sys
 import subprocess
+import pandas as pd
 
 #可传参的调用脚本进行后处理的批处理
 def paraview_post_bat(save_path, open_path, **kwargs):
@@ -84,7 +85,7 @@ def CFD_simu(**kwargs):
     scheme.doMenuCommandToString('/report/fluxes/mass-flow no inlet* () yes massflow_'+run_id+'.txt')#质量流量保存到文件里
     #scheme.doMenuCommandToString('/report/dpm-sample injection-0 () outlet () plane-16 () no no')
     scheme.doMenuCommandToString('/report/volume-integrals/volume-avg fuild () dpm-concentration yes dpm_'+run_id+'.txt')#质量浓度保存到文件里
-    scheme.doMenuCommandToString('/report/volume-integrals/mass-avg fuild () temperature yes Temperature_'+run_id+'.txt')
+    scheme.doMenuCommandToString('/report/surface-integrals/mass-weighted-avg outlet () temperature yes Temperature_'+run_id+'.txt')
 
     f = open(os.path.join(workPath,'massflow_'+run_id+'.txt'), 'r', encoding='utf-8')
     line = f.read()
@@ -102,15 +103,15 @@ def CFD_simu(**kwargs):
     Tem = open(os.path.join(workPath,'Temperature_'+run_id+'.txt'), 'r', encoding='utf-8')
     l_T = Tem.read()
     item_T = l_T.split()
-    T_index = item_T.index('fuild')+1
+    T_index = item_T.index('outlet')+1
     Temperature = float(item_T[T_index])
 
-    Energy = simulate(model = 'F:/Thinking/dymolaModel/Vadilation.mo', 
-                        problem_name = 'Vadilation.OPT_Modelica', 
+    Energy = simulate(model = 'D:/Backup/Documents/Dymola/AirBraytonCycle.mo', 
+                        problem_name = 'AirBraytonCycle.ABC_test_verify', 
                         dir = dir_result, 
                         endT = 100, 
-                        variable = ['SupplyAir.m_flow','SupplyAir.T','CFD_roo.Room_MeanT'], 
-                        value = [massflow, BoundaryT, Temperature])
+                        variable = ['inlet.T','set_T.k'], 
+                        value = [Temperature, BoundaryT])
 
     return massflow, contam, Energy
 
@@ -260,6 +261,9 @@ if __name__=='__main__':
         fit_contam += [ind.fitness.values[1]]
         fit_energy += [ind.fitness.values[2]]
         gen += [i]
+    
+    mydataframe_flow = pd.DataFrame({'fit_flow': fit_flow, 'fit_contam': fit_contam, 'fit_energy': fit_energy})
+    mydataframe_flow.to_csv(os.path.join(os.path.join(workPath,'fit.csv')))
 
     fig, ax1 = plt.subplots(1,3,1)
     line1 = ax1.plot(fit_flow, fit_contam, "b-", label="CFD Paerto front1")
