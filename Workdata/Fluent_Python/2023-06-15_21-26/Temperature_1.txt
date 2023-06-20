@@ -1,8 +1,0 @@
-                          "Volume Integral Report"
-
-           Mass-Weighted Average
-              Static Temperature                  (k)
--------------------------------- --------------------
-                           fuild            294.93323
-                ---------------- --------------------
-                             Net            294.93323

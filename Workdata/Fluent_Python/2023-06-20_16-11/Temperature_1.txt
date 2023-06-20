@@ -1,0 +1,6 @@
+                         "Surface Integral Report"
+
+           Mass-Weighted Average
+              Static Temperature                  (k)
+-------------------------------- --------------------
+                          outlet            300.51358

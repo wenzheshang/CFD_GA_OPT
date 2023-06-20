@@ -5,7 +5,7 @@ import numpy
 from deap import base, creator, tools, algorithms
 import matplotlib.pyplot as plt
 
-from Counter_run_time import CallingCounter
+from Counter_run_time import CallingParameter
 from Modelica_simu import simulate
 from fluent_corba import CORBA
 import time
@@ -30,7 +30,7 @@ def paraview_post_bat(save_path, open_path, **kwargs):
 
     return 
 
-@CallingCounter
+@CallingParameter
 def CFD_simu(**kwargs):
     
     #r['rank'] = r['rank'] + 1
@@ -41,14 +41,14 @@ def CFD_simu(**kwargs):
 
     scheme.doMenuCommand('define/models/dpm/interaction/coupled-calculations? no')
 
-    scheme.doMenuCommand('/define/boundary/velocity-inlet/inlet no no yes yes no '+str(BoundaryV)+' no 0 no 293.15 no no yes 5 10')
+    scheme.doMenuCommand('/define/boundary/velocity-inlet/inlet no no yes yes no '+str(BoundaryV)+' no 0 no '+str(BoundaryT)+' no no yes 5 10')
     scheme.doMenuCommand("/define/boundary/zone-type outlet outflow")
     
     for BoundaryName in ['ew','ww','sw','nw','uw']:
-        scheme.doMenuCommand('/define/boundary/wall '+BoundaryName+' 0 no 0 no yes temperature no '+str(BoundaryT)
+        scheme.doMenuCommand('/define/boundary/wall '+BoundaryName+' 0 no 0 no yes temperature no '+str(299.15)
                               +' no no no no 0 no 0.5 no polynomial 1 1 polynomial 1 1 no 1')
     for boxname in ['eb','wb','sb','nb','ub','dw']:
-        scheme.doMenuCommand('/define/boundary/wall '+boxname+' 0 no 0 no yes temperature no '+str(303.15)
+        scheme.doMenuCommand('/define/boundary/wall '+boxname+' 0 no 0 no yes temperature no '+str(309.85)
                               +' no no no no 0 no 0.5 no polynomial 1 1 polynomial 1 1 no 1')
 
     scheme.doMenuCommand('/solve/set/p-v-coupling 20') #SIMPLE
@@ -74,10 +74,10 @@ def CFD_simu(**kwargs):
     fluentUnit.calculate()
 
  #################################################保存cgns后处理结果########################################################
-    scheme.doMenuCommand("/file/export/cgns version_"+str(CFD_simu.count)+" no velocity dpm-concentration no")
+    scheme.doMenuCommand("/file/export/cgns version_"+str(CFD_simu.count)+" no velocity dpm-concentration temperature no")
     paraview_post_bat(str(savepic)+'/', str(workPath)+'/version_'+str(CFD_simu.count)+'.cgns',
-                        file_name1 = 'velocity_'+str(CFD_simu.count)+'_'+str(BoundaryV), 
-                        file_name2 = 'dpm_'+str(CFD_simu.count)+'_'+str(BoundaryV))
+                        file_name1 = 'velocity_'+str(CFD_simu.count)+'_'+str(round(BoundaryV,2))+'_'+str(round(BoundaryT,2)), 
+                        file_name2 = 'dpm_'+str(CFD_simu.count)+'_'+str(round(BoundaryV,2))+'_'+str(round(BoundaryT,2)))
 
  #####################################################保存结果########################################################
  
@@ -133,10 +133,10 @@ def main():
     toolbox.register('individual', tools.initRepeat, creator.Individual, toolbox.attr_item, n = IND_size)
     toolbox.register('population', tools.initRepeat, list, toolbox.individual)
     
-    @CallingCounter
     def evaluate(individual):
-        cfdv = individual[0]+individual[1]
-        flow, contam, Energy = CFD_simu(velocity=cfdv, temperature = 293.15)
+        cfdv = individual[0]*2 + 0.367  #0.367m/s~2.367m/s  (1.367m/s ± 1m/s)
+        cfdt = individual[1]*10 + 290.35 #290.35K~300.35K (295.35K ± 5K)
+        flow, contam, Energy = CFD_simu(velocity=cfdv, temperature = cfdt)
            
         return flow, contam, Energy
 
@@ -255,6 +255,9 @@ if __name__=='__main__':
     fit_contam = []
     fit_energy = []
 
+    dataframeVT = pd.DataFrame({'Velocity':CFD_simu.velocity, 'Temperature':CFD_simu.temperature})
+    dataframeVT.to_csv(os.path.join(workPath, 'VT.csv'))
+
     for ind in hof:
         i += 1
         fit_flow += [ind.fitness.values[0]]
@@ -263,7 +266,7 @@ if __name__=='__main__':
         gen += [i]
     
     mydataframe_flow = pd.DataFrame({'fit_flow': fit_flow, 'fit_contam': fit_contam, 'fit_energy': fit_energy})
-    mydataframe_flow.to_csv(os.path.join(os.path.join(workPath,'fit.csv')))
+    mydataframe_flow.to_csv(os.path.join(workPath,'fit.csv'))
 
     fig, ax1 = plt.subplots(1,3,1)
     line1 = ax1.plot(fit_flow, fit_contam, "b-", label="CFD Paerto front1")
