@@ -14,6 +14,12 @@ import os, sys
 import subprocess
 import pandas as pd
 
+#记录一些不好记录的数据
+dict_energy = {'energy':[]}
+dict_outT = {'outT':[]}
+dict_contam = {'cotam':[]}
+dict_flow = {'flow':[]}
+
 #可传参的调用脚本进行后处理的批处理
 def paraview_post_bat(save_path, open_path, **kwargs):
 
@@ -44,21 +50,21 @@ def CFD_simu(**kwargs):
     scheme.doMenuCommand('/define/boundary/velocity-inlet/inlet no no yes yes no '+str(BoundaryV)+' no 0 no '+str(BoundaryT)+' no no yes 5 10')
     scheme.doMenuCommand("/define/boundary/zone-type outlet outflow")
     
-    for BoundaryName in ['ew','ww','sw','nw','uw']:
+    for BoundaryName in ['ew','ww','sw','nw','uw','bw']:
         scheme.doMenuCommand('/define/boundary/wall '+BoundaryName+' 0 no 0 no yes temperature no '+str(299.15)
                               +' no no no no 0 no 0.5 no polynomial 1 1 polynomial 1 1 no 1')
-    for boxname in ['eb','wb','sb','nb','ub','dw']:
+    for boxname in ['eb','wb','sb','nb','ub']:
         scheme.doMenuCommand('/define/boundary/wall '+boxname+' 0 no 0 no yes temperature no '+str(309.85)
                               +' no no no no 0 no 0.5 no polynomial 1 1 polynomial 1 1 no 1')
 
     scheme.doMenuCommand('/solve/set/p-v-coupling 20') #SIMPLE
     scheme.doMenuCommand('solve/set/discretization-scheme/pressure 14') #PRESTO!
     scheme.doMenuCommand('solve/set/discretization-scheme/mom 1') #SOU
-    scheme.doMenuCommand('solve/set/discretization-scheme/k 1') #SOU
-    scheme.doMenuCommand('solve/set/discretization-scheme/epsilon 1') #SOU
-    scheme.doMenuCommand('solve/set/under-relaxation/k 0.7') #Relaxtion
-    scheme.doMenuCommand('solve/set/under-relaxation/epsilon 0.7') #Relaxtion
-    scheme.doMenuCommand('/solve/initialize/set-hyb-initialization/general-settings 30 1 1 relative no no no')
+    scheme.doMenuCommand('solve/set/discretization-scheme/k 0') #FOU
+    scheme.doMenuCommand('solve/set/discretization-scheme/epsilon 0') #FOU
+    scheme.doMenuCommand('solve/set/under-relaxation/k 0.8') #Relaxtion
+    scheme.doMenuCommand('solve/set/under-relaxation/epsilon 0.8') #Relaxtion
+    scheme.doMenuCommand('/solve/initialize/set-hyb-initialization/general-settings 10 1 1 relative no no no')
     if CFD_simu.count == 1:
         scheme.doMenuCommand("/solve/initialize/compute-defaults/all-zones")
     else:
@@ -84,7 +90,7 @@ def CFD_simu(**kwargs):
     run_id = str(CFD_simu.count)
     scheme.doMenuCommandToString('/report/fluxes/mass-flow no inlet* () yes massflow_'+run_id+'.txt')#质量流量保存到文件里
     #scheme.doMenuCommandToString('/report/dpm-sample injection-0 () outlet () plane-16 () no no')
-    scheme.doMenuCommandToString('/report/volume-integrals/volume-avg fuild () dpm-concentration yes dpm_'+run_id+'.txt')#质量浓度保存到文件里
+    scheme.doMenuCommandToString('/report/volume-integrals/volume-avg fuildblock () dpm-concentration yes dpm_'+run_id+'.txt')#质量浓度保存到文件里
     scheme.doMenuCommandToString('/report/surface-integrals/mass-weighted-avg outlet () temperature yes Temperature_'+run_id+'.txt')
 
     f = open(os.path.join(workPath,'massflow_'+run_id+'.txt'), 'r', encoding='utf-8')
@@ -96,7 +102,7 @@ def CFD_simu(**kwargs):
     d = open(os.path.join(workPath,'dpm_'+run_id+'.txt'), 'r', encoding='utf-8')
     dine = d.read()
     dpmem = dine.split()
-    dpm_index = dpmem.index('fuild')+1
+    dpm_index = dpmem.index('fuildblock')+1
     contam = float(dpmem[dpm_index])
 
     
@@ -110,8 +116,13 @@ def CFD_simu(**kwargs):
                         problem_name = 'AirBraytonCycle.ABC_test_verify', 
                         dir = dir_result, 
                         endT = 100, 
-                        variable = ['inlet.T','set_T.k'], 
-                        value = [Temperature, BoundaryT])
+                        variable = ['inlet.T','set_T.k','set_mflow.k'], 
+                        value = [Temperature, BoundaryT, massflow])
+
+    dict_outT['outT'].append(Temperature)
+    dict_contam['cotam'].append(contam)
+    dict_energy['energy'].append(Energy)
+    dict_flow['flow'].append(massflow)
 
     return massflow, contam, Energy
 
@@ -133,16 +144,16 @@ def main():
     toolbox.register('individual', tools.initRepeat, creator.Individual, toolbox.attr_item, n = IND_size)
     toolbox.register('population', tools.initRepeat, list, toolbox.individual)
     
+    
     def evaluate(individual):
         cfdv = individual[0]*2 + 0.367  #0.367m/s~2.367m/s  (1.367m/s ± 1m/s)
         cfdt = individual[1]*10 + 290.35 #290.35K~300.35K (295.35K ± 5K)
-        flow, contam, Energy = CFD_simu(velocity=cfdv, temperature = cfdt)
-           
+        flow, contam, Energy = CFD_simu(velocity=cfdv, temperature = cfdt)           
         return flow, contam, Energy
 
     toolbox.register("evaluate", evaluate)
     toolbox.register('mate', tools.cxTwoPoint)
-    toolbox.register("mutate", tools.mutFlipBit, indpb=0.02)
+    toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)
     toolbox.register("select", tools.selNSGA2)
 
     # toolbox.decorate("mate", decorate.checkBounds(MIN, MAX))
@@ -154,11 +165,11 @@ def main():
     mstats.register('min', numpy.min, axis = 0)
     mstats.register('max', numpy.max, axis = 0)
 
-    CXPB = 0.7
-    MUTPB = 0.2
-    NGEN = 20
-    MU = 10
-    LAMBDA = 20
+    CXPB = 0.6
+    MUTPB = 0.3
+    NGEN = 15
+    MU = 30
+    LAMBDA = 50
 
     pop = toolbox.population(n=MU)
     hof = tools.ParetoFront()
@@ -232,7 +243,7 @@ if __name__=='__main__':
     fluentUnit = orb.string_to_object(aasFilePath.open("r").read())
     scheme = fluentUnit.getSchemeControllerInstance()
 
-    casename = 'F:/Thinking/CFD_study/case3/case3_files/dp0/FFF/MECH/FFF.1.msh'
+    casename = 'F:/Thinking/CFD_study/case3/a/FFF.msh'
     scheme.execScheme(f'(read-case "{casename}")')
     # udf_name1 = 'calculate_N_avg.c '
     # user_name2 = 'calculate_vd.c'
@@ -243,6 +254,8 @@ if __name__=='__main__':
     scheme.doMenuCommand("/define/model viscous ke-rng yes")
     scheme.doMenuCommand("/define/model energy yes no no no no")
     scheme.doMenuCommand("/define/operating-conditions gravity yes 0 9.8")
+    scheme.doMenuCommand('/define/materials/change-create air air yes boussinesq 1.161 no no no no yes 0.0034 no')
+    scheme.doMenuCommand('/define/operating-conditions/operating-temperature 304')
     scheme.doMenuCommand('/define/model/dpm/injections/create-injection injection-0 no yes surface no ub () '+ 
                         'no no no no no no no 0 0.6 0 1e-6 303.15 1e-3')
                         #                x速度 y速度 z速度 粒径 温度 流量
@@ -255,8 +268,9 @@ if __name__=='__main__':
     fit_contam = []
     fit_energy = []
 
-    dataframeVT = pd.DataFrame({'Velocity':CFD_simu.velocity, 'Temperature':CFD_simu.temperature})
-    dataframeVT.to_csv(os.path.join(workPath, 'VT.csv'))
+    dataframeVT = pd.DataFrame({'Velocity':CFD_simu.velocity, 'inletT':CFD_simu.temperature, 'outT':dict_outT['outT'], 
+                                 'Contam':dict_contam['cotam'], 'Energy':dict_energy['energy'], 'Massflow':dict_flow['flow']})
+    dataframeVT.to_csv(os.path.join(workPath, 'VTTCEM.csv'))
 
     for ind in hof:
         i += 1
@@ -268,7 +282,8 @@ if __name__=='__main__':
     mydataframe_flow = pd.DataFrame({'fit_flow': fit_flow, 'fit_contam': fit_contam, 'fit_energy': fit_energy})
     mydataframe_flow.to_csv(os.path.join(workPath,'fit.csv'))
 
-    fig, ax1 = plt.subplots(1,3,1)
+    fig, ax = plt.subplots(3, 1,figsize=(8,18), gridspec_kw={'height_ratios': [1,1,1]})
+    ax1 = ax[0]
     line1 = ax1.plot(fit_flow, fit_contam, "b-", label="CFD Paerto front1")
     ax1.set_xlabel("flow")
     ax1.set_ylabel("contam", color="b")
@@ -279,7 +294,7 @@ if __name__=='__main__':
     labs = [l.get_label() for l in lns]
     ax1.legend(lns, labs, loc="center right")
  ################################################################################
-    fig, ax2 = plt.subplots(1,3,2)
+    ax2 = ax[1]
     line2 = ax2.plot(fit_flow, fit_energy, "b-", label="CFD Paerto front2")
     ax2.set_xlabel("flow")
     ax2.set_ylabel("energy", color="b")
@@ -290,7 +305,7 @@ if __name__=='__main__':
     labs2 = [l.get_label() for l in lns2]
     ax2.legend(lns2, labs2, loc="center right")
  ################################################################################
-    fig, ax3 = plt.subplots(1,3,3)
+    ax3 = ax[2]
     line3 = ax3.plot(fit_energy, fit_contam, "b-", label="CFD Paerto front3")
     ax3.set_xlabel("energy")
     ax3.set_ylabel("contam", color="b")

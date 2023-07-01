@@ -91,4 +91,7 @@ def simulate(**kwargs):
 
         (te,energyconsumption) = r.values('EnergyConsumption')
 
+        dymola.close()
+        dymola = None
+
     return energyconsumption[-1]

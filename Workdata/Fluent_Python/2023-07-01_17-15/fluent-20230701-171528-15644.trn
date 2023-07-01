@@ -1,0 +1,2456 @@
+
+              Welcome to ANSYS Fluent 2020 R2
+
+              Copyright 1987-2020 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: May 29 2020 07:22:43 EDT  Build Id: 10176  
+ 
+Host spawning Node 0 on machine "wenzheshang" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                     
+-------------------------------------------------------------------------------
+n3    wenzheshang  4/12  Windows-x64  18412  Intel(R) Core(TM) i7-8750H 
+n2    wenzheshang  3/12  Windows-x64  22156  Intel(R) Core(TM) i7-8750H 
+n1    wenzheshang  2/12  Windows-x64  10396  Intel(R) Core(TM) i7-8750H 
+n0*   wenzheshang  1/12  Windows-x64  19544  Intel(R) Core(TM) i7-8750H 
+host  wenzheshang        Windows-x64  13888  Intel(R) Core(TM) i7-8750H 
+
+MPI Option Selected: intel
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+
+Cleanup script file is f:\\Thinking\\program\\pareto_front\\Workdata\\Fluent_Python\\2023-07-01_17-15\\cleanup-fluent-wenzheshang-13888.bat
+
+Opening wrapper library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent/../commonfiles/AAS/bin/winx64/COWrapper.dll"...
+
+Done.
+Loading "F:/ANASYS/ANSYS Inc/v202/fluent/../commonfiles/AAS/bin/winx64/cowrapper.scm"
+Done.
+(define (aaslistener-func iter time-step) (display "<aaslistener> 
+") '() )aaslistener-func
+(define (aaslistener-func-freq) 1)aaslistener-func-freq
+(register-solution-monitor 'aaslistener-func aaslistener-func #f aaslistener-func-freq)monitor-lambdas
+(rpsetvar 'co-simulation/ior_ICoFluentUnit "IOR:010000002000000049444c3a4141535f434f5242412f49436f466c75656e74556e69743a312e300002000000000000006c000000010102000e0000003137322e31382e3132332e3635002b761b00000014010f00525354c8ee9f64c71c0c000100000001000000020000000002000000000000000800000001005200004f41540100000018000000010052000100010001000000010001050901010000000000000000006c000000010102000d0000003137322e33302e3137362e3100002b761b00000014010f00525354c8ee9f64c71c0c000100000001000000020000000002000000000000000800000001005200004f41540100000018000000010052000100010001000000010001050901010000000000")co-simulation/ior_icofluentunit
+(rp-var-define 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e300002000000000000006c000000010102000e0000003137322e31382e3132332e36350029761b00000014010f00525354c8ee9f64f8140c000000000001000000010000000002000000000000000800000001018335004f41540100000018000000010183350100010001000000010001050901010000000000000000006c000000010102000d0000003137322e33302e3137362e31000029761b00000014010f00525354c8ee9f64f8140c000000000001000000010000000002000000000000000800000001018335004f41540100000018000000010183350100010001000000010001050901010000000000" 'string #f)co-simulation/ior_exceptionholder
+(rpsetvar 'co-simulation/ior_ExceptionHolder "IOR:010000003000000049444c3a4141535f434f5242412f466c75656e742f49466c75656e74457863657074696f6e486f6c6465723a312e300002000000000000006c000000010102000e0000003137322e31382e3132332e36350029761b00000014010f00525354c8ee9f64f8140c000000000001000000010000000002000000000000000800000001018335004f41540100000018000000010183350100010001000000010001050901010000000000000000006c000000010102000d0000003137322e33302e3137362e31000029761b00000014010f00525354c8ee9f64f8140c000000000001000000010000000002000000000000000800000001018335004f41540100000018000000010183350100010001000000010001050901010000000000")co-simulation/ior_exceptionholder
+
+> 
+Reading "F:/Thinking/CFD_study/case3/a/FFF.msh"...
+
+Buffering for file scan...
+
+  111348 nodes.
+  102794 hexahedral cells, zone 18.
+  299949 quadrilateral interior faces, zone 19.
+     188 quadrilateral velocity-inlet faces, zone 20.
+    2303 quadrilateral wall faces, zone 21.
+     621 quadrilateral wall faces, zone 22.
+     282 quadrilateral pressure-outlet faces, zone 23.
+    2209 quadrilateral wall faces, zone 24.
+     621 quadrilateral wall faces, zone 25.
+    2491 quadrilateral wall faces, zone 26.
+     621 quadrilateral wall faces, zone 27.
+     621 quadrilateral wall faces, zone 28.
+    2491 quadrilateral wall faces, zone 29.
+    1680 quadrilateral wall faces, zone 30.
+     529 quadrilateral wall faces, zone 31.
+    2209 quadrilateral wall faces, zone 32.
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts....,
+		faces....,
+		nodes....,
+		cells....,
+        bandwidth reduction using Reverse Cuthill-McKee: 14749/668 = 22.0793
+     materials,
+     interface,
+     domains,
+     zones,
+	uw
+	ub
+	bw
+	ew
+	eb
+	wb
+	ww
+	nb
+	nw
+	outlet
+	sb
+	sw
+	inlet
+	int_fuildblock
+	fuildblock
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+/define/model viscous ke-rng yes/define/model energy yes no no no no/define/operating-conditions gravity yes 0 9.8/define/materials/change-create air air air is a fluid
+yes 
+Density
+boussinesq 1.161 
+no no no no yes 
+Thermal Expansion Coefficient
+method is constant
+0.0034 
+no/define/operating-conditions/operating-temperature 304/define/model/dpm/injections/create-injection injection-0 no yes surface no Available surfaces: (bw eb ew inlet nb nw outlet sb sw ub uw wb ww)
+Chosen: ub () no no no no no no no 0 0.6 0 1e-6 303.15 1e-3
+The injection settings have been assigned. ---
+Please note that more options and settings may be available in the
+TUI menu: /define[/models/dpm]/injections/injection-properties/set
+At least the drag-parameters should be set there for all particles having any mass;
+for droplets, e.g. breakup parameters may be available there, too.
+define/models/dpm/interaction/coupled-calculations? no/define/boundary/velocity-inlet/i(inlet)
+nlet no no yes yes no 1.410480744540147 no 0 no 296.2730084493062 no no yes 5 10
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+/define/boundary/zone-type outlet outflow/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+ew 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+ww 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+sw 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+nw 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+uw 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+bw 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+eb 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+wb 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+sb 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+nb 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+ub 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Resetting "DEM Collision Partner" from *dem-unknown* to none.
+
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/solve/set/p-v-coupling 20
+ Switching OFF pseudo transient formulation.
+solve/set/discretization-scheme/pressure 14solve/set/discretization-scheme/mom 1solve/set/discretization-scheme/k 0solve/set/discretization-scheme/epsilon 0solve/set/under-relaxation/k 0.8solve/set/under-relaxation/epsilon 0.8/solve/initialize/set-hyb-initialization/general-settings 10 
+Explicit URF for scalar equation-01 
+Explicit URF for scalar equation-11 
+Current reference frame : Relative to cell zonerelative no no no/solve/initialize/compute-defaults/all-zonessolve iterate 500
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		1.000000e+00
+	2		8.954007e-06
+	3		4.791284e-07
+	4		3.591671e-08
+	5		2.957458e-09
+	6		2.662735e-10
+	7		1.585480e-11
+	8		1.541048e-12
+	9		1.460218e-13
+	10		1.395726e-14
+
+Hybrid initialization is done.
+<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+     1  1.0000e+00  1.2695e-01  6.4274e-01  6.4692e-04  1.3765e-04  5.4313e-01  4.0980e-01  0:00:00  499
+<aaslistener> 
+     2  1.0000e+00  9.4264e-02  8.3394e-01  1.9223e-03  3.0494e-04  4.0370e-01  3.3345e-01  0:16:36  498
+<aaslistener> 
+     3  4.7017e-01  4.3912e-02  1.0934e-01  1.6747e-02  1.8938e-04  2.2846e-01  2.6717e-01  0:13:15  497
+<aaslistener> 
+     4  3.5470e-01  4.7006e-02  6.4378e-02  1.7231e-02  1.2768e-04  1.2538e-01  2.2253e-01  0:10:35  496
+<aaslistener> 
+     5  2.6139e-01  4.2335e-02  4.8684e-02  1.3893e-02  1.0030e-04  1.0940e-01  2.3415e-01  0:10:06  495
+<aaslistener> 
+     6  2.2271e-01  3.7594e-02  4.0824e-02  1.1995e-02  8.2335e-05  1.0383e-01  2.6084e-01  0:08:04  494
+<aaslistener> 
+     7  2.0173e-01  3.3708e-02  3.6830e-02  1.0992e-02  7.1431e-05  9.5010e-02  2.4122e-01  0:06:26  493
+<aaslistener> 
+     8  1.8912e-01  3.1003e-02  3.3542e-02  1.0528e-02  6.1347e-05  8.8211e-02  1.9831e-01  0:06:47  492
+<aaslistener> 
+     9  1.7733e-01  2.9009e-02  3.0227e-02  1.0088e-02  5.4970e-05  8.4554e-02  1.7619e-01  0:05:25  491
+<aaslistener> 
+    10  1.6816e-01  2.7540e-02  2.7939e-02  9.7452e-03  4.9559e-05  8.0064e-02  1.6195e-01  0:04:19  490
+<aaslistener> 
+    11  1.6511e-01  2.6195e-02  2.6637e-02  9.5208e-03  4.5529e-05  7.2439e-02  1.4151e-01  0:05:05  489
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    12  1.6847e-01  2.5374e-02  2.5441e-02  9.4550e-03  4.1873e-05  6.4467e-02  1.1994e-01  0:04:03  488
+<aaslistener> 
+    13  1.5745e-01  2.4797e-02  2.4436e-02  9.5888e-03  3.9213e-05  5.8152e-02  1.0512e-01  0:03:14  487
+<aaslistener> 
+    14  1.6089e-01  2.4338e-02  2.3380e-02  9.5482e-03  3.6030e-05  5.2164e-02  8.8580e-02  0:04:12  486
+<aaslistener> 
+    15  1.5401e-01  2.3798e-02  2.2492e-02  9.5675e-03  3.3994e-05  4.6949e-02  7.4161e-02  0:03:21  485
+<aaslistener> 
+    16  1.4921e-01  2.3026e-02  2.1948e-02  9.5870e-03  3.2410e-05  4.2529e-02  6.1392e-02  0:02:41  484
+<aaslistener> 
+    17  1.4144e-01  2.2539e-02  2.1600e-02  9.6247e-03  3.1131e-05  3.9498e-02  5.7275e-02  0:03:45  483
+<aaslistener> 
+    18  1.4639e-01  2.1936e-02  2.0847e-02  9.4653e-03  2.9898e-05  3.6220e-02  5.1475e-02  0:03:00  482
+<aaslistener> 
+    19  1.3494e-01  2.1103e-02  2.0277e-02  9.4297e-03  2.9218e-05  3.3897e-02  4.9385e-02  0:02:23  481
+<aaslistener> 
+    20  1.3847e-01  2.0399e-02  1.9631e-02  9.2086e-03  2.8146e-05  3.1510e-02  4.4235e-02  0:03:30  480
+<aaslistener> 
+    21  1.2701e-01  1.9395e-02  1.9105e-02  9.1364e-03  2.7529e-05  2.9551e-02  4.2237e-02  0:02:48  479
+<aaslistener> 
+    22  1.3036e-01  1.8669e-02  1.8603e-02  8.8957e-03  2.6848e-05  2.8191e-02  4.0885e-02  0:02:14  478
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    23  1.2623e-01  1.7902e-02  1.8135e-02  8.7690e-03  2.6060e-05  2.7277e-02  3.9976e-02  0:03:22  477
+<aaslistener> 
+    24  1.1828e-01  1.7424e-02  1.7931e-02  8.6750e-03  2.5659e-05  2.6367e-02  3.8952e-02  0:02:42  476
+<aaslistener> 
+    25  1.2170e-01  1.7104e-02  1.7719e-02  8.5451e-03  2.5142e-05  2.5425e-02  3.6534e-02  0:02:09  475
+<aaslistener> 
+    26  1.1373e-01  1.6597e-02  1.7780e-02  8.5489e-03  2.5189e-05  2.4431e-02  3.4236e-02  0:03:18  474
+<aaslistener> 
+    27  1.1884e-01  1.6501e-02  1.7555e-02  8.5452e-03  2.5048e-05  2.3511e-02  3.2534e-02  0:02:38  473
+<aaslistener> 
+    28  1.1262e-01  1.6333e-02  1.7482e-02  8.6550e-03  2.4930e-05  2.2586e-02  3.1153e-02  0:03:40  472
+<aaslistener> 
+    29  1.1868e-01  1.6391e-02  1.7111e-02  8.7776e-03  2.3919e-05  2.1708e-02  2.9991e-02  0:02:56  471
+<aaslistener> 
+    30  1.1654e-01  1.6337e-02  1.6810e-02  8.9461e-03  2.2882e-05  2.0961e-02  2.9626e-02  0:02:21  470
+<aaslistener> 
+    31  1.1584e-01  1.6393e-02  1.6517e-02  9.0415e-03  2.1973e-05  2.0443e-02  3.0215e-02  0:01:52  469
+<aaslistener> 
+    32  1.1556e-01  1.6548e-02  1.6133e-02  9.1175e-03  2.1237e-05  2.0220e-02  3.2038e-02  0:03:03  468
+<aaslistener> 
+    33  1.1569e-01  1.6649e-02  1.5784e-02  9.1447e-03  2.0554e-05  2.0393e-02  3.5208e-02  0:02:26  467
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    34  1.1581e-01  1.6705e-02  1.5494e-02  9.1247e-03  2.0029e-05  2.0900e-02  3.9061e-02  0:01:57  466
+<aaslistener> 
+    35  1.1489e-01  1.6583e-02  1.5225e-02  9.0516e-03  1.9628e-05  2.1735e-02  4.4144e-02  0:03:06  465
+<aaslistener> 
+    36  1.1374e-01  1.6362e-02  1.4999e-02  8.9561e-03  1.9211e-05  2.2610e-02  4.8844e-02  0:02:29  464
+<aaslistener> 
+    37  1.1246e-01  1.6027e-02  1.4821e-02  8.8659e-03  1.8823e-05  2.3375e-02  5.2037e-02  0:01:59  463
+<aaslistener> 
+    38  1.1042e-01  1.5654e-02  1.4686e-02  8.7758e-03  1.8472e-05  2.3816e-02  5.3844e-02  0:03:07  462
+<aaslistener> 
+    39  1.0818e-01  1.5250e-02  1.4567e-02  8.6886e-03  1.8272e-05  2.3999e-02  5.4207e-02  0:02:29  461
+<aaslistener> 
+    40  1.0570e-01  1.4888e-02  1.4391e-02  8.6039e-03  1.8001e-05  2.3825e-02  5.2233e-02  0:01:59  460
+<aaslistener> 
+    41  1.0360e-01  1.4519e-02  1.4199e-02  8.5461e-03  1.7654e-05  2.3317e-02  4.8579e-02  0:03:07  459
+<aaslistener> 
+    42  1.0135e-01  1.4188e-02  1.4013e-02  8.4906e-03  1.7164e-05  2.2609e-02  4.4042e-02  0:02:29  458
+<aaslistener> 
+    43  9.8771e-02  1.3896e-02  1.3776e-02  8.4341e-03  1.6690e-05  2.1838e-02  4.0071e-02  0:01:59  457
+<aaslistener> 
+    44  9.5594e-02  1.3631e-02  1.3548e-02  8.3583e-03  1.6296e-05  2.1004e-02  3.6404e-02  0:03:06  456
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    45  9.3103e-02  1.3377e-02  1.3308e-02  8.2502e-03  1.5898e-05  2.0086e-02  3.3143e-02  0:02:29  455
+<aaslistener> 
+    46  9.0630e-02  1.3130e-02  1.3093e-02  8.1384e-03  1.5448e-05  1.9100e-02  3.0134e-02  0:01:59  454
+<aaslistener> 
+    47  8.3830e-02  1.2890e-02  1.2924e-02  8.0080e-03  1.5048e-05  1.8133e-02  2.7746e-02  0:03:05  453
+<aaslistener> 
+    48  8.7419e-02  1.2718e-02  1.2729e-02  7.8491e-03  1.4505e-05  1.7178e-02  2.5327e-02  0:02:28  452
+<aaslistener> 
+    49  7.9634e-02  1.2468e-02  1.2538e-02  7.7321e-03  1.3871e-05  1.6296e-02  2.3336e-02  0:01:58  451
+<aaslistener> 
+    50  7.8495e-02  1.2194e-02  1.2336e-02  7.5957e-03  1.3257e-05  1.5593e-02  2.2040e-02  0:03:04  450
+<aaslistener> 
+    51  7.6787e-02  1.1892e-02  1.2144e-02  7.4642e-03  1.2504e-05  1.5076e-02  2.1504e-02  0:02:27  449
+<aaslistener> 
+    52  7.4787e-02  1.1559e-02  1.1942e-02  7.3502e-03  1.1829e-05  1.4725e-02  2.1339e-02  0:01:57  448
+<aaslistener> 
+    53  7.3222e-02  1.1203e-02  1.1733e-02  7.2415e-03  1.1199e-05  1.4469e-02  2.1541e-02  0:03:03  447
+<aaslistener> 
+    54  7.1585e-02  1.0826e-02  1.1519e-02  7.1370e-03  1.0654e-05  1.4193e-02  2.1327e-02  0:02:26  446
+<aaslistener> 
+    55  7.0206e-02  1.0452e-02  1.1295e-02  7.0305e-03  1.0232e-05  1.3839e-02  2.0887e-02  0:03:26  445
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    56  6.9110e-02  1.0100e-02  1.1064e-02  6.9274e-03  9.8916e-06  1.3370e-02  2.0423e-02  0:02:44  444
+<aaslistener> 
+    57  6.7830e-02  9.7509e-03  1.0806e-02  6.8237e-03  9.5856e-06  1.2890e-02  1.9740e-02  0:02:11  443
+<aaslistener> 
+    58  6.6620e-02  9.4218e-03  1.0546e-02  6.7172e-03  9.3439e-06  1.2599e-02  1.9285e-02  0:03:13  442
+<aaslistener> 
+    59  6.5530e-02  9.0945e-03  1.0271e-02  6.6028e-03  9.2080e-06  1.2332e-02  1.8284e-02  0:02:34  441
+<aaslistener> 
+    60  6.4560e-02  8.7744e-03  9.9905e-03  6.4795e-03  9.1314e-06  1.1879e-02  1.6868e-02  0:02:03  440
+<aaslistener> 
+    61  6.3666e-02  8.4913e-03  9.7082e-03  6.3571e-03  9.0897e-06  1.1409e-02  1.5892e-02  0:03:06  439
+<aaslistener> 
+    62  6.2919e-02  8.2484e-03  9.4236e-03  6.2303e-03  9.0756e-06  1.0920e-02  1.4998e-02  0:02:28  438
+<aaslistener> 
+    63  6.5008e-02  8.0191e-03  9.1663e-03  6.0828e-03  8.9613e-06  1.0497e-02  1.4373e-02  0:01:58  437
+<aaslistener> 
+    64  5.9398e-02  7.8517e-03  8.8164e-03  6.0007e-03  8.8867e-06  1.0202e-02  1.3674e-02  0:03:02  436
+<aaslistener> 
+    65  5.8903e-02  7.6899e-03  8.5875e-03  5.8649e-03  8.7434e-06  9.9961e-03  1.3221e-02  0:02:25  435
+<aaslistener> 
+    66  6.0790e-02  7.5391e-03  8.3496e-03  5.7212e-03  8.5400e-06  9.7962e-03  1.2805e-02  0:01:56  434
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    67  5.5710e-02  7.4578e-03  8.0492e-03  5.6097e-03  8.3874e-06  9.5793e-03  1.2556e-02  0:02:59  433
+<aaslistener> 
+    68  5.8415e-02  7.3240e-03  7.8741e-03  5.4791e-03  8.1739e-06  9.4080e-03  1.2565e-02  0:02:23  432
+<aaslistener> 
+    69  5.4286e-02  7.2508e-03  7.6442e-03  5.3554e-03  8.0721e-06  9.2831e-03  1.2714e-02  0:01:54  431
+<aaslistener> 
+    70  5.7418e-02  7.1194e-03  7.4975e-03  5.2436e-03  7.9283e-06  9.1661e-03  1.3025e-02  0:02:57  430
+<aaslistener> 
+    71  5.3351e-02  7.0509e-03  7.3032e-03  5.1475e-03  7.8530e-06  9.0368e-03  1.3310e-02  0:02:21  429
+<aaslistener> 
+    72  5.6251e-02  6.9402e-03  7.1935e-03  5.0517e-03  7.7038e-06  8.9163e-03  1.3374e-02  0:01:53  428
+<aaslistener> 
+    73  5.2718e-02  6.8770e-03  7.0586e-03  4.9802e-03  7.6520e-06  8.8004e-03  1.3319e-02  0:02:55  427
+<aaslistener> 
+    74  5.5219e-02  6.7751e-03  6.9992e-03  4.8964e-03  7.5350e-06  8.6797e-03  1.3219e-02  0:02:20  426
+<aaslistener> 
+    75  5.2233e-02  6.7206e-03  6.9171e-03  4.8400e-03  7.5389e-06  8.5451e-03  1.3133e-02  0:01:52  425
+<aaslistener> 
+    76  5.4956e-02  6.6355e-03  6.8783e-03  4.7797e-03  7.4821e-06  8.4296e-03  1.3185e-02  0:02:54  424
+<aaslistener> 
+    77  5.4920e-02  6.5722e-03  6.8268e-03  4.7437e-03  7.4050e-06  8.3401e-03  1.3305e-02  0:02:19  423
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    78  5.2790e-02  6.5403e-03  6.7934e-03  4.7321e-03  7.4170e-06  8.2566e-03  1.2964e-02  0:01:51  422
+<aaslistener> 
+    79  5.5781e-02  6.4829e-03  6.7714e-03  4.6885e-03  7.4122e-06  8.2113e-03  1.2688e-02  0:02:53  421
+<aaslistener> 
+    80  5.5141e-02  6.4274e-03  6.7291e-03  4.6694e-03  7.4002e-06  8.1606e-03  1.2127e-02  0:02:18  420
+<aaslistener> 
+    81  5.4953e-02  6.3905e-03  6.6868e-03  4.6399e-03  7.3643e-06  8.0785e-03  1.1246e-02  0:01:50  419
+<aaslistener> 
+    82  5.4060e-02  6.3578e-03  6.6230e-03  4.6052e-03  7.2236e-06  8.0085e-03  1.0667e-02  0:02:51  418
+<aaslistener> 
+    83  5.3356e-02  6.3350e-03  6.5370e-03  4.5660e-03  7.1435e-06  7.9392e-03  1.0344e-02  0:02:17  417
+<aaslistener> 
+    84  5.2642e-02  6.3084e-03  6.4702e-03  4.5204e-03  6.9938e-06  7.8569e-03  1.0001e-02  0:01:49  416
+<aaslistener> 
+    85  5.1950e-02  6.2779e-03  6.3799e-03  4.4543e-03  6.8164e-06  7.7587e-03  9.6674e-03  0:02:50  415
+<aaslistener> 
+    86  5.1964e-02  6.2410e-03  6.3027e-03  4.4063e-03  6.7980e-06  7.6637e-03  9.3852e-03  0:02:16  414
+<aaslistener> 
+    87  5.1087e-02  6.2076e-03  6.2144e-03  4.3524e-03  6.7577e-06  7.5953e-03  9.1578e-03  0:01:48  413
+<aaslistener> 
+    88  5.0283e-02  6.1590e-03  6.1349e-03  4.3032e-03  6.5873e-06  7.5382e-03  8.9331e-03  0:02:49  412
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    89  4.9549e-02  6.1212e-03  6.0705e-03  4.2624e-03  6.4319e-06  7.4897e-03  8.8346e-03  0:02:15  411
+<aaslistener> 
+    90  4.6902e-02  6.0760e-03  6.0131e-03  4.2534e-03  6.3267e-06  7.4372e-03  8.7356e-03  0:01:48  410
+<aaslistener> 
+    91  4.9206e-02  6.0148e-03  5.9964e-03  4.2255e-03  6.2188e-06  7.3708e-03  8.4536e-03  0:02:48  409
+<aaslistener> 
+    92  4.5994e-02  5.9457e-03  5.9519e-03  4.2377e-03  6.1939e-06  7.2974e-03  8.3008e-03  0:02:14  408
+<aaslistener> 
+    93  4.8603e-02  5.8706e-03  5.9294e-03  4.2274e-03  6.1168e-06  7.2067e-03  7.8964e-03  0:01:47  407
+<aaslistener> 
+    94  4.7569e-02  5.7864e-03  5.8711e-03  4.2411e-03  6.0461e-06  7.0956e-03  7.6059e-03  0:02:46  406
+<aaslistener> 
+    95  4.7482e-02  5.7183e-03  5.8077e-03  4.2515e-03  6.0090e-06  6.9669e-03  7.3697e-03  0:02:13  405
+<aaslistener> 
+    96  4.7372e-02  5.6631e-03  5.7306e-03  4.2537e-03  5.9475e-06  6.8334e-03  7.1811e-03  0:01:46  404
+<aaslistener> 
+    97  4.7357e-02  5.6094e-03  5.6508e-03  4.2611e-03  5.8707e-06  6.7008e-03  6.9875e-03  0:02:45  403
+<aaslistener> 
+    98  4.6887e-02  5.5535e-03  5.5739e-03  4.2638e-03  5.8274e-06  6.5655e-03  6.7636e-03  0:02:12  402
+<aaslistener> 
+    99  4.6700e-02  5.5076e-03  5.5058e-03  4.2527e-03  5.7963e-06  6.4462e-03  6.5847e-03  0:01:45  401
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   100  4.6474e-02  5.4721e-03  5.4412e-03  4.2411e-03  5.7469e-06  6.3168e-03  6.4243e-03  0:02:44  400
+<aaslistener> 
+   101  4.6378e-02  5.4377e-03  5.3742e-03  4.2226e-03  5.6550e-06  6.1962e-03  6.2490e-03  0:02:11  399
+<aaslistener> 
+   102  4.6440e-02  5.4018e-03  5.3251e-03  4.2075e-03  5.5644e-06  6.1109e-03  6.1260e-03  0:01:44  398
+<aaslistener> 
+   103  4.6588e-02  5.3762e-03  5.2863e-03  4.1941e-03  5.4836e-06  6.0488e-03  6.0452e-03  0:02:43  397
+<aaslistener> 
+   104  4.6735e-02  5.3554e-03  5.2576e-03  4.1821e-03  5.4309e-06  6.0033e-03  5.9804e-03  0:02:10  396
+<aaslistener> 
+   105  4.6863e-02  5.3231e-03  5.2266e-03  4.1647e-03  5.3586e-06  5.9617e-03  5.9192e-03  0:01:44  395
+<aaslistener> 
+   106  4.6994e-02  5.2775e-03  5.2063e-03  4.1345e-03  5.2777e-06  5.9218e-03  5.8709e-03  0:02:41  394
+<aaslistener> 
+   107  4.7114e-02  5.2215e-03  5.1840e-03  4.0925e-03  5.1786e-06  5.8916e-03  5.8472e-03  0:02:09  393
+<aaslistener> 
+   108  4.7065e-02  5.1563e-03  5.1631e-03  4.0340e-03  5.0579e-06  5.8696e-03  5.8738e-03  0:01:43  392
+<aaslistener> 
+   109  4.6968e-02  5.0831e-03  5.1372e-03  3.9748e-03  4.9420e-06  5.8594e-03  5.9456e-03  0:02:40  391
+<aaslistener> 
+   110  4.6613e-02  5.0021e-03  5.1044e-03  3.9161e-03  4.8080e-06  5.8663e-03  6.0301e-03  0:02:08  390
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   111  4.6422e-02  4.9228e-03  5.0624e-03  3.8596e-03  4.6754e-06  5.8724e-03  6.1358e-03  0:01:42  389
+<aaslistener> 
+   112  4.6097e-02  4.8444e-03  5.0131e-03  3.8132e-03  4.5125e-06  5.8903e-03  6.3283e-03  0:02:39  388
+<aaslistener> 
+   113  4.5571e-02  4.7688e-03  4.9545e-03  3.7803e-03  4.3403e-06  5.9089e-03  6.5414e-03  0:02:07  387
+<aaslistener> 
+   114  4.5135e-02  4.6906e-03  4.8962e-03  3.7647e-03  4.1769e-06  5.9063e-03  6.7476e-03  0:01:41  386
+<aaslistener> 
+   115  4.4566e-02  4.6085e-03  4.8496e-03  3.7641e-03  4.0342e-06  5.8920e-03  6.9141e-03  0:02:38  385
+<aaslistener> 
+   116  4.4205e-02  4.5198e-03  4.8009e-03  3.7730e-03  3.8794e-06  5.8597e-03  7.0582e-03  0:02:06  384
+<aaslistener> 
+   117  4.3849e-02  4.4317e-03  4.7551e-03  3.7843e-03  3.7660e-06  5.8155e-03  7.1401e-03  0:01:40  383
+<aaslistener> 
+   118  4.3409e-02  4.3513e-03  4.7156e-03  3.7896e-03  3.6523e-06  5.7566e-03  7.2022e-03  0:02:37  382
+<aaslistener> 
+   119  4.2871e-02  4.2745e-03  4.6880e-03  3.7887e-03  3.5740e-06  5.6976e-03  7.2322e-03  0:02:05  381
+<aaslistener> 
+   120  4.2567e-02  4.2018e-03  4.6711e-03  3.7720e-03  3.4977e-06  5.6305e-03  7.2584e-03  0:01:40  380
+<aaslistener> 
+   121  4.2253e-02  4.1359e-03  4.6565e-03  3.7405e-03  3.4402e-06  5.5426e-03  7.2589e-03  0:02:35  379
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   122  4.1853e-02  4.0784e-03  4.6413e-03  3.7020e-03  3.3987e-06  5.4537e-03  7.3014e-03  0:02:04  378
+<aaslistener> 
+   123  4.1397e-02  4.0337e-03  4.6300e-03  3.6567e-03  3.3589e-06  5.3709e-03  7.3030e-03  0:01:39  377
+<aaslistener> 
+   124  4.1010e-02  3.9980e-03  4.6204e-03  3.6131e-03  3.3416e-06  5.2908e-03  7.3107e-03  0:02:34  376
+<aaslistener> 
+   125  4.0537e-02  3.9666e-03  4.6129e-03  3.5768e-03  3.3255e-06  5.2238e-03  7.3782e-03  0:02:03  375
+<aaslistener> 
+   126  4.0083e-02  3.9425e-03  4.6035e-03  3.5439e-03  3.3201e-06  5.1584e-03  7.4107e-03  0:01:38  374
+<aaslistener> 
+   127  3.9641e-02  3.9167e-03  4.5994e-03  3.5215e-03  3.3191e-06  5.1103e-03  7.4899e-03  0:02:33  373
+<aaslistener> 
+   128  3.9286e-02  3.8944e-03  4.5947e-03  3.5087e-03  3.3173e-06  5.0704e-03  7.6030e-03  0:02:02  372
+<aaslistener> 
+   129  3.8921e-02  3.8795e-03  4.5871e-03  3.5058e-03  3.3260e-06  5.0346e-03  7.7489e-03  0:01:37  371
+<aaslistener> 
+   130  3.8656e-02  3.8695e-03  4.5777e-03  3.5150e-03  3.3372e-06  5.0124e-03  7.9813e-03  0:02:32  370
+<aaslistener> 
+   131  3.8301e-02  3.8618e-03  4.5640e-03  3.5308e-03  3.3479e-06  4.9949e-03  8.1458e-03  0:02:01  369
+<aaslistener> 
+   132  3.8267e-02  3.8523e-03  4.5457e-03  3.5475e-03  3.3453e-06  4.9876e-03  8.2963e-03  0:01:37  368
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   133  3.8019e-02  3.8498e-03  4.5315e-03  3.5672e-03  3.3376e-06  4.9879e-03  8.4347e-03  0:02:30  367
+<aaslistener> 
+   134  3.7875e-02  3.8547e-03  4.5163e-03  3.5907e-03  3.3425e-06  4.9957e-03  8.6623e-03  0:02:00  366
+<aaslistener> 
+   135  3.7873e-02  3.8648e-03  4.5038e-03  3.6165e-03  3.3658e-06  5.0109e-03  8.9231e-03  0:01:36  365
+<aaslistener> 
+   136  3.8101e-02  3.8813e-03  4.4997e-03  3.6427e-03  3.4171e-06  5.0368e-03  9.3063e-03  0:02:29  364
+<aaslistener> 
+   137  3.8363e-02  3.9018e-03  4.4953e-03  3.6698e-03  3.4792e-06  5.0675e-03  9.7541e-03  0:01:59  363
+<aaslistener> 
+   138  3.8471e-02  3.9274e-03  4.4806e-03  3.6982e-03  3.5364e-06  5.1071e-03  1.0308e-02  0:01:35  362
+<aaslistener> 
+   139  3.8759e-02  3.9552e-03  4.4608e-03  3.7254e-03  3.5920e-06  5.1577e-03  1.0883e-02  0:02:28  361
+<aaslistener> 
+   140  3.9049e-02  3.9819e-03  4.4348e-03  3.7494e-03  3.6379e-06  5.2225e-03  1.1577e-02  0:01:58  360
+<aaslistener> 
+   141  3.9304e-02  4.0048e-03  4.4063e-03  3.7667e-03  3.6461e-06  5.2973e-03  1.2330e-02  0:01:34  359
+<aaslistener> 
+   142  3.9479e-02  4.0197e-03  4.3711e-03  3.7781e-03  3.6449e-06  5.3840e-03  1.3163e-02  0:02:27  358
+<aaslistener> 
+   143  3.9688e-02  4.0286e-03  4.3371e-03  3.7845e-03  3.6349e-06  5.4814e-03  1.3982e-02  0:01:57  357
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   144  3.9662e-02  4.0360e-03  4.3052e-03  3.7813e-03  3.5878e-06  5.5760e-03  1.4775e-02  0:01:33  356
+<aaslistener> 
+   145  3.9556e-02  4.0381e-03  4.2746e-03  3.7736e-03  3.5252e-06  5.6581e-03  1.5499e-02  0:02:25  355
+<aaslistener> 
+   146  3.9374e-02  4.0368e-03  4.2531e-03  3.7573e-03  3.4428e-06  5.7111e-03  1.5934e-02  0:01:56  354
+<aaslistener> 
+   147  3.9045e-02  4.0333e-03  4.2354e-03  3.7434e-03  3.3578e-06  5.7313e-03  1.6063e-02  0:01:33  353
+<aaslistener> 
+   148  3.8761e-02  4.0260e-03  4.2286e-03  3.7235e-03  3.2738e-06  5.7126e-03  1.5796e-02  0:02:24  352
+<aaslistener> 
+   149  3.8399e-02  4.0114e-03  4.2242e-03  3.7068e-03  3.1938e-06  5.6555e-03  1.5202e-02  0:01:55  351
+<aaslistener> 
+   150  3.7951e-02  3.9991e-03  4.2249e-03  3.6851e-03  3.1346e-06  5.5821e-03  1.4544e-02  0:01:32  350
+<aaslistener> 
+   151  3.7531e-02  3.9830e-03  4.2345e-03  3.6598e-03  3.0830e-06  5.5034e-03  1.4051e-02  0:02:23  349
+<aaslistener> 
+   152  3.7187e-02  3.9659e-03  4.2413e-03  3.6361e-03  3.0596e-06  5.4306e-03  1.3814e-02  0:01:54  348
+<aaslistener> 
+   153  3.6920e-02  3.9498e-03  4.2517e-03  3.6099e-03  3.0472e-06  5.3736e-03  1.3775e-02  0:01:31  347
+<aaslistener> 
+   154  3.6671e-02  3.9360e-03  4.2614e-03  3.5875e-03  3.0552e-06  5.3425e-03  1.3987e-02  0:02:22  346
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   155  3.6466e-02  3.9314e-03  4.2723e-03  3.5670e-03  3.0814e-06  5.3381e-03  1.4342e-02  0:01:53  345
+<aaslistener> 
+   156  3.6131e-02  3.9295e-03  4.2843e-03  3.5554e-03  3.1065e-06  5.3556e-03  1.4773e-02  0:01:30  344
+<aaslistener> 
+   157  3.5946e-02  3.9317e-03  4.2997e-03  3.5414e-03  3.1161e-06  5.3794e-03  1.5192e-02  0:02:21  343
+<aaslistener> 
+   158  3.5763e-02  3.9334e-03  4.3152e-03  3.5274e-03  3.1420e-06  5.3992e-03  1.5422e-02  0:01:52  342
+<aaslistener> 
+   159  3.5610e-02  3.9341e-03  4.3296e-03  3.5139e-03  3.1674e-06  5.4117e-03  1.5484e-02  0:01:29  341
+<aaslistener> 
+   160  3.5402e-02  3.9383e-03  4.3419e-03  3.4997e-03  3.1929e-06  5.4116e-03  1.5319e-02  0:02:19  340
+<aaslistener> 
+   161  3.5114e-02  3.9376e-03  4.3541e-03  3.4939e-03  3.2139e-06  5.4170e-03  1.5041e-02  0:01:51  339
+<aaslistener> 
+   162  3.4883e-02  3.9310e-03  4.3669e-03  3.4900e-03  3.2269e-06  5.4354e-03  1.4848e-02  0:01:29  338
+<aaslistener> 
+   163  3.4760e-02  3.9223e-03  4.3800e-03  3.4865e-03  3.2345e-06  5.4605e-03  1.4694e-02  0:02:18  337
+<aaslistener> 
+   164  3.4452e-02  3.9121e-03  4.3940e-03  3.4895e-03  3.2377e-06  5.4887e-03  1.4550e-02  0:01:50  336
+<aaslistener> 
+   165  3.4235e-02  3.9023e-03  4.4122e-03  3.4901e-03  3.2406e-06  5.5103e-03  1.4327e-02  0:01:28  335
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   166  3.3820e-02  3.8901e-03  4.4327e-03  3.4943e-03  3.2479e-06  5.5077e-03  1.3882e-02  0:02:17  334
+<aaslistener> 
+   167  3.3476e-02  3.8764e-03  4.4636e-03  3.4959e-03  3.2601e-06  5.4884e-03  1.3281e-02  0:01:49  333
+<aaslistener> 
+   168  3.3208e-02  3.8613e-03  4.4987e-03  3.4935e-03  3.2876e-06  5.4562e-03  1.2472e-02  0:01:27  332
+<aaslistener> 
+   169  3.2989e-02  3.8481e-03  4.5404e-03  3.4917e-03  3.3262e-06  5.4096e-03  1.1642e-02  0:02:16  331
+<aaslistener> 
+   170  3.2760e-02  3.8360e-03  4.5789e-03  3.4842e-03  3.3662e-06  5.3447e-03  1.0882e-02  0:01:48  330
+<aaslistener> 
+   171  3.2584e-02  3.8225e-03  4.6083e-03  3.4799e-03  3.3820e-06  5.2606e-03  1.0160e-02  0:01:26  329
+<aaslistener> 
+   172  3.2538e-02  3.8114e-03  4.6318e-03  3.4699e-03  3.4004e-06  5.1687e-03  9.5699e-03  0:02:14  328
+<aaslistener> 
+   173  3.2479e-02  3.8114e-03  4.6460e-03  3.4540e-03  3.4045e-06  5.0678e-03  9.1119e-03  0:01:47  327
+<aaslistener> 
+   174  3.2435e-02  3.8087e-03  4.6503e-03  3.4346e-03  3.3945e-06  4.9694e-03  8.7660e-03  0:01:26  326
+<aaslistener> 
+   175  3.2210e-02  3.8082e-03  4.6403e-03  3.4264e-03  3.3515e-06  4.8687e-03  8.4511e-03  0:02:13  325
+<aaslistener> 
+   176  3.2102e-02  3.8082e-03  4.6184e-03  3.4123e-03  3.3008e-06  4.7718e-03  8.2205e-03  0:01:46  324
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   177  3.2227e-02  3.8071e-03  4.5904e-03  3.4028e-03  3.2501e-06  4.6667e-03  8.0580e-03  0:01:25  323
+<aaslistener> 
+   178  3.2325e-02  3.8077e-03  4.5568e-03  3.4006e-03  3.2218e-06  4.5547e-03  7.8624e-03  0:02:12  322
+<aaslistener> 
+   179  3.2415e-02  3.8008e-03  4.5226e-03  3.4101e-03  3.2103e-06  4.4389e-03  7.6222e-03  0:01:45  321
+<aaslistener> 
+   180  3.2486e-02  3.7960e-03  4.4868e-03  3.4185e-03  3.2155e-06  4.3242e-03  7.3660e-03  0:01:24  320
+<aaslistener> 
+   181  3.2724e-02  3.7880e-03  4.4572e-03  3.4315e-03  3.2190e-06  4.2268e-03  7.1663e-03  0:02:11  319
+<aaslistener> 
+   182  3.2820e-02  3.7792e-03  4.4370e-03  3.4487e-03  3.2367e-06  4.1547e-03  7.1020e-03  0:01:44  318
+<aaslistener> 
+   183  3.2855e-02  3.7675e-03  4.4227e-03  3.4721e-03  3.2573e-06  4.1118e-03  7.1880e-03  0:01:23  317
+<aaslistener> 
+   184  3.2720e-02  3.7556e-03  4.4224e-03  3.4896e-03  3.2726e-06  4.0980e-03  7.2701e-03  0:02:10  316
+<aaslistener> 
+   185  3.2511e-02  3.7447e-03  4.4299e-03  3.5055e-03  3.2857e-06  4.0836e-03  7.3244e-03  0:01:43  315
+<aaslistener> 
+   186  3.2406e-02  3.7329e-03  4.4494e-03  3.5257e-03  3.2812e-06  4.0764e-03  7.3670e-03  0:01:22  314
+<aaslistener> 
+   187  3.2034e-02  3.7273e-03  4.4779e-03  3.5465e-03  3.2702e-06  4.0800e-03  7.4309e-03  0:02:08  313
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   188  3.1659e-02  3.7288e-03  4.5116e-03  3.5693e-03  3.2399e-06  4.0955e-03  7.5571e-03  0:01:42  312
+<aaslistener> 
+   189  3.1518e-02  3.7440e-03  4.5510e-03  3.5949e-03  3.2213e-06  4.1265e-03  7.7470e-03  0:01:22  311
+<aaslistener> 
+   190  3.1373e-02  3.7679e-03  4.5933e-03  3.6227e-03  3.1941e-06  4.1727e-03  8.0166e-03  0:02:07  310
+<aaslistener> 
+   191  3.1103e-02  3.7997e-03  4.6335e-03  3.6521e-03  3.1489e-06  4.2348e-03  8.4100e-03  0:01:41  309
+<aaslistener> 
+   192  3.1051e-02  3.8426e-03  4.6709e-03  3.6798e-03  3.0985e-06  4.3054e-03  8.8475e-03  0:01:21  308
+<aaslistener> 
+   193  3.1005e-02  3.8847e-03  4.7089e-03  3.7002e-03  3.0620e-06  4.3898e-03  9.3098e-03  0:02:06  307
+<aaslistener> 
+   194  3.0981e-02  3.9296e-03  4.7341e-03  3.7248e-03  3.0366e-06  4.4711e-03  9.7106e-03  0:01:40  306
+<aaslistener> 
+   195  3.0935e-02  3.9745e-03  4.7517e-03  3.7465e-03  2.9996e-06  4.5475e-03  1.0059e-02  0:01:20  305
+<aaslistener> 
+   196  3.0909e-02  4.0146e-03  4.7672e-03  3.7641e-03  2.9529e-06  4.6119e-03  1.0273e-02  0:02:05  304
+<aaslistener> 
+   197  3.1035e-02  4.0489e-03  4.7771e-03  3.7846e-03  2.9218e-06  4.6713e-03  1.0396e-02  0:01:39  303
+<aaslistener> 
+   198  3.1087e-02  4.0810e-03  4.7819e-03  3.8027e-03  2.9086e-06  4.7259e-03  1.0464e-02  0:01:19  302
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   199  3.1187e-02  4.1120e-03  4.7820e-03  3.8111e-03  2.9126e-06  4.7682e-03  1.0478e-02  0:02:03  301
+<aaslistener> 
+   200  3.1309e-02  4.1411e-03  4.7842e-03  3.8144e-03  2.9353e-06  4.7912e-03  1.0445e-02  0:01:38  300
+<aaslistener> 
+   201  3.1337e-02  4.1658e-03  4.7898e-03  3.8078e-03  2.9658e-06  4.7954e-03  1.0388e-02  0:01:18  299
+<aaslistener> 
+   202  3.1265e-02  4.1858e-03  4.7891e-03  3.8009e-03  2.9856e-06  4.7889e-03  1.0402e-02  0:02:02  298
+<aaslistener> 
+   203  3.1384e-02  4.1983e-03  4.7903e-03  3.7805e-03  2.9889e-06  4.7706e-03  1.0404e-02  0:01:37  297
+<aaslistener> 
+   204  3.1261e-02  4.2035e-03  4.7866e-03  3.7565e-03  2.9920e-06  4.7457e-03  1.0472e-02  0:01:18  296
+<aaslistener> 
+   205  3.1026e-02  4.2068e-03  4.7715e-03  3.7271e-03  2.9793e-06  4.7135e-03  1.0547e-02  0:02:01  295
+<aaslistener> 
+   206  3.0833e-02  4.2026e-03  4.7520e-03  3.6912e-03  2.9592e-06  4.6701e-03  1.0603e-02  0:01:36  294
+<aaslistener> 
+   207  3.0577e-02  4.1891e-03  4.7254e-03  3.6490e-03  2.9387e-06  4.6261e-03  1.0694e-02  0:01:17  293
+<aaslistener> 
+   208  3.0245e-02  4.1741e-03  4.6928e-03  3.5955e-03  2.9239e-06  4.5909e-03  1.0810e-02  0:02:00  292
+<aaslistener> 
+   209  2.9901e-02  4.1491e-03  4.6595e-03  3.5402e-03  2.9011e-06  4.5772e-03  1.0926e-02  0:01:35  291
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   210  2.9543e-02  4.1205e-03  4.6312e-03  3.4840e-03  2.8804e-06  4.5614e-03  1.0872e-02  0:02:14  290
+<aaslistener> 
+   211  2.9045e-02  4.0808e-03  4.6100e-03  3.4314e-03  2.8582e-06  4.5417e-03  1.0798e-02  0:01:47  289
+<aaslistener> 
+   212  2.8676e-02  4.0401e-03  4.5912e-03  3.3795e-03  2.8276e-06  4.5145e-03  1.0618e-02  0:01:25  288
+<aaslistener> 
+   213  2.8355e-02  3.9902e-03  4.5802e-03  3.3342e-03  2.7953e-06  4.4921e-03  1.0375e-02  0:02:05  287
+<aaslistener> 
+   214  2.8004e-02  3.9438e-03  4.5641e-03  3.2916e-03  2.7628e-06  4.4762e-03  1.0219e-02  0:01:40  286
+<aaslistener> 
+   215  2.7660e-02  3.8918e-03  4.5537e-03  3.2513e-03  2.7253e-06  4.4657e-03  1.0080e-02  0:01:20  285
+<aaslistener> 
+   216  2.7287e-02  3.8432e-03  4.5437e-03  3.2189e-03  2.6805e-06  4.4518e-03  9.8457e-03  0:02:00  284
+<aaslistener> 
+   217  2.6993e-02  3.7978e-03  4.5240e-03  3.1894e-03  2.6335e-06  4.4370e-03  9.6623e-03  0:01:36  283
+<aaslistener> 
+   218  2.6749e-02  3.7586e-03  4.4973e-03  3.1596e-03  2.5811e-06  4.4120e-03  9.4307e-03  0:01:16  282
+<aaslistener> 
+   219  2.6499e-02  3.7175e-03  4.4636e-03  3.1322e-03  2.5364e-06  4.3787e-03  9.1979e-03  0:01:57  281
+<aaslistener> 
+   220  2.6233e-02  3.6791e-03  4.4181e-03  3.1042e-03  2.4851e-06  4.3383e-03  8.9575e-03  0:01:33  280
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   221  2.6013e-02  3.6413e-03  4.3683e-03  3.0792e-03  2.4418e-06  4.2842e-03  8.6669e-03  0:01:14  279
+<aaslistener> 
+   222  2.5847e-02  3.5992e-03  4.3066e-03  3.0634e-03  2.3959e-06  4.2273e-03  8.4636e-03  0:01:55  278
+<aaslistener> 
+   223  2.5641e-02  3.5533e-03  4.2424e-03  3.0514e-03  2.3466e-06  4.1685e-03  8.3286e-03  0:01:32  277
+<aaslistener> 
+   224  2.5370e-02  3.5044e-03  4.1726e-03  3.0417e-03  2.2930e-06  4.1122e-03  8.2238e-03  0:01:13  276
+<aaslistener> 
+   225  2.5082e-02  3.4516e-03  4.1031e-03  3.0283e-03  2.2558e-06  4.0620e-03  8.1980e-03  0:01:53  275
+<aaslistener> 
+   226  2.4759e-02  3.3916e-03  4.0389e-03  3.0131e-03  2.2109e-06  4.0253e-03  8.1891e-03  0:01:30  274
+<aaslistener> 
+   227  2.3040e-02  3.3301e-03  3.9656e-03  3.0128e-03  2.1953e-06  3.9929e-03  8.2087e-03  0:01:12  273
+<aaslistener> 
+   228  2.4299e-02  3.2564e-03  3.9184e-03  2.9812e-03  2.1732e-06  3.9772e-03  8.4522e-03  0:01:52  272
+<aaslistener> 
+   229  2.2352e-02  3.1815e-03  3.8514e-03  2.9813e-03  2.1604e-06  3.9566e-03  8.5662e-03  0:01:29  271
+<aaslistener> 
+   230  2.3550e-02  3.1077e-03  3.8089e-03  2.9533e-03  2.1354e-06  3.9374e-03  8.7416e-03  0:01:11  270
+<aaslistener> 
+   231  2.1743e-02  3.0403e-03  3.7445e-03  2.9518e-03  2.1117e-06  3.9052e-03  8.6200e-03  0:01:50  269
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   232  2.3061e-02  2.9779e-03  3.7105e-03  2.9209e-03  2.0849e-06  3.8783e-03  8.6123e-03  0:01:28  268
+<aaslistener> 
+   233  2.1420e-02  2.9231e-03  3.6509e-03  2.9247e-03  2.0602e-06  3.8483e-03  8.4066e-03  0:01:10  267
+<aaslistener> 
+   234  2.2845e-02  2.8743e-03  3.6246e-03  2.8957e-03  2.0362e-06  3.8269e-03  8.3149e-03  0:01:49  266
+<aaslistener> 
+   235  2.1430e-02  2.8329e-03  3.5646e-03  2.9031e-03  2.0114e-06  3.8126e-03  8.1870e-03  0:01:27  265
+<aaslistener> 
+   236  2.2845e-02  2.7884e-03  3.5404e-03  2.8753e-03  1.9906e-06  3.8075e-03  8.1237e-03  0:02:02  264
+<aaslistener> 
+   237  2.1472e-02  2.7562e-03  3.4776e-03  2.8829e-03  1.9654e-06  3.7962e-03  8.0224e-03  0:01:37  263
+<aaslistener> 
+   238  2.2778e-02  2.7185e-03  3.4458e-03  2.8585e-03  1.9431e-06  3.7814e-03  7.9642e-03  0:01:18  262
+<aaslistener> 
+   239  2.1175e-02  2.6919e-03  3.3845e-03  2.8638e-03  1.9269e-06  3.7567e-03  7.9036e-03  0:01:02  261
+<aaslistener> 
+   240  2.2349e-02  2.6591e-03  3.3503e-03  2.8372e-03  1.9000e-06  3.7272e-03  7.9680e-03  0:01:41  260
+<aaslistener> 
+   241  2.1867e-02  2.6308e-03  3.2978e-03  2.8210e-03  1.8871e-06  3.6942e-03  7.9903e-03  0:01:21  259
+<aaslistener> 
+   242  2.0354e-02  2.6088e-03  3.2422e-03  2.8126e-03  1.8735e-06  3.6526e-03  7.9150e-03  0:01:04  258
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   243  2.1495e-02  2.5775e-03  3.2103e-03  2.7696e-03  1.8574e-06  3.6091e-03  7.9057e-03  0:01:43  257
+<aaslistener> 
+   244  2.0937e-02  2.5535e-03  3.1654e-03  2.7355e-03  1.8501e-06  3.5606e-03  7.8350e-03  0:01:22  256
+<aaslistener> 
+   245  2.0409e-02  2.5364e-03  3.1188e-03  2.7004e-03  1.8446e-06  3.5096e-03  7.8245e-03  0:01:05  255
+<aaslistener> 
+   246  2.0034e-02  2.5202e-03  3.0773e-03  2.6616e-03  1.8347e-06  3.4681e-03  8.0246e-03  0:01:43  254
+<aaslistener> 
+   247  1.9693e-02  2.5061e-03  3.0390e-03  2.6172e-03  1.8220e-06  3.4339e-03  8.2711e-03  0:01:22  253
+<aaslistener> 
+   248  1.9440e-02  2.4915e-03  3.0066e-03  2.5739e-03  1.8020e-06  3.4064e-03  8.5919e-03  0:01:05  252
+<aaslistener> 
+   249  1.9273e-02  2.4768e-03  2.9789e-03  2.5304e-03  1.7817e-06  3.3834e-03  8.8680e-03  0:01:42  251
+<aaslistener> 
+   250  1.9078e-02  2.4602e-03  2.9544e-03  2.4894e-03  1.7639e-06  3.3612e-03  8.9129e-03  0:01:21  250
+<aaslistener> 
+   251  1.8901e-02  2.4420e-03  2.9334e-03  2.4477e-03  1.7463e-06  3.3424e-03  8.9465e-03  0:01:05  249
+<aaslistener> 
+   252  1.8812e-02  2.4282e-03  2.9158e-03  2.4078e-03  1.7364e-06  3.3277e-03  9.0159e-03  0:01:41  248
+<aaslistener> 
+   253  1.8696e-02  2.4161e-03  2.8976e-03  2.3710e-03  1.7341e-06  3.3140e-03  8.9832e-03  0:01:21  247
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   254  1.8617e-02  2.4097e-03  2.8830e-03  2.3372e-03  1.7347e-06  3.3084e-03  9.0510e-03  0:01:04  246
+<aaslistener> 
+   255  1.8641e-02  2.4022e-03  2.8718e-03  2.3071e-03  1.7368e-06  3.3106e-03  9.1328e-03  0:01:40  245
+<aaslistener> 
+   256  1.8643e-02  2.3964e-03  2.8577e-03  2.2810e-03  1.7469e-06  3.3193e-03  9.1534e-03  0:01:20  244
+<aaslistener> 
+   257  1.8740e-02  2.3919e-03  2.8455e-03  2.2546e-03  1.7591e-06  3.3339e-03  9.2743e-03  0:01:52  243
+<aaslistener> 
+   258  1.8773e-02  2.3924e-03  2.8335e-03  2.2301e-03  1.7735e-06  3.3568e-03  9.4961e-03  0:01:29  242
+<aaslistener> 
+   259  1.8864e-02  2.3954e-03  2.8196e-03  2.2088e-03  1.7831e-06  3.3779e-03  9.6264e-03  0:01:11  241
+<aaslistener> 
+   260  1.8956e-02  2.3961e-03  2.8077e-03  2.1895e-03  1.7931e-06  3.3952e-03  9.7242e-03  0:01:45  240
+<aaslistener> 
+   261  1.9000e-02  2.3945e-03  2.7951e-03  2.1734e-03  1.8080e-06  3.4019e-03  9.7381e-03  0:01:23  239
+<aaslistener> 
+   262  1.9023e-02  2.3949e-03  2.7863e-03  2.1600e-03  1.8161e-06  3.3955e-03  9.6593e-03  0:01:06  238
+<aaslistener> 
+   263  1.9175e-02  2.3971e-03  2.7776e-03  2.1502e-03  1.8243e-06  3.3731e-03  9.4443e-03  0:01:40  237
+<aaslistener> 
+   264  1.9236e-02  2.4019e-03  2.7661e-03  2.1415e-03  1.8174e-06  3.3396e-03  9.2064e-03  0:01:20  236
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   265  1.9267e-02  2.4067e-03  2.7530e-03  2.1342e-03  1.7896e-06  3.2946e-03  8.9517e-03  0:01:04  235
+<aaslistener> 
+   266  1.9176e-02  2.4091e-03  2.7374e-03  2.1241e-03  1.7458e-06  3.2448e-03  8.7058e-03  0:01:38  234
+<aaslistener> 
+   267  1.9046e-02  2.4119e-03  2.7202e-03  2.1153e-03  1.6948e-06  3.1946e-03  8.4640e-03  0:01:18  233
+<aaslistener> 
+   268  1.8893e-02  2.4127e-03  2.7023e-03  2.1074e-03  1.6408e-06  3.1471e-03  8.2734e-03  0:01:02  232
+<aaslistener> 
+   269  1.8855e-02  2.4122e-03  2.6837e-03  2.1024e-03  1.6029e-06  3.1059e-03  8.1737e-03  0:01:35  231
+<aaslistener> 
+   270  1.8768e-02  2.4125e-03  2.6655e-03  2.0957e-03  1.5915e-06  3.0700e-03  8.0801e-03  0:01:16  230
+<aaslistener> 
+   271  1.8652e-02  2.4112e-03  2.6499e-03  2.0921e-03  1.5901e-06  3.0357e-03  7.9868e-03  0:01:01  229
+<aaslistener> 
+   272  1.8497e-02  2.4092e-03  2.6373e-03  2.0866e-03  1.6006e-06  3.0050e-03  7.8450e-03  0:01:34  228
+<aaslistener> 
+   273  1.8336e-02  2.4029e-03  2.6286e-03  2.0824e-03  1.6281e-06  2.9777e-03  7.6214e-03  0:01:15  227
+<aaslistener> 
+   274  1.8122e-02  2.3980e-03  2.6217e-03  2.0805e-03  1.6663e-06  2.9599e-03  7.3148e-03  0:01:00  226
+<aaslistener> 
+   275  1.7947e-02  2.3938e-03  2.6212e-03  2.0797e-03  1.7089e-06  2.9435e-03  6.9686e-03  0:01:32  225
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   276  1.7798e-02  2.3911e-03  2.6245e-03  2.0796e-03  1.7505e-06  2.9228e-03  6.6241e-03  0:01:14  224
+<aaslistener> 
+   277  1.7638e-02  2.3853e-03  2.6315e-03  2.0839e-03  1.7811e-06  2.8980e-03  6.3275e-03  0:00:59  223
+<aaslistener> 
+   278  1.7610e-02  2.3795e-03  2.6409e-03  2.0919e-03  1.8104e-06  2.8691e-03  6.0613e-03  0:01:31  222
+<aaslistener> 
+   279  1.7707e-02  2.3729e-03  2.6538e-03  2.0976e-03  1.8437e-06  2.8339e-03  5.8127e-03  0:01:13  221
+<aaslistener> 
+   280  1.7750e-02  2.3613e-03  2.6657e-03  2.1105e-03  1.8737e-06  2.7964e-03  5.6393e-03  0:00:58  220
+<aaslistener> 
+   281  1.7856e-02  2.3499e-03  2.6818e-03  2.1215e-03  1.9029e-06  2.7561e-03  5.5113e-03  0:01:30  219
+<aaslistener> 
+   282  1.7906e-02  2.3339e-03  2.6964e-03  2.1384e-03  1.9288e-06  2.7184e-03  5.4641e-03  0:01:12  218
+<aaslistener> 
+   283  1.8042e-02  2.3158e-03  2.7125e-03  2.1548e-03  1.9565e-06  2.6836e-03  5.4998e-03  0:00:57  217
+<aaslistener> 
+   284  1.8166e-02  2.2988e-03  2.7278e-03  2.1706e-03  1.9819e-06  2.6523e-03  5.6231e-03  0:01:29  216
+<aaslistener> 
+   285  1.8241e-02  2.2827e-03  2.7440e-03  2.1876e-03  2.0075e-06  2.6274e-03  5.8704e-03  0:01:11  215
+<aaslistener> 
+   286  1.8269e-02  2.2694e-03  2.7613e-03  2.2062e-03  2.0469e-06  2.6137e-03  6.2555e-03  0:00:56  214
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   287  1.8375e-02  2.2618e-03  2.7791e-03  2.2258e-03  2.0792e-06  2.6100e-03  6.6700e-03  0:01:27  213
+<aaslistener> 
+   288  1.8556e-02  2.2615e-03  2.7946e-03  2.2423e-03  2.1127e-06  2.6188e-03  7.1048e-03  0:01:10  212
+<aaslistener> 
+   289  1.8740e-02  2.2644e-03  2.8071e-03  2.2591e-03  2.1479e-06  2.6399e-03  7.5602e-03  0:01:38  211
+<aaslistener> 
+   290  1.8899e-02  2.2709e-03  2.8158e-03  2.2742e-03  2.1852e-06  2.6734e-03  7.9938e-03  0:01:18  210
+<aaslistener> 
+   291  1.9008e-02  2.2807e-03  2.8222e-03  2.2894e-03  2.2188e-06  2.7179e-03  8.4128e-03  0:01:02  209
+<aaslistener> 
+   292  1.9087e-02  2.2949e-03  2.8259e-03  2.3008e-03  2.2329e-06  2.7714e-03  8.7669e-03  0:01:31  208
+<aaslistener> 
+   293  1.9188e-02  2.3085e-03  2.8262e-03  2.3114e-03  2.2318e-06  2.8283e-03  9.0260e-03  0:01:12  207
+<aaslistener> 
+   294  1.9321e-02  2.3247e-03  2.8298e-03  2.3193e-03  2.2440e-06  2.8942e-03  9.1838e-03  0:01:39  206
+<aaslistener> 
+   295  1.9414e-02  2.3415e-03  2.8333e-03  2.3276e-03  2.2439e-06  2.9557e-03  9.2195e-03  0:01:19  205
+<aaslistener> 
+   296  1.9430e-02  2.3588e-03  2.8382e-03  2.3345e-03  2.2354e-06  3.0077e-03  9.1507e-03  0:01:03  204
+<aaslistener> 
+   297  1.9495e-02  2.3727e-03  2.8423e-03  2.3394e-03  2.2281e-06  3.0494e-03  8.9899e-03  0:00:50  203
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   298  1.9489e-02  2.3883e-03  2.8505e-03  2.3404e-03  2.2213e-06  3.0771e-03  8.7809e-03  0:01:20  202
+<aaslistener> 
+   299  1.9408e-02  2.4027e-03  2.8599e-03  2.3399e-03  2.2269e-06  3.1014e-03  8.5833e-03  0:01:04  201
+<aaslistener> 
+   300  1.9250e-02  2.4158e-03  2.8701e-03  2.3395e-03  2.2375e-06  3.1179e-03  8.3412e-03  0:00:51  200
+<aaslistener> 
+   301  1.9097e-02  2.4302e-03  2.8825e-03  2.3365e-03  2.2488e-06  3.1299e-03  8.1309e-03  0:01:20  199
+<aaslistener> 
+   302  1.9006e-02  2.4419e-03  2.8985e-03  2.3285e-03  2.2588e-06  3.1370e-03  7.9549e-03  0:01:04  198
+<aaslistener> 
+   303  1.8813e-02  2.4542e-03  2.9122e-03  2.3208e-03  2.2661e-06  3.1420e-03  7.7925e-03  0:00:51  197
+<aaslistener> 
+   304  1.8790e-02  2.4640e-03  2.9251e-03  2.3079e-03  2.2578e-06  3.1445e-03  7.6299e-03  0:01:20  196
+<aaslistener> 
+   305  1.8783e-02  2.4716e-03  2.9354e-03  2.2938e-03  2.2357e-06  3.1459e-03  7.4847e-03  0:01:03  195
+<aaslistener> 
+   306  1.8675e-02  2.4787e-03  2.9383e-03  2.2758e-03  2.2017e-06  3.1471e-03  7.3675e-03  0:00:50  194
+<aaslistener> 
+   307  1.8624e-02  2.4864e-03  2.9391e-03  2.2557e-03  2.1762e-06  3.1493e-03  7.2739e-03  0:01:19  193
+<aaslistener> 
+   308  1.8603e-02  2.4930e-03  2.9325e-03  2.2375e-03  2.1473e-06  3.1552e-03  7.2143e-03  0:01:03  192
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   309  1.8504e-02  2.4986e-03  2.9227e-03  2.2224e-03  2.1327e-06  3.1656e-03  7.1387e-03  0:00:50  191
+<aaslistener> 
+   310  1.8476e-02  2.5070e-03  2.9052e-03  2.2072e-03  2.1276e-06  3.1767e-03  7.0628e-03  0:01:18  190
+<aaslistener> 
+   311  1.8486e-02  2.5196e-03  2.8827e-03  2.1944e-03  2.1275e-06  3.1901e-03  6.9785e-03  0:01:02  189
+<aaslistener> 
+   312  1.8403e-02  2.5270e-03  2.8563e-03  2.1840e-03  2.1277e-06  3.2038e-03  6.8937e-03  0:00:49  188
+<aaslistener> 
+   313  1.8347e-02  2.5391e-03  2.8274e-03  2.1782e-03  2.1323e-06  3.2163e-03  6.7825e-03  0:01:17  187
+<aaslistener> 
+   314  1.8352e-02  2.5529e-03  2.7979e-03  2.1759e-03  2.1407e-06  3.2258e-03  6.6878e-03  0:01:01  186
+<aaslistener> 
+   315  1.8355e-02  2.5666e-03  2.7702e-03  2.1813e-03  2.1631e-06  3.2358e-03  6.6531e-03  0:01:25  185
+<aaslistener> 
+   316  1.8356e-02  2.5827e-03  2.7492e-03  2.1916e-03  2.1740e-06  3.2542e-03  6.7052e-03  0:01:08  184
+<aaslistener> 
+   317  1.8358e-02  2.5964e-03  2.7329e-03  2.2039e-03  2.1891e-06  3.2734e-03  6.7628e-03  0:00:54  183
+<aaslistener> 
+   318  1.8360e-02  2.6102e-03  2.7229e-03  2.2213e-03  2.2066e-06  3.2906e-03  6.7638e-03  0:00:43  182
+<aaslistener> 
+   319  1.8442e-02  2.6236e-03  2.7175e-03  2.2421e-03  2.2266e-06  3.3009e-03  6.7009e-03  0:01:10  181
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   320  1.8509e-02  2.6357e-03  2.7154e-03  2.2704e-03  2.2425e-06  3.3048e-03  6.6039e-03  0:00:56  180
+<aaslistener> 
+   321  1.8675e-02  2.6508e-03  2.7223e-03  2.2981e-03  2.2514e-06  3.3011e-03  6.4621e-03  0:00:45  179
+<aaslistener> 
+   322  1.8783e-02  2.6665e-03  2.7303e-03  2.3279e-03  2.2556e-06  3.2928e-03  6.2784e-03  0:01:11  178
+<aaslistener> 
+   323  1.8937e-02  2.6843e-03  2.7396e-03  2.3536e-03  2.2633e-06  3.2830e-03  6.0832e-03  0:00:57  177
+<aaslistener> 
+   324  1.9070e-02  2.7017e-03  2.7515e-03  2.3811e-03  2.2526e-06  3.2707e-03  5.8772e-03  0:00:45  176
+<aaslistener> 
+   325  1.9262e-02  2.7231e-03  2.7655e-03  2.4035e-03  2.2359e-06  3.2547e-03  5.6805e-03  0:01:11  175
+<aaslistener> 
+   326  1.9432e-02  2.7419e-03  2.7847e-03  2.4207e-03  2.2159e-06  3.2398e-03  5.5209e-03  0:00:56  174
+<aaslistener> 
+   327  1.9566e-02  2.7591e-03  2.8045e-03  2.4331e-03  2.1914e-06  3.2276e-03  5.3736e-03  0:00:45  173
+<aaslistener> 
+   328  1.9711e-02  2.7721e-03  2.8295e-03  2.4393e-03  2.1627e-06  3.2186e-03  5.2618e-03  0:01:10  172
+<aaslistener> 
+   329  1.9788e-02  2.7823e-03  2.8586e-03  2.4463e-03  2.1241e-06  3.2176e-03  5.2115e-03  0:00:56  171
+<aaslistener> 
+   330  1.9882e-02  2.7895e-03  2.8887e-03  2.4553e-03  2.0893e-06  3.2208e-03  5.2241e-03  0:00:44  170
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   331  1.9977e-02  2.7930e-03  2.9177e-03  2.4651e-03  2.0623e-06  3.2293e-03  5.2940e-03  0:01:09  169
+<aaslistener> 
+   332  2.0068e-02  2.7960e-03  2.9429e-03  2.4750e-03  2.0407e-06  3.2360e-03  5.3729e-03  0:00:55  168
+<aaslistener> 
+   333  2.0153e-02  2.7994e-03  2.9650e-03  2.4845e-03  2.0384e-06  3.2473e-03  5.4949e-03  0:01:17  167
+<aaslistener> 
+   334  2.0252e-02  2.7967e-03  2.9813e-03  2.4994e-03  2.0511e-06  3.2588e-03  5.5946e-03  0:01:01  166
+<aaslistener> 
+   335  2.0364e-02  2.7959e-03  2.9916e-03  2.5109e-03  2.0698e-06  3.2704e-03  5.6783e-03  0:00:49  165
+<aaslistener> 
+   336  2.0494e-02  2.7879e-03  2.9994e-03  2.5187e-03  2.0865e-06  3.2795e-03  5.7250e-03  0:01:12  164
+<aaslistener> 
+   337  2.0531e-02  2.7786e-03  3.0016e-03  2.5246e-03  2.1087e-06  3.2836e-03  5.7232e-03  0:00:57  163
+<aaslistener> 
+   338  2.0536e-02  2.7658e-03  3.0014e-03  2.5270e-03  2.1306e-06  3.2801e-03  5.6848e-03  0:00:45  162
+<aaslistener> 
+   339  2.0573e-02  2.7496e-03  3.0017e-03  2.5284e-03  2.1438e-06  3.2713e-03  5.6434e-03  0:01:08  161
+<aaslistener> 
+   340  2.0618e-02  2.7367e-03  3.0019e-03  2.5269e-03  2.1440e-06  3.2559e-03  5.5592e-03  0:00:54  160
+<aaslistener> 
+   341  2.0763e-02  2.7213e-03  3.0027e-03  2.5211e-03  2.1518e-06  3.2333e-03  5.4639e-03  0:00:43  159
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   342  2.0897e-02  2.7077e-03  3.0043e-03  2.5137e-03  2.1485e-06  3.2084e-03  5.4026e-03  0:01:06  158
+<aaslistener> 
+   343  2.0949e-02  2.6935e-03  3.0082e-03  2.5063e-03  2.1410e-06  3.1895e-03  5.3465e-03  0:00:52  157
+<aaslistener> 
+   344  2.1027e-02  2.6791e-03  3.0115e-03  2.4956e-03  2.1271e-06  3.1793e-03  5.2862e-03  0:00:42  156
+<aaslistener> 
+   345  2.0974e-02  2.6630e-03  3.0172e-03  2.4829e-03  2.1126e-06  3.1704e-03  5.1959e-03  0:01:04  155
+<aaslistener> 
+   346  2.0893e-02  2.6438e-03  3.0220e-03  2.4681e-03  2.0957e-06  3.1646e-03  5.0965e-03  0:00:51  154
+<aaslistener> 
+   347  2.0737e-02  2.6215e-03  3.0268e-03  2.4462e-03  2.0748e-06  3.1594e-03  4.9792e-03  0:00:40  153
+<aaslistener> 
+   348  2.0557e-02  2.5977e-03  3.0280e-03  2.4282e-03  2.0610e-06  3.1458e-03  4.8069e-03  0:01:03  152
+<aaslistener> 
+   349  2.0292e-02  2.5696e-03  3.0297e-03  2.4083e-03  2.0418e-06  3.1250e-03  4.6104e-03  0:00:50  151
+<aaslistener> 
+   350  2.0163e-02  2.5420e-03  3.0300e-03  2.3892e-03  2.0235e-06  3.0963e-03  4.3959e-03  0:00:40  150
+<aaslistener> 
+   351  2.0108e-02  2.5093e-03  3.0324e-03  2.3710e-03  2.0023e-06  3.0619e-03  4.1691e-03  0:01:01  149
+<aaslistener> 
+   352  2.0022e-02  2.4799e-03  3.0322e-03  2.3509e-03  1.9929e-06  3.0168e-03  3.9510e-03  0:00:49  148
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   353  2.0030e-02  2.4485e-03  3.0349e-03  2.3315e-03  1.9812e-06  2.9644e-03  3.7506e-03  0:00:39  147
+<aaslistener> 
+   354  2.0009e-02  2.4159e-03  3.0362e-03  2.3154e-03  1.9728e-06  2.9080e-03  3.6001e-03  0:01:00  146
+<aaslistener> 
+   355  1.9944e-02  2.3912e-03  3.0339e-03  2.3042e-03  1.9728e-06  2.8588e-03  3.4843e-03  0:00:48  145
+<aaslistener> 
+   356  1.9949e-02  2.3643e-03  3.0317e-03  2.2973e-03  1.9642e-06  2.8151e-03  3.4148e-03  0:00:38  144
+<aaslistener> 
+   357  1.9852e-02  2.3468e-03  3.0240e-03  2.2930e-03  1.9608e-06  2.7799e-03  3.3455e-03  0:00:59  143
+<aaslistener> 
+   358  1.9821e-02  2.3323e-03  3.0159e-03  2.2889e-03  1.9429e-06  2.7535e-03  3.3301e-03  0:00:47  142
+<aaslistener> 
+   359  1.9765e-02  2.3204e-03  3.0043e-03  2.2870e-03  1.9326e-06  2.7391e-03  3.3517e-03  0:00:37  141
+<aaslistener> 
+   360  1.9746e-02  2.3141e-03  2.9913e-03  2.2840e-03  1.9268e-06  2.7333e-03  3.4367e-03  0:00:57  140
+<aaslistener> 
+   361  1.9769e-02  2.3108e-03  2.9767e-03  2.2841e-03  1.9068e-06  2.7320e-03  3.5216e-03  0:00:46  139
+<aaslistener> 
+   362  1.9791e-02  2.3099e-03  2.9614e-03  2.2854e-03  1.8987e-06  2.7357e-03  3.5844e-03  0:00:36  138
+<aaslistener> 
+   363  1.9855e-02  2.3083e-03  2.9441e-03  2.2895e-03  1.9092e-06  2.7381e-03  3.6576e-03  0:00:56  137
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   364  1.9942e-02  2.3080e-03  2.9283e-03  2.2921e-03  1.9252e-06  2.7378e-03  3.7099e-03  0:00:45  136
+<aaslistener> 
+   365  1.9988e-02  2.3109e-03  2.9145e-03  2.2943e-03  1.9478e-06  2.7387e-03  3.7607e-03  0:00:35  135
+<aaslistener> 
+   366  1.9887e-02  2.3129e-03  2.9022e-03  2.2947e-03  1.9811e-06  2.7426e-03  3.8017e-03  0:00:55  134
+<aaslistener> 
+   367  1.9943e-02  2.3167e-03  2.8934e-03  2.2930e-03  2.0128e-06  2.7495e-03  3.8528e-03  0:00:44  133
+<aaslistener> 
+   368  1.9878e-02  2.3205e-03  2.8847e-03  2.2872e-03  2.0309e-06  2.7581e-03  3.8976e-03  0:00:35  132
+<aaslistener> 
+   369  1.9908e-02  2.3240e-03  2.8811e-03  2.2779e-03  2.0424e-06  2.7682e-03  3.9498e-03  0:00:54  131
+<aaslistener> 
+   370  1.9823e-02  2.3289e-03  2.8751e-03  2.2668e-03  2.0482e-06  2.7742e-03  3.9911e-03  0:00:43  130
+<aaslistener> 
+   371  1.9796e-02  2.3271e-03  2.8727e-03  2.2497e-03  2.0604e-06  2.7764e-03  4.0098e-03  0:00:34  129
+<aaslistener> 
+   372  1.9711e-02  2.3238e-03  2.8690e-03  2.2273e-03  2.0536e-06  2.7750e-03  4.0498e-03  0:00:52  128
+<aaslistener> 
+   373  1.9558e-02  2.3176e-03  2.8593e-03  2.2038e-03  2.0420e-06  2.7669e-03  4.0838e-03  0:00:42  127
+<aaslistener> 
+   374  1.9432e-02  2.3092e-03  2.8491e-03  2.1720e-03  2.0366e-06  2.7530e-03  4.1140e-03  0:00:33  126
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   375  1.9349e-02  2.2990e-03  2.8324e-03  2.1393e-03  2.0309e-06  2.7311e-03  4.1426e-03  0:00:51  125
+<aaslistener> 
+   376  1.9205e-02  2.2875e-03  2.8092e-03  2.1051e-03  2.0202e-06  2.7041e-03  4.1974e-03  0:00:41  124
+<aaslistener> 
+   377  1.9024e-02  2.2699e-03  2.7823e-03  2.0738e-03  2.0298e-06  2.6718e-03  4.2530e-03  0:00:32  123
+<aaslistener> 
+   378  1.8855e-02  2.2548e-03  2.7490e-03  2.0431e-03  2.0384e-06  2.6343e-03  4.2767e-03  0:00:50  122
+<aaslistener> 
+   379  1.8646e-02  2.2379e-03  2.7122e-03  2.0148e-03  2.0426e-06  2.5947e-03  4.2776e-03  0:00:40  121
+<aaslistener> 
+   380  1.8280e-02  2.2222e-03  2.6740e-03  1.9871e-03  2.0464e-06  2.5551e-03  4.2746e-03  0:00:31  120
+<aaslistener> 
+   381  1.8147e-02  2.2064e-03  2.6337e-03  1.9658e-03  2.0617e-06  2.5168e-03  4.2494e-03  0:00:25  119
+<aaslistener> 
+   382  1.8000e-02  2.1928e-03  2.5962e-03  1.9503e-03  2.0701e-06  2.4843e-03  4.2154e-03  0:00:43  118
+<aaslistener> 
+   383  1.7891e-02  2.1797e-03  2.5641e-03  1.9398e-03  2.0848e-06  2.4585e-03  4.1842e-03  0:00:34  117
+<aaslistener> 
+   384  1.7840e-02  2.1697e-03  2.5343e-03  1.9346e-03  2.0911e-06  2.4369e-03  4.1554e-03  0:00:27  116
+<aaslistener> 
+   385  1.7792e-02  2.1604e-03  2.5104e-03  1.9365e-03  2.1107e-06  2.4209e-03  4.1368e-03  0:00:45  115
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   386  1.7695e-02  2.1536e-03  2.4855e-03  1.9437e-03  2.1065e-06  2.4050e-03  4.0979e-03  0:00:35  114
+<aaslistener> 
+   387  1.7567e-02  2.1444e-03  2.4643e-03  1.9539e-03  2.0888e-06  2.3912e-03  4.0532e-03  0:00:28  113
+<aaslistener> 
+   388  1.7437e-02  2.1366e-03  2.4422e-03  1.9714e-03  2.0700e-06  2.3797e-03  4.0225e-03  0:00:45  112
+<aaslistener> 
+   389  1.7290e-02  2.1297e-03  2.4174e-03  1.9925e-03  2.0246e-06  2.3698e-03  4.0022e-03  0:00:35  111
+<aaslistener> 
+   390  1.7159e-02  2.1233e-03  2.3906e-03  2.0095e-03  1.9994e-06  2.3632e-03  3.9740e-03  0:00:28  110
+<aaslistener> 
+   391  1.6954e-02  2.1171e-03  2.3596e-03  2.0261e-03  1.9618e-06  2.3611e-03  3.9640e-03  0:00:44  109
+<aaslistener> 
+   392  1.6919e-02  2.1121e-03  2.3297e-03  2.0404e-03  1.9260e-06  2.3619e-03  3.9708e-03  0:00:35  108
+<aaslistener> 
+   393  1.6952e-02  2.1077e-03  2.3031e-03  2.0475e-03  1.8948e-06  2.3648e-03  3.9790e-03  0:00:49  107
+<aaslistener> 
+   394  1.6989e-02  2.1027e-03  2.2797e-03  2.0491e-03  1.8587e-06  2.3659e-03  3.9846e-03  0:00:39  106
+<aaslistener> 
+   395  1.6950e-02  2.0979e-03  2.2605e-03  2.0474e-03  1.8141e-06  2.3661e-03  3.9909e-03  0:00:31  105
+<aaslistener> 
+   396  1.6814e-02  2.0960e-03  2.2450e-03  2.0391e-03  1.7737e-06  2.3662e-03  4.0157e-03  0:00:45  104
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   397  1.6775e-02  2.0926e-03  2.2340e-03  2.0309e-03  1.7296e-06  2.3627e-03  4.0183e-03  0:00:36  103
+<aaslistener> 
+   398  1.6643e-02  2.0891e-03  2.2273e-03  2.0188e-03  1.6958e-06  2.3562e-03  3.9820e-03  0:00:28  102
+<aaslistener> 
+   399  1.6616e-02  2.0826e-03  2.2234e-03  2.0091e-03  1.6688e-06  2.3470e-03  3.9107e-03  0:00:43  101
+<aaslistener> 
+   400  1.6590e-02  2.0779e-03  2.2226e-03  1.9987e-03  1.6537e-06  2.3383e-03  3.8557e-03  0:00:34  100
+<aaslistener> 
+   401  1.6628e-02  2.0713e-03  2.2249e-03  1.9912e-03  1.6424e-06  2.3287e-03  3.8328e-03  0:00:27   99
+<aaslistener> 
+   402  1.6607e-02  2.0657e-03  2.2280e-03  1.9858e-03  1.6393e-06  2.3196e-03  3.8516e-03  0:00:41   98
+<aaslistener> 
+   403  1.6690e-02  2.0612e-03  2.2347e-03  1.9813e-03  1.6416e-06  2.3117e-03  3.9400e-03  0:00:32   97
+<aaslistener> 
+   404  1.6677e-02  2.0577e-03  2.2452e-03  1.9794e-03  1.6602e-06  2.3069e-03  4.0815e-03  0:00:26   96
+<aaslistener> 
+   405  1.6724e-02  2.0551e-03  2.2546e-03  1.9829e-03  1.6897e-06  2.3051e-03  4.2630e-03  0:00:39   95
+<aaslistener> 
+   406  1.6802e-02  2.0544e-03  2.2685e-03  1.9872e-03  1.7316e-06  2.3090e-03  4.5207e-03  0:00:31   94
+<aaslistener> 
+   407  1.6839e-02  2.0537e-03  2.2851e-03  1.9973e-03  1.7694e-06  2.3165e-03  4.7975e-03  0:00:25   93
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   408  1.6872e-02  2.0527e-03  2.3031e-03  2.0084e-03  1.8299e-06  2.3298e-03  5.1005e-03  0:00:38   92
+<aaslistener> 
+   409  1.6919e-02  2.0531e-03  2.3246e-03  2.0199e-03  1.8826e-06  2.3455e-03  5.2286e-03  0:00:30   91
+<aaslistener> 
+   410  1.6962e-02  2.0565e-03  2.3457e-03  2.0354e-03  1.9174e-06  2.3630e-03  5.2817e-03  0:00:24   90
+<aaslistener> 
+   411  1.6954e-02  2.0625e-03  2.3659e-03  2.0502e-03  1.9380e-06  2.3830e-03  5.3308e-03  0:00:37   89
+<aaslistener> 
+   412  1.6864e-02  2.0716e-03  2.3795e-03  2.0663e-03  1.9575e-06  2.4088e-03  5.5333e-03  0:00:29   88
+<aaslistener> 
+   413  1.6858e-02  2.0848e-03  2.3856e-03  2.0768e-03  1.9724e-06  2.4435e-03  5.8767e-03  0:00:23   87
+<aaslistener> 
+   414  1.6813e-02  2.0985e-03  2.3844e-03  2.0845e-03  1.9799e-06  2.4824e-03  6.2643e-03  0:00:35   86
+<aaslistener> 
+   415  1.6704e-02  2.1117e-03  2.3739e-03  2.0877e-03  1.9722e-06  2.5227e-03  6.5743e-03  0:00:28   85
+<aaslistener> 
+   416  1.6635e-02  2.1241e-03  2.3601e-03  2.0849e-03  1.9603e-06  2.5556e-03  6.7013e-03  0:00:22   84
+<aaslistener> 
+   417  1.6602e-02  2.1346e-03  2.3445e-03  2.0746e-03  1.9368e-06  2.5798e-03  6.7065e-03  0:00:34   83
+<aaslistener> 
+   418  1.6504e-02  2.1455e-03  2.3273e-03  2.0605e-03  1.9044e-06  2.5920e-03  6.6001e-03  0:00:27   82
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   419  1.6420e-02  2.1533e-03  2.3120e-03  2.0426e-03  1.8732e-06  2.5907e-03  6.3639e-03  0:00:37   81
+<aaslistener> 
+   420  1.6304e-02  2.1592e-03  2.3010e-03  2.0208e-03  1.8439e-06  2.5717e-03  6.0695e-03  0:00:30   80
+<aaslistener> 
+   421  1.6213e-02  2.1625e-03  2.2892e-03  2.0017e-03  1.8248e-06  2.5422e-03  5.7723e-03  0:00:23   79
+<aaslistener> 
+   422  1.6195e-02  2.1637e-03  2.2773e-03  1.9858e-03  1.8023e-06  2.5071e-03  5.5590e-03  0:00:34   78
+<aaslistener> 
+   423  1.6169e-02  2.1607e-03  2.2649e-03  1.9721e-03  1.7857e-06  2.4754e-03  5.4880e-03  0:00:27   77
+<aaslistener> 
+   424  1.6135e-02  2.1564e-03  2.2536e-03  1.9632e-03  1.7742e-06  2.4534e-03  5.4759e-03  0:00:21   76
+<aaslistener> 
+   425  1.6083e-02  2.1514e-03  2.2437e-03  1.9560e-03  1.7637e-06  2.4396e-03  5.5247e-03  0:00:32   75
+<aaslistener> 
+   426  1.6078e-02  2.1457e-03  2.2356e-03  1.9470e-03  1.7620e-06  2.4388e-03  5.6416e-03  0:00:25   74
+<aaslistener> 
+   427  1.6074e-02  2.1374e-03  2.2278e-03  1.9406e-03  1.7620e-06  2.4387e-03  5.7342e-03  0:00:20   73
+<aaslistener> 
+   428  1.6083e-02  2.1318e-03  2.2229e-03  1.9320e-03  1.7681e-06  2.4377e-03  5.8042e-03  0:00:30   72
+<aaslistener> 
+   429  1.6118e-02  2.1258e-03  2.2220e-03  1.9219e-03  1.7719e-06  2.4350e-03  5.8552e-03  0:00:24   71
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   430  1.6135e-02  2.1221e-03  2.2217e-03  1.9126e-03  1.7758e-06  2.4309e-03  5.8637e-03  0:00:19   70
+<aaslistener> 
+   431  1.6191e-02  2.1211e-03  2.2244e-03  1.9012e-03  1.7709e-06  2.4228e-03  5.7961e-03  0:00:15   69
+<aaslistener> 
+   432  1.6248e-02  2.1215e-03  2.2295e-03  1.8884e-03  1.7730e-06  2.4105e-03  5.7513e-03  0:00:25   68
+<aaslistener> 
+   433  1.6248e-02  2.1218e-03  2.2375e-03  1.8768e-03  1.7627e-06  2.3993e-03  5.6985e-03  0:00:20   67
+<aaslistener> 
+   434  1.6293e-02  2.1239e-03  2.2464e-03  1.8678e-03  1.7480e-06  2.3897e-03  5.6465e-03  0:00:16   66
+<aaslistener> 
+   435  1.6362e-02  2.1257e-03  2.2540e-03  1.8581e-03  1.7321e-06  2.3894e-03  5.6569e-03  0:00:25   65
+<aaslistener> 
+   436  1.6480e-02  2.1309e-03  2.2621e-03  1.8487e-03  1.7182e-06  2.3999e-03  5.8003e-03  0:00:20   64
+<aaslistener> 
+   437  1.6610e-02  2.1365e-03  2.2696e-03  1.8392e-03  1.7136e-06  2.4166e-03  6.0401e-03  0:00:16   63
+<aaslistener> 
+   438  1.6677e-02  2.1393e-03  2.2736e-03  1.8323e-03  1.7022e-06  2.4375e-03  6.2910e-03  0:00:25   62
+<aaslistener> 
+   439  1.6688e-02  2.1412e-03  2.2786e-03  1.8242e-03  1.6916e-06  2.4612e-03  6.5942e-03  0:00:20   61
+<aaslistener> 
+   440  1.6683e-02  2.1438e-03  2.2835e-03  1.8158e-03  1.6842e-06  2.4843e-03  6.8644e-03  0:00:15   60
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   441  1.6538e-02  2.1449e-03  2.2889e-03  1.8096e-03  1.6654e-06  2.5039e-03  7.0627e-03  0:00:24   59
+<aaslistener> 
+   442  1.6421e-02  2.1438e-03  2.2921e-03  1.8053e-03  1.6407e-06  2.5157e-03  7.1781e-03  0:00:19   58
+<aaslistener> 
+   443  1.6270e-02  2.1403e-03  2.2911e-03  1.8025e-03  1.6190e-06  2.5183e-03  7.1568e-03  0:00:15   57
+<aaslistener> 
+   444  1.6152e-02  2.1373e-03  2.2889e-03  1.8012e-03  1.6132e-06  2.5178e-03  7.0971e-03  0:00:23   56
+<aaslistener> 
+   445  1.5981e-02  2.1334e-03  2.2865e-03  1.8002e-03  1.6124e-06  2.5139e-03  7.0664e-03  0:00:18   55
+<aaslistener> 
+   446  1.5917e-02  2.1249e-03  2.2838e-03  1.7980e-03  1.6044e-06  2.5018e-03  7.0027e-03  0:00:25   54
+<aaslistener> 
+   447  1.5805e-02  2.1181e-03  2.2771e-03  1.7939e-03  1.5983e-06  2.4872e-03  6.8867e-03  0:00:20   53
+<aaslistener> 
+   448  1.5694e-02  2.1081e-03  2.2701e-03  1.7882e-03  1.5886e-06  2.4724e-03  6.7321e-03  0:00:15   52
+<aaslistener> 
+   449  1.5505e-02  2.0983e-03  2.2614e-03  1.7797e-03  1.5832e-06  2.4538e-03  6.5227e-03  0:00:22   51
+<aaslistener> 
+   450  1.5283e-02  2.0874e-03  2.2512e-03  1.7679e-03  1.5748e-06  2.4326e-03  6.2740e-03  0:00:17   50
+<aaslistener> 
+   451  1.5066e-02  2.0755e-03  2.2401e-03  1.7568e-03  1.5628e-06  2.4082e-03  6.0418e-03  0:00:14   49
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   452  1.4924e-02  2.0625e-03  2.2285e-03  1.7447e-03  1.5533e-06  2.3857e-03  5.8547e-03  0:00:20   48
+<aaslistener> 
+   453  1.4777e-02  2.0491e-03  2.2169e-03  1.7342e-03  1.5411e-06  2.3679e-03  5.7296e-03  0:00:16   47
+<aaslistener> 
+   454  1.4700e-02  2.0352e-03  2.2065e-03  1.7266e-03  1.5251e-06  2.3582e-03  5.6644e-03  0:00:12   46
+<aaslistener> 
+   455  1.4669e-02  2.0222e-03  2.1972e-03  1.7214e-03  1.5182e-06  2.3580e-03  5.6404e-03  0:00:19   45
+<aaslistener> 
+   456  1.4635e-02  2.0105e-03  2.1907e-03  1.7181e-03  1.5159e-06  2.3680e-03  5.6174e-03  0:00:15   44
+<aaslistener> 
+   457  1.4624e-02  2.0020e-03  2.1887e-03  1.7204e-03  1.5185e-06  2.3855e-03  5.5953e-03  0:00:11   43
+<aaslistener> 
+   458  1.4644e-02  1.9968e-03  2.1918e-03  1.7250e-03  1.5234e-06  2.4061e-03  5.5591e-03  0:00:17   42
+<aaslistener> 
+   459  1.4719e-02  1.9953e-03  2.1994e-03  1.7330e-03  1.5306e-06  2.4302e-03  5.5238e-03  0:00:14   41
+<aaslistener> 
+   460  1.4705e-02  1.9932e-03  2.2110e-03  1.7465e-03  1.5415e-06  2.4581e-03  5.4991e-03  0:00:11   40
+<aaslistener> 
+   461  1.4814e-02  1.9927e-03  2.2266e-03  1.7608e-03  1.5500e-06  2.4894e-03  5.4709e-03  0:00:16   39
+<aaslistener> 
+   462  1.4824e-02  1.9938e-03  2.2463e-03  1.7787e-03  1.5578e-06  2.5215e-03  5.4583e-03  0:00:13   38
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   463  1.4944e-02  1.9934e-03  2.2698e-03  1.7991e-03  1.5675e-06  2.5513e-03  5.4106e-03  0:00:10   37
+<aaslistener> 
+   464  1.5075e-02  1.9947e-03  2.2967e-03  1.8185e-03  1.5718e-06  2.5768e-03  5.3136e-03  0:00:15   36
+<aaslistener> 
+   465  1.5216e-02  1.9954e-03  2.3234e-03  1.8401e-03  1.5827e-06  2.5986e-03  5.2201e-03  0:00:12   35
+<aaslistener> 
+   466  1.5336e-02  1.9989e-03  2.3489e-03  1.8618e-03  1.5926e-06  2.6155e-03  5.1802e-03  0:00:09   34
+<aaslistener> 
+   467  1.5502e-02  2.0004e-03  2.3739e-03  1.8818e-03  1.5933e-06  2.6307e-03  5.2013e-03  0:00:14   33
+<aaslistener> 
+   468  1.5619e-02  2.0038e-03  2.3976e-03  1.8999e-03  1.5862e-06  2.6437e-03  5.2590e-03  0:00:11   32
+<aaslistener> 
+   469  1.5652e-02  2.0064e-03  2.4212e-03  1.9144e-03  1.5753e-06  2.6588e-03  5.3749e-03  0:00:08   31
+<aaslistener> 
+   470  1.5735e-02  2.0072e-03  2.4444e-03  1.9256e-03  1.5640e-06  2.6821e-03  5.5843e-03  0:00:12   30
+<aaslistener> 
+   471  1.5804e-02  2.0073e-03  2.4675e-03  1.9351e-03  1.5538e-06  2.7199e-03  5.9180e-03  0:00:10   29
+<aaslistener> 
+   472  1.5800e-02  2.0056e-03  2.4874e-03  1.9437e-03  1.5334e-06  2.7740e-03  6.2723e-03  0:00:13   28
+<aaslistener> 
+   473  1.5764e-02  2.0005e-03  2.5074e-03  1.9538e-03  1.5176e-06  2.8296e-03  6.5436e-03  0:00:10   27
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   474  1.5760e-02  1.9933e-03  2.5289e-03  1.9649e-03  1.5002e-06  2.8835e-03  6.7982e-03  0:00:08   26
+<aaslistener> 
+   475  1.5655e-02  1.9869e-03  2.5511e-03  1.9790e-03  1.4883e-06  2.9359e-03  6.9888e-03  0:00:06   25
+<aaslistener> 
+   476  1.5617e-02  1.9834e-03  2.5719e-03  1.9935e-03  1.4808e-06  2.9874e-03  7.1251e-03  0:00:09   24
+<aaslistener> 
+   477  1.5537e-02  1.9809e-03  2.5892e-03  2.0086e-03  1.4789e-06  3.0347e-03  7.1879e-03  0:00:07   23
+<aaslistener> 
+   478  1.5495e-02  1.9788e-03  2.6095e-03  2.0250e-03  1.4827e-06  3.0722e-03  7.1751e-03  0:00:05   22
+<aaslistener> 
+   479  1.5607e-02  1.9824e-03  2.6313e-03  2.0390e-03  1.4849e-06  3.1011e-03  7.1443e-03  0:00:08   21
+<aaslistener> 
+   480  1.5689e-02  1.9894e-03  2.6544e-03  2.0547e-03  1.4820e-06  3.1150e-03  7.0052e-03  0:00:06   20
+<aaslistener> 
+   481  1.5836e-02  2.0007e-03  2.6763e-03  2.0693e-03  1.4750e-06  3.1186e-03  6.8293e-03  0:00:05   19
+<aaslistener> 
+   482  1.5913e-02  2.0162e-03  2.6961e-03  2.0846e-03  1.4726e-06  3.1123e-03  6.5999e-03  0:00:07   18
+<aaslistener> 
+   483  1.6101e-02  2.0333e-03  2.7142e-03  2.0981e-03  1.4663e-06  3.0978e-03  6.3499e-03  0:00:06   17
+<aaslistener> 
+   484  1.6259e-02  2.0521e-03  2.7270e-03  2.1078e-03  1.4670e-06  3.0807e-03  6.1004e-03  0:00:04   16
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   485  1.6494e-02  2.0692e-03  2.7327e-03  2.1167e-03  1.4668e-06  3.0614e-03  5.8685e-03  0:00:06   15
+<aaslistener> 
+   486  1.6655e-02  2.0858e-03  2.7359e-03  2.1243e-03  1.4652e-06  3.0381e-03  5.6419e-03  0:00:05   14
+<aaslistener> 
+   487  1.6924e-02  2.0985e-03  2.7342e-03  2.1329e-03  1.4615e-06  3.0142e-03  5.4636e-03  0:00:03   13
+<aaslistener> 
+   488  1.7279e-02  2.1103e-03  2.7272e-03  2.1405e-03  1.4597e-06  2.9874e-03  5.3084e-03  0:00:05   12
+<aaslistener> 
+   489  1.7471e-02  2.1208e-03  2.7133e-03  2.1458e-03  1.4568e-06  2.9557e-03  5.1736e-03  0:00:04   11
+<aaslistener> 
+   490  1.7612e-02  2.1258e-03  2.6968e-03  2.1511e-03  1.4577e-06  2.9224e-03  5.0719e-03  0:00:03   10
+<aaslistener> 
+   491  1.7709e-02  2.1258e-03  2.6776e-03  2.1546e-03  1.4535e-06  2.8909e-03  4.9996e-03  0:00:04    9
+<aaslistener> 
+   492  1.7864e-02  2.1204e-03  2.6578e-03  2.1559e-03  1.4513e-06  2.8616e-03  4.9687e-03  0:00:03    8
+<aaslistener> 
+   493  1.7958e-02  2.1150e-03  2.6372e-03  2.1542e-03  1.4538e-06  2.8383e-03  4.9745e-03  0:00:02    7
+<aaslistener> 
+   494  1.8021e-02  2.1083e-03  2.6183e-03  2.1499e-03  1.4544e-06  2.8212e-03  5.0679e-03  0:00:02    6
+<aaslistener> 
+   495  1.8070e-02  2.1046e-03  2.6004e-03  2.1415e-03  1.4548e-06  2.8127e-03  5.2259e-03  0:00:02    5
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   496  1.8101e-02  2.0985e-03  2.5875e-03  2.1299e-03  1.4595e-06  2.8125e-03  5.4132e-03  0:00:01    4
+<aaslistener> 
+   497  1.8078e-02  2.0953e-03  2.5751e-03  2.1153e-03  1.4680e-06  2.8193e-03  5.6689e-03  0:00:01    3
+<aaslistener> 
+   498  1.8052e-02  2.0943e-03  2.5650e-03  2.0972e-03  1.4796e-06  2.8298e-03  5.9471e-03  0:00:01    2
+<aaslistener> 
+   499  1.8012e-02  2.0924e-03  2.5543e-03  2.0793e-03  1.4893e-06  2.8428e-03  6.2037e-03  0:00:00    1
+<aaslistener> 
+   500  1.7963e-02  2.0947e-03  2.5453e-03  2.0590e-03  1.5003e-06  2.8528e-03  6.4427e-03  0:00:00    0
+define/models/dpm/interaction/coupled-calculations? yessolve iterate 10<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   500  1.7963e-02  2.0947e-03  2.5453e-03  2.0590e-03  1.5003e-06  2.8528e-03  6.4427e-03  0:00:04   10
+<aaslistener> 
+   501  1.7816e-02  2.0950e-03  2.5369e-03  2.0382e-03  1.5077e-06  2.8581e-03  6.6476e-03  0:00:05    9
+<aaslistener> 
+   502  1.7602e-02  2.1005e-03  2.5275e-03  2.0153e-03  1.5116e-06  2.8602e-03  6.8525e-03  0:00:03    8
+<aaslistener> 
+   503  1.7346e-02  2.1055e-03  2.5158e-03  1.9924e-03  1.5120e-06  2.8577e-03  7.0619e-03  0:00:02    7
+<aaslistener> 
+   504  1.7122e-02  2.1108e-03  2.5044e-03  1.9690e-03  1.5138e-06  2.8525e-03  7.2477e-03  0:00:03    6
+<aaslistener> 
+   505  1.6876e-02  2.1126e-03  2.4905e-03  1.9485e-03  1.5136e-06  2.8447e-03  7.4468e-03  0:00:02    5
+<aaslistener> 
+   506  1.6674e-02  2.1122e-03  2.4774e-03  1.9277e-03  1.5157e-06  2.8359e-03  7.6274e-03  0:00:01    4
+<aaslistener> 
+   507  1.6463e-02  2.1070e-03  2.4599e-03  1.9098e-03  1.5168e-06  2.8330e-03  7.8276e-03  0:00:01    3
+<aaslistener> 
+   508  1.6263e-02  2.1005e-03  2.4424e-03  1.8901e-03  1.5166e-06  2.8323e-03  7.9151e-03  0:00:01    2
+<aaslistener> 
+   509  1.6153e-02  2.0885e-03  2.4239e-03  1.8722e-03  1.5126e-06  2.8343e-03  7.9826e-03  0:00:00    1
+
+DPM Iteration ....
+number tracked = 529, escaped = 523, incomplete = 6
+<aaslistener> 
+   510  1.6080e-02  2.0720e-03  2.4061e-03  1.8543e-03  1.5130e-06  2.8377e-03  7.9595e-03  0:00:00    0
+/file/export/cgns version_1 no velocity dpm-concentration temperature noinvalid command [no]
+
+Opening library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent\\fluent20.2.0\\vki\\win64\\devtools4.4.6.dll"... done.
+
+
+Writing "version_1.cgns"
+  111348 nodes written.
+  119660 elements written.
+      13 node sets written.
+         temperature is written as result for 111348 nodes
+         dpm-concentration is written as result for 111348 nodes
+         velocity-magnitude is written as result for 111348 nodes
+Done. 
+
+Closing library "F:\\ANASYS\\ANSYS Inc\\v202\\fluent\\fluent20.2.0\\vki\\win64\\devtools4.4.6.dll"... done.
+
+define/models/dpm/interaction/coupled-calculations? no/define/boundary/velocity-inlet/i(inlet)
+nlet no no yes yes no 2.338395299008673 no 0 no 290.54948861733965 no no yes 5 10/define/boundary/zone-type outlet outflow/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+ew 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+ww 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+sw 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+nw 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+uw 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+bw 0 no 0 no yes temperature no 299.15 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+eb 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+wb 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+sb 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+nb 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/define/boundary/wall (sw sb nw nb ww wb eb ew bw ub uw)
+ub 0 no 0 no yes temperature no 309.85 no no no no 0 no 0.5 no 
+Normal 
+polynomial 1 1 
+Tangent
+polynomial 1 1 no 1/solve/set/p-v-coupling 20solve/set/discretization-scheme/pressure 14solve/set/discretization-scheme/mom 1solve/set/discretization-scheme/k 0solve/set/discretization-scheme/epsilon 0solve/set/under-relaxation/k 0.8solve/set/under-relaxation/epsilon 0.8/solve/initialize/set-hyb-initialization/general-settings 10 
+Explicit URF for scalar equation-01 
+Explicit URF for scalar equation-11 
+Current reference frame : Relative to cell zonerelative no no no/solve/initialize/hyb-initialization o
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		1.000000e+00
+	2		8.954007e-06
+	3		4.791284e-07
+	4		3.591671e-08
+	5		2.957458e-09
+	6		2.662735e-10
+	7		1.595677e-11
+	8		1.525056e-12
+	9		1.422818e-13
+	10		1.199685e-14
+
+Hybrid initialization is done.
+solve iterate 500<aaslistener> 
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+     1  1.0000e+00  1.3650e-01  2.9646e-01  1.1142e-03  2.8182e-04  6.4636e-01  5.1865e-01  0:05:30  499
+<aaslistener> 
+     2  1.0000e+00  9.7107e-02  7.4832e-01  1.4593e-03  5.2035e-04  5.0253e-01  4.0827e-01  0:06:03  498
+<aaslistener> 
+     3  4.0393e-01  4.6385e-02  9.7363e-02  1.4012e-02  3.1259e-04  2.8768e-01  3.0853e-01  0:06:29  497
+<aaslistener> 
+     4  3.2334e-01  4.5095e-02  5.6894e-02  1.3549e-02  2.0327e-04  1.3313e-01  2.4143e-01  0:05:11  496
+<aaslistener> 
+     5  2.3898e-01  4.0707e-02  4.1295e-02  1.0725e-02  1.6663e-04  1.1089e-01  2.5421e-01  0:04:08  495
+<aaslistener> 
+     6  1.9492e-01  3.6866e-02  3.4459e-02  9.1973e-03  1.4264e-04  1.0714e-01  2.8887e-01  0:03:18  494
+<aaslistener> 
+     7  1.8003e-01  3.3941e-02  3.1435e-02  8.5150e-03  1.2236e-04  1.0089e-01  2.6870e-01  0:04:17  493
+<aaslistener> 
+     8  1.7021e-01  3.2565e-02  2.8810e-02  7.8308e-03  1.0745e-04  9.5774e-02  2.2847e-01  0:03:25  492
+<aaslistener> 
+     9  1.6011e-01  3.0938e-02  2.6140e-02  7.4148e-03  9.6646e-05  9.3792e-02  2.0860e-01  0:04:22  491
+<aaslistener> 
+    10  1.5375e-01  2.9353e-02  2.4274e-02  7.1961e-03  8.9172e-05  9.0467e-02  1.9119e-01  0:03:29  490
+<aaslistener> 
+    11  1.5353e-01  2.7667e-02  2.3226e-02  7.0339e-03  8.5573e-05  8.4020e-02  1.6817e-01  0:02:47  489
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    12  1.4275e-01  2.6416e-02  2.2875e-02  7.0150e-03  8.0601e-05  7.6465e-02  1.4589e-01  0:03:51  488
+<aaslistener> 
+    13  1.4607e-01  2.5172e-02  2.2080e-02  6.9684e-03  7.7702e-05  6.8584e-02  1.2506e-01  0:03:04  487
+<aaslistener> 
+    14  1.3921e-01  2.4354e-02  2.1627e-02  7.0332e-03  7.3232e-05  6.2073e-02  1.1051e-01  0:02:27  486
+<aaslistener> 
+    15  1.4241e-01  2.3479e-02  2.0798e-02  7.0471e-03  6.9850e-05  5.5601e-02  9.3912e-02  0:03:34  485
+<aaslistener> 
+    16  1.3416e-01  2.2798e-02  2.0155e-02  7.1327e-03  6.5401e-05  5.0334e-02  8.0351e-02  0:02:51  484
+<aaslistener> 
+    17  1.3878e-01  2.1903e-02  1.9307e-02  7.1234e-03  6.1421e-05  4.5737e-02  6.9731e-02  0:02:17  483
+<aaslistener> 
+    18  1.2997e-01  2.1115e-02  1.8742e-02  7.1406e-03  5.7390e-05  4.2376e-02  6.6194e-02  0:03:26  482
+<aaslistener> 
+    19  1.3376e-01  2.0179e-02  1.8070e-02  7.1053e-03  5.4258e-05  3.9112e-02  6.0425e-02  0:02:44  481
+<aaslistener> 
+    20  1.2447e-01  1.9277e-02  1.7650e-02  7.1576e-03  5.1916e-05  3.6213e-02  5.4243e-02  0:02:11  480
+<aaslistener> 
+    21  1.2693e-01  1.8391e-02  1.7104e-02  7.1341e-03  5.1041e-05  3.3203e-02  4.6458e-02  0:03:20  479
+<aaslistener> 
+    22  1.1965e-01  1.7637e-02  1.6550e-02  7.1947e-03  5.0986e-05  3.0722e-02  4.1249e-02  0:02:40  478
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    23  1.2281e-01  1.6983e-02  1.5952e-02  7.1902e-03  5.1163e-05  2.8632e-02  3.6599e-02  0:02:08  477
+<aaslistener> 
+    24  1.1649e-01  1.6426e-02  1.5620e-02  7.2589e-03  5.0827e-05  2.7354e-02  3.5107e-02  0:01:42  476
+<aaslistener> 
+    25  1.1962e-01  1.6081e-02  1.5138e-02  7.2276e-03  4.9980e-05  2.6327e-02  3.4374e-02  0:02:56  475
+<aaslistener> 
+    26  1.1685e-01  1.5809e-02  1.4762e-02  7.2212e-03  4.8798e-05  2.5429e-02  3.4127e-02  0:02:21  474
+<aaslistener> 
+    27  1.0886e-01  1.5697e-02  1.4598e-02  7.2150e-03  4.7434e-05  2.4638e-02  3.4448e-02  0:01:52  473
+<aaslistener> 
+    28  1.1250e-01  1.5761e-02  1.4300e-02  7.1664e-03  4.5512e-05  2.4084e-02  3.5565e-02  0:03:04  472
+<aaslistener> 
+    29  1.0459e-01  1.5836e-02  1.4255e-02  7.1846e-03  4.3749e-05  2.3540e-02  3.6241e-02  0:02:27  471
+<aaslistener> 
+    30  1.0889e-01  1.5989e-02  1.4051e-02  7.1828e-03  4.1734e-05  2.3101e-02  3.6733e-02  0:01:57  470
+<aaslistener> 
+    31  1.0060e-01  1.6161e-02  1.4013e-02  7.2452e-03  3.9908e-05  2.2552e-02  3.5987e-02  0:03:07  469
+<aaslistener> 
+    32  1.0048e-01  1.6369e-02  1.3893e-02  7.2541e-03  3.8110e-05  2.1940e-02  3.4807e-02  0:02:30  468
+<aaslistener> 
+    33  9.9838e-02  1.6536e-02  1.3781e-02  7.2724e-03  3.6662e-05  2.1314e-02  3.3699e-02  0:01:59  467
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    34  9.8894e-02  1.6650e-02  1.3713e-02  7.2874e-03  3.5344e-05  2.0860e-02  3.3476e-02  0:03:09  466
+<aaslistener> 
+    35  9.7852e-02  1.6703e-02  1.3632e-02  7.3071e-03  3.4015e-05  2.0758e-02  3.4702e-02  0:02:31  465
+<aaslistener> 
+    36  9.7210e-02  1.6637e-02  1.3545e-02  7.3046e-03  3.2652e-05  2.1166e-02  3.7962e-02  0:03:33  464
+<aaslistener> 
+    37  9.6081e-02  1.6455e-02  1.3434e-02  7.3006e-03  3.1356e-05  2.2197e-02  4.3484e-02  0:02:50  463
+<aaslistener> 
+    38  9.4888e-02  1.6175e-02  1.3297e-02  7.2909e-03  3.0108e-05  2.3702e-02  5.0084e-02  0:02:16  462
+<aaslistener> 
+    39  9.2706e-02  1.5771e-02  1.3192e-02  7.2505e-03  2.8926e-05  2.5365e-02  5.6032e-02  0:03:21  461
+<aaslistener> 
+    40  9.0841e-02  1.5262e-02  1.3050e-02  7.1902e-03  2.7945e-05  2.6910e-02  6.0899e-02  0:02:40  460
+<aaslistener> 
+    41  8.8285e-02  1.4667e-02  1.2883e-02  7.1127e-03  2.7164e-05  2.8135e-02  6.4467e-02  0:02:08  459
+<aaslistener> 
+    42  8.6304e-02  1.4028e-02  1.2663e-02  7.0134e-03  2.6406e-05  2.8836e-02  6.6195e-02  0:01:42  458
+<aaslistener> 
+    43  8.4485e-02  1.3362e-02  1.2424e-02  6.9077e-03  2.5766e-05  2.8860e-02  6.5665e-02  0:02:53  457
+<aaslistener> 
+    44  8.2522e-02  1.2699e-02  1.2118e-02  6.8085e-03  2.5114e-05  2.8317e-02  6.2092e-02  0:02:18  456
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    45  8.0597e-02  1.2077e-02  1.1786e-02  6.7129e-03  2.4375e-05  2.7340e-02  5.6212e-02  0:01:50  455
+<aaslistener> 
+    46  7.8467e-02  1.1477e-02  1.1427e-02  6.6125e-03  2.3595e-05  2.5808e-02  4.7996e-02  0:02:59  454
+<aaslistener> 
+    47  7.6722e-02  1.0938e-02  1.1051e-02  6.5087e-03  2.2823e-05  2.4048e-02  4.0756e-02  0:02:23  453
+<aaslistener> 
+    48  7.5026e-02  1.0438e-02  1.0677e-02  6.3928e-03  2.1819e-05  2.2187e-02  3.5045e-02  0:01:54  452
+<aaslistener> 
+    49  7.3398e-02  9.9886e-03  1.0300e-02  6.2594e-03  2.0874e-05  2.0304e-02  3.0688e-02  0:03:01  451
+<aaslistener> 
+    50  7.5676e-02  9.5881e-03  9.9400e-03  6.0940e-03  1.9730e-05  1.8628e-02  2.8255e-02  0:02:25  450
+<aaslistener> 
+    51  6.8380e-02  9.2144e-03  9.4961e-03  5.9710e-03  1.8778e-05  1.7200e-02  2.6760e-02  0:01:55  449
+<aaslistener> 
+    52  7.1350e-02  8.8886e-03  9.2016e-03  5.7760e-03  1.7683e-05  1.6029e-02  2.6576e-02  0:03:02  448
+<aaslistener> 
+    53  6.4996e-02  8.6234e-03  8.7926e-03  5.6078e-03  1.6994e-05  1.5099e-02  2.6792e-02  0:02:25  447
+<aaslistener> 
+    54  6.7833e-02  8.3594e-03  8.5427e-03  5.4154e-03  1.6252e-05  1.4419e-02  2.7269e-02  0:01:56  446
+<aaslistener> 
+    55  6.2276e-02  8.1858e-03  8.1678e-03  5.2385e-03  1.5697e-05  1.3786e-02  2.6970e-02  0:03:01  445
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    56  6.5193e-02  7.9624e-03  7.9421e-03  5.0702e-03  1.5092e-05  1.3241e-02  2.6260e-02  0:02:25  444
+<aaslistener> 
+    57  6.0214e-02  7.8271e-03  7.6178e-03  4.9400e-03  1.4717e-05  1.2729e-02  2.5160e-02  0:01:56  443
+<aaslistener> 
+    58  6.3433e-02  7.6285e-03  7.4298e-03  4.8121e-03  1.4340e-05  1.2338e-02  2.4129e-02  0:03:01  442
+<aaslistener> 
+    59  5.8998e-02  7.4815e-03  7.1817e-03  4.7275e-03  1.4141e-05  1.2024e-02  2.3262e-02  0:02:24  441
+<aaslistener> 
+    60  6.2078e-02  7.2978e-03  7.0388e-03  4.6240e-03  1.3893e-05  1.1774e-02  2.2535e-02  0:03:23  440
+<aaslistener> 
+    61  5.8210e-02  7.1542e-03  6.8718e-03  4.5652e-03  1.3797e-05  1.1547e-02  2.1863e-02  0:02:42  439
+<aaslistener> 
+    62  6.1406e-02  7.0002e-03  6.7858e-03  4.4612e-03  1.3587e-05  1.1318e-02  2.1309e-02  0:02:09  438
+<aaslistener> 
+    63  5.8208e-02  6.8706e-03  6.7072e-03  4.4010e-03  1.3542e-05  1.1048e-02  2.0716e-02  0:03:11  437
+<aaslistener> 
+    64  6.1639e-02  6.7592e-03  6.6534e-03  4.3163e-03  1.3447e-05  1.0757e-02  2.0174e-02  0:02:32  436
+<aaslistener> 
+    65  6.1085e-02  6.6385e-03  6.5940e-03  4.2654e-03  1.3394e-05  1.0448e-02  1.9586e-02  0:02:01  435
+<aaslistener> 
+    66  6.0860e-02  6.5096e-03  6.5533e-03  4.2347e-03  1.3263e-05  1.0142e-02  1.8838e-02  0:03:04  434
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    67  6.0875e-02  6.3966e-03  6.5153e-03  4.2202e-03  1.3165e-05  9.8378e-03  1.7914e-02  0:02:27  433
+<aaslistener> 
+    68  6.0757e-02  6.2961e-03  6.4442e-03  4.2131e-03  1.2874e-05  9.5579e-03  1.6896e-02  0:01:57  432
+<aaslistener> 
+    69  5.9058e-02  6.1904e-03  6.3766e-03  4.1991e-03  1.2369e-05  9.3026e-03  1.5800e-02  0:01:33  431
+<aaslistener> 
+    70  5.7315e-02  6.1111e-03  6.3211e-03  4.1779e-03  1.1666e-05  9.0670e-03  1.4743e-02  0:02:41  430
+<aaslistener> 
+    71  5.6274e-02  6.0469e-03  6.2644e-03  4.1609e-03  1.0920e-05  8.8357e-03  1.3675e-02  0:02:08  429
+<aaslistener> 
+    72  5.5228e-02  5.9972e-03  6.2145e-03  4.1244e-03  1.0295e-05  8.6512e-03  1.3043e-02  0:01:42  428
+<aaslistener> 
+    73  5.4613e-02  5.9476e-03  6.1678e-03  4.0925e-03  9.8289e-06  8.5277e-03  1.2886e-02  0:02:47  427
+<aaslistener> 
+    74  5.3895e-02  5.9032e-03  6.1072e-03  4.0658e-03  9.4240e-06  8.4286e-03  1.3022e-02  0:02:13  426
+<aaslistener> 
+    75  5.3386e-02  5.8571e-03  6.0653e-03  4.0463e-03  9.1169e-06  8.3149e-03  1.3114e-02  0:01:46  425
+<aaslistener> 
+    76  5.3343e-02  5.8122e-03  6.0019e-03  4.0423e-03  8.9507e-06  8.1861e-03  1.3134e-02  0:02:50  424
+<aaslistener> 
+    77  5.3095e-02  5.7637e-03  5.9555e-03  4.0403e-03  8.8472e-06  8.1259e-03  1.3078e-02  0:02:15  423
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    78  5.2503e-02  5.7021e-03  5.9120e-03  4.0614e-03  8.6697e-06  8.1453e-03  1.2980e-02  0:01:48  422
+<aaslistener> 
+    79  5.2425e-02  5.6378e-03  5.8602e-03  4.0926e-03  8.4405e-06  8.1828e-03  1.2927e-02  0:02:50  421
+<aaslistener> 
+    80  5.0244e-02  5.5837e-03  5.8175e-03  4.1350e-03  8.2671e-06  8.2159e-03  1.2888e-02  0:02:16  420
+<aaslistener> 
+    81  5.4120e-02  5.5415e-03  5.7686e-03  4.1517e-03  8.0069e-06  8.2075e-03  1.2922e-02  0:01:49  419
+<aaslistener> 
+    82  5.0882e-02  5.4689e-03  5.7364e-03  4.2138e-03  7.8661e-06  8.1694e-03  1.2785e-02  0:02:50  418
+<aaslistener> 
+    83  5.4862e-02  5.4354e-03  5.6769e-03  4.2217e-03  7.7485e-06  8.1162e-03  1.2860e-02  0:02:16  417
+<aaslistener> 
+    84  5.2119e-02  5.3859e-03  5.6199e-03  4.2460e-03  7.7756e-06  8.0368e-03  1.2783e-02  0:01:48  416
+<aaslistener> 
+    85  5.6549e-02  5.3605e-03  5.5621e-03  4.2252e-03  7.7302e-06  7.9412e-03  1.2765e-02  0:02:50  415
+<aaslistener> 
+    86  5.3535e-02  5.3057e-03  5.5031e-03  4.2186e-03  7.7251e-06  7.8476e-03  1.2650e-02  0:02:15  414
+<aaslistener> 
+    87  5.7676e-02  5.2676e-03  5.4194e-03  4.1778e-03  7.6603e-06  7.7378e-03  1.2537e-02  0:03:11  413
+<aaslistener> 
+    88  5.4405e-02  5.2013e-03  5.3285e-03  4.1539e-03  7.6461e-06  7.6292e-03  1.2327e-02  0:02:32  412
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+    89  5.7959e-02  5.1394e-03  5.2412e-03  4.0976e-03  7.5207e-06  7.5126e-03  1.2090e-02  0:02:01  411
+<aaslistener> 
+    90  5.6693e-02  5.0472e-03  5.1482e-03  4.0276e-03  7.4198e-06  7.3802e-03  1.1778e-02  0:01:37  410
+<aaslistener> 
+    91  5.5904e-02  4.9436e-03  5.0498e-03  3.9485e-03  7.2627e-06  7.2272e-03  1.1391e-02  0:02:39  409
+<aaslistener> 
+    92  5.5479e-02  4.8289e-03  4.9568e-03  3.8583e-03  7.0950e-06  7.0680e-03  1.0978e-02  0:02:07  408
+<aaslistener> 
+    93  5.5284e-02  4.6957e-03  4.8662e-03  3.7563e-03  6.8879e-06  6.8814e-03  1.0571e-02  0:01:41  407
+<aaslistener> 
+    94  5.4657e-02  4.5524e-03  4.7808e-03  3.6533e-03  6.6531e-06  6.6896e-03  1.0153e-02  0:02:42  406
+<aaslistener> 
+    95  5.3923e-02  4.4098e-03  4.6908e-03  3.5419e-03  6.4161e-06  6.4805e-03  9.7605e-03  0:02:09  405
+<aaslistener> 
+    96  5.0088e-02  4.2860e-03  4.5963e-03  3.4518e-03  6.2114e-06  6.2809e-03  9.4267e-03  0:01:43  404
+<aaslistener> 
+    97  5.2405e-02  4.1583e-03  4.5414e-03  3.3453e-03  6.0173e-06  6.0781e-03  9.1489e-03  0:02:43  403
+<aaslistener> 
+    98  5.0606e-02  4.0446e-03  4.4864e-03  3.2592e-03  5.8698e-06  5.8933e-03  8.9159e-03  0:02:10  402
+<aaslistener> 
+    99  4.9142e-02  3.9493e-03  4.4467e-03  3.2031e-03  5.7283e-06  5.7390e-03  8.7149e-03  0:01:44  401
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   100  4.8250e-02  3.8666e-03  4.4253e-03  3.1663e-03  5.6297e-06  5.6064e-03  8.5275e-03  0:02:43  400
+<aaslistener> 
+   101  4.7783e-02  3.7961e-03  4.4157e-03  3.1398e-03  5.5399e-06  5.4954e-03  8.3819e-03  0:02:10  399
+<aaslistener> 
+   102  4.7044e-02  3.7377e-03  4.4111e-03  3.1173e-03  5.4649e-06  5.4008e-03  8.2602e-03  0:01:44  398
+<aaslistener> 
+   103  4.6105e-02  3.6903e-03  4.4034e-03  3.0935e-03  5.3818e-06  5.3316e-03  8.1558e-03  0:02:42  397
+<aaslistener> 
+   104  4.5202e-02  3.6517e-03  4.3983e-03  3.0721e-03  5.3066e-06  5.2914e-03  8.0579e-03  0:02:09  396
+<aaslistener> 
+   105  4.4184e-02  3.6216e-03  4.3919e-03  3.0542e-03  5.2191e-06  5.2732e-03  7.9599e-03  0:01:43  395
+<aaslistener> 
+   106  4.3221e-02  3.6007e-03  4.3861e-03  3.0290e-03  5.1265e-06  5.2672e-03  7.8695e-03  0:02:41  394
+<aaslistener> 
+   107  4.2512e-02  3.5893e-03  4.3759e-03  3.0102e-03  5.0464e-06  5.2686e-03  7.7732e-03  0:02:09  393
+<aaslistener> 
+   108  4.1794e-02  3.5857e-03  4.3616e-03  2.9873e-03  4.9665e-06  5.2650e-03  7.6696e-03  0:01:43  392
+<aaslistener> 
+   109  4.1346e-02  3.5866e-03  4.3388e-03  2.9625e-03  4.9144e-06  5.2555e-03  7.5828e-03  0:02:40  391
+<aaslistener> 
+   110  4.0998e-02  3.5951e-03  4.3108e-03  2.9386e-03  4.8643e-06  5.2450e-03  7.5161e-03  0:02:08  390
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   111  4.0577e-02  3.6049e-03  4.2825e-03  2.9214e-03  4.8467e-06  5.2266e-03  7.4983e-03  0:01:42  389
+<aaslistener> 
+   112  4.0275e-02  3.6152e-03  4.2540e-03  2.9154e-03  4.8345e-06  5.1981e-03  7.5365e-03  0:02:39  388
+<aaslistener> 
+   113  3.9976e-02  3.6226e-03  4.2261e-03  2.9166e-03  4.8236e-06  5.1571e-03  7.6163e-03  0:02:07  387
+<aaslistener> 
+   114  3.9656e-02  3.6301e-03  4.2029e-03  2.9270e-03  4.8111e-06  5.1227e-03  7.7551e-03  0:01:41  386
+<aaslistener> 
+   115  3.9376e-02  3.6341e-03  4.1843e-03  2.9476e-03  4.7912e-06  5.0938e-03  7.9842e-03  0:02:38  385
+<aaslistener> 
+   116  3.9111e-02  3.6410e-03  4.1723e-03  2.9687e-03  4.7857e-06  5.0711e-03  8.2724e-03  0:02:06  384
+<aaslistener> 
+   117  3.8988e-02  3.6506e-03  4.1608e-03  2.9953e-03  4.7923e-06  5.0404e-03  8.5686e-03  0:01:40  383
+<aaslistener> 
+   118  3.8727e-02  3.6653e-03  4.1518e-03  3.0257e-03  4.8022e-06  5.0015e-03  8.8328e-03  0:02:37  382
+<aaslistener> 
+   119  3.8553e-02  3.6784e-03  4.1517e-03  3.0542e-03  4.8262e-06  4.9662e-03  8.9659e-03  0:02:05  381
+<aaslistener> 
+   120  3.8632e-02  3.6985e-03  4.1576e-03  3.0844e-03  4.8358e-06  4.9396e-03  8.9748e-03  0:01:40  380
+<aaslistener> 
+   121  3.8703e-02  3.7317e-03  4.1704e-03  3.1116e-03  4.8437e-06  4.9167e-03  8.8496e-03  0:02:35  379
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   122  3.8745e-02  3.7716e-03  4.1901e-03  3.1369e-03  4.8275e-06  4.9036e-03  8.6939e-03  0:02:04  378
+<aaslistener> 
+   123  3.8993e-02  3.8168e-03  4.2165e-03  3.1595e-03  4.8213e-06  4.9024e-03  8.5493e-03  0:01:39  377
+<aaslistener> 
+   124  3.9186e-02  3.8676e-03  4.2481e-03  3.1838e-03  4.7954e-06  4.9095e-03  8.4919e-03  0:02:34  376
+<aaslistener> 
+   125  3.9602e-02  3.9181e-03  4.2919e-03  3.2106e-03  4.7779e-06  4.9390e-03  8.6357e-03  0:02:03  375
+<aaslistener> 
+   126  4.0067e-02  3.9672e-03  4.3387e-03  3.2376e-03  4.8150e-06  5.0004e-03  8.9723e-03  0:01:38  374
+<aaslistener> 
+   127  4.0572e-02  4.0144e-03  4.3922e-03  3.2713e-03  4.8615e-06  5.1049e-03  9.6138e-03  0:02:33  373
+<aaslistener> 
+   128  4.1063e-02  4.0529e-03  4.4508e-03  3.3156e-03  4.9175e-06  5.2545e-03  1.0545e-02  0:02:02  372
+<aaslistener> 
+   129  4.1501e-02  4.0926e-03  4.5056e-03  3.3686e-03  4.9715e-06  5.4469e-03  1.1692e-02  0:01:37  371
+<aaslistener> 
+   130  4.1707e-02  4.1252e-03  4.5603e-03  3.4281e-03  5.0421e-06  5.6791e-03  1.2951e-02  0:02:32  370
+<aaslistener> 
+   131  4.1999e-02  4.1563e-03  4.6099e-03  3.4966e-03  5.1129e-06  5.9181e-03  1.4154e-02  0:02:01  369
+<aaslistener> 
+   132  4.2196e-02  4.1885e-03  4.6555e-03  3.5690e-03  5.1980e-06  6.1390e-03  1.5172e-02  0:01:37  368
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   133  4.2534e-02  4.2180e-03  4.6874e-03  3.6411e-03  5.2705e-06  6.3368e-03  1.5946e-02  0:02:30  367
+<aaslistener> 
+   134  4.2655e-02  4.2408e-03  4.7107e-03  3.7100e-03  5.3584e-06  6.5045e-03  1.6425e-02  0:02:00  366
+<aaslistener> 
+   135  4.2788e-02  4.2639e-03  4.7216e-03  3.7700e-03  5.4309e-06  6.6265e-03  1.6661e-02  0:02:49  365
+<aaslistener> 
+   136  4.3039e-02  4.2862e-03  4.7226e-03  3.8288e-03  5.4906e-06  6.7027e-03  1.6732e-02  0:02:15  364
+<aaslistener> 
+   137  4.3024e-02  4.3053e-03  4.7224e-03  3.8842e-03  5.5362e-06  6.7243e-03  1.6618e-02  0:01:47  363
+<aaslistener> 
+   138  4.3005e-02  4.3208e-03  4.7172e-03  3.9259e-03  5.5697e-06  6.7107e-03  1.6381e-02  0:02:38  362
+<aaslistener> 
+   139  4.2958e-02  4.3280e-03  4.7158e-03  3.9604e-03  5.5960e-06  6.6669e-03  1.6120e-02  0:02:06  361
+<aaslistener> 
+   140  4.2871e-02  4.3205e-03  4.7098e-03  3.9890e-03  5.6121e-06  6.6080e-03  1.5837e-02  0:01:41  360
+<aaslistener> 
+   141  4.2640e-02  4.3094e-03  4.7010e-03  4.0170e-03  5.6334e-06  6.5399e-03  1.5473e-02  0:02:32  359
+<aaslistener> 
+   142  4.2524e-02  4.2896e-03  4.6850e-03  4.0398e-03  5.6508e-06  6.4612e-03  1.5100e-02  0:02:01  358
+<aaslistener> 
+   143  4.2204e-02  4.2699e-03  4.6633e-03  4.0598e-03  5.6731e-06  6.3661e-03  1.4700e-02  0:02:48  357
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   144  4.1876e-02  4.2461e-03  4.6406e-03  4.0773e-03  5.6850e-06  6.2495e-03  1.4137e-02  0:02:14  356
+<aaslistener> 
+   145  4.1397e-02  4.2171e-03  4.6140e-03  4.0942e-03  5.6849e-06  6.1284e-03  1.3518e-02  0:01:47  355
+<aaslistener> 
+   146  4.1050e-02  4.1867e-03  4.5934e-03  4.1038e-03  5.6665e-06  6.0207e-03  1.2945e-02  0:02:36  354
+<aaslistener> 
+   147  4.0702e-02  4.1504e-03  4.5784e-03  4.1129e-03  5.6293e-06  5.9384e-03  1.2570e-02  0:02:05  353
+<aaslistener> 
+   148  4.0293e-02  4.1150e-03  4.5671e-03  4.1144e-03  5.5927e-06  5.8813e-03  1.2452e-02  0:01:39  352
+<aaslistener> 
+   149  3.9928e-02  4.0774e-03  4.5607e-03  4.1162e-03  5.5452e-06  5.8587e-03  1.2611e-02  0:02:29  351
+<aaslistener> 
+   150  3.9538e-02  4.0350e-03  4.5571e-03  4.1125e-03  5.4905e-06  5.8726e-03  1.2971e-02  0:01:59  350
+<aaslistener> 
+   151  3.8772e-02  3.9937e-03  4.5489e-03  4.1099e-03  5.4429e-06  5.8951e-03  1.3347e-02  0:01:35  349
+<aaslistener> 
+   152  3.8197e-02  3.9520e-03  4.5384e-03  4.1000e-03  5.3791e-06  5.9070e-03  1.3699e-02  0:02:25  348
+<aaslistener> 
+   153  3.7694e-02  3.9138e-03  4.5181e-03  4.0738e-03  5.3120e-06  5.8969e-03  1.3884e-02  0:01:56  347
+<aaslistener> 
+   154  3.5227e-02  3.8822e-03  4.4842e-03  4.0576e-03  5.2660e-06  5.8729e-03  1.3985e-02  0:01:33  346
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   155  3.7345e-02  3.8503e-03  4.4690e-03  3.9912e-03  5.1635e-06  5.8330e-03  1.4133e-02  0:02:23  345
+<aaslistener> 
+   156  3.6647e-02  3.8197e-03  4.4349e-03  3.9417e-03  5.0935e-06  5.7763e-03  1.4177e-02  0:01:54  344
+<aaslistener> 
+   157  3.6054e-02  3.7948e-03  4.4029e-03  3.8878e-03  5.0337e-06  5.7609e-03  1.4403e-02  0:01:31  343
+<aaslistener> 
+   158  3.5570e-02  3.7749e-03  4.3762e-03  3.8260e-03  4.9876e-06  5.7839e-03  1.4785e-02  0:02:21  342
+<aaslistener> 
+   159  3.5274e-02  3.7579e-03  4.3549e-03  3.7589e-03  4.9426e-06  5.8040e-03  1.5211e-02  0:01:52  341
+<aaslistener> 
+   160  3.4928e-02  3.7431e-03  4.3332e-03  3.7015e-03  4.8949e-06  5.8087e-03  1.5548e-02  0:02:38  340
+<aaslistener> 
+   161  3.4625e-02  3.7265e-03  4.3142e-03  3.6485e-03  4.8402e-06  5.7836e-03  1.5587e-02  0:02:06  339
+<aaslistener> 
+   162  3.4303e-02  3.7062e-03  4.2994e-03  3.6029e-03  4.7796e-06  5.7220e-03  1.5210e-02  0:01:40  338
+<aaslistener> 
+   163  3.4104e-02  3.6856e-03  4.2871e-03  3.5630e-03  4.7395e-06  5.6396e-03  1.4522e-02  0:02:27  337
+<aaslistener> 
+   164  3.3770e-02  3.6623e-03  4.2780e-03  3.5324e-03  4.7062e-06  5.5659e-03  1.3747e-02  0:01:58  336
+<aaslistener> 
+   165  3.3451e-02  3.6394e-03  4.2733e-03  3.5073e-03  4.6727e-06  5.5135e-03  1.3034e-02  0:02:41  335
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   166  3.3443e-02  3.6196e-03  4.2692e-03  3.4884e-03  4.6161e-06  5.4576e-03  1.2418e-02  0:02:08  334
+<aaslistener> 
+   167  3.3443e-02  3.6021e-03  4.2633e-03  3.4760e-03  4.5801e-06  5.3917e-03  1.1887e-02  0:01:42  333
+<aaslistener> 
+   168  3.3161e-02  3.5905e-03  4.2551e-03  3.4676e-03  4.5720e-06  5.3273e-03  1.1443e-02  0:02:28  332
+<aaslistener> 
+   169  3.2927e-02  3.5808e-03  4.2514e-03  3.4562e-03  4.5802e-06  5.2723e-03  1.1131e-02  0:01:58  331
+<aaslistener> 
+   170  3.2761e-02  3.5735e-03  4.2496e-03  3.4483e-03  4.5873e-06  5.2170e-03  1.0882e-02  0:02:40  330
+<aaslistener> 
+   171  3.2634e-02  3.5700e-03  4.2459e-03  3.4365e-03  4.5911e-06  5.1542e-03  1.0674e-02  0:02:08  329
+<aaslistener> 
+   172  3.2626e-02  3.5634e-03  4.2402e-03  3.4225e-03  4.5829e-06  5.0913e-03  1.0499e-02  0:02:47  328
+<aaslistener> 
+   173  3.2522e-02  3.5518e-03  4.2329e-03  3.4054e-03  4.5709e-06  5.0485e-03  1.0460e-02  0:02:14  327
+<aaslistener> 
+   174  3.2517e-02  3.5333e-03  4.2332e-03  3.3814e-03  4.5610e-06  5.0162e-03  1.0571e-02  0:01:47  326
+<aaslistener> 
+   175  3.2386e-02  3.5155e-03  4.2361e-03  3.3522e-03  4.5544e-06  4.9943e-03  1.0856e-02  0:02:30  325
+<aaslistener> 
+   176  3.2388e-02  3.4963e-03  4.2353e-03  3.3223e-03  4.5664e-06  4.9876e-03  1.1261e-02  0:02:00  324
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   177  3.2265e-02  3.4756e-03  4.2335e-03  3.2919e-03  4.5799e-06  4.9900e-03  1.1722e-02  0:02:40  323
+<aaslistener> 
+   178  3.2163e-02  3.4562e-03  4.2277e-03  3.2618e-03  4.5795e-06  4.9934e-03  1.2241e-02  0:02:08  322
+<aaslistener> 
+   179  3.2075e-02  3.4363e-03  4.2262e-03  3.2318e-03  4.5987e-06  4.9998e-03  1.2749e-02  0:01:42  321
+<aaslistener> 
+   180  3.1969e-02  3.4188e-03  4.2175e-03  3.1996e-03  4.6110e-06  5.0185e-03  1.3296e-02  0:02:25  320
+<aaslistener> 
+   181  3.1993e-02  3.4020e-03  4.2090e-03  3.1681e-03  4.6085e-06  5.0484e-03  1.3872e-02  0:01:56  319
+<aaslistener> 
+   182  3.1819e-02  3.3862e-03  4.1923e-03  3.1373e-03  4.5873e-06  5.0765e-03  1.4440e-02  0:02:36  318
+<aaslistener> 
+   183  3.1631e-02  3.3704e-03  4.1693e-03  3.1099e-03  4.5570e-06  5.1057e-03  1.4920e-02  0:02:04  317
+<aaslistener> 
+   184  3.1387e-02  3.3558e-03  4.1363e-03  3.0886e-03  4.5071e-06  5.1373e-03  1.5307e-02  0:01:39  316
+<aaslistener> 
+   185  3.1162e-02  3.3427e-03  4.1001e-03  3.0721e-03  4.4584e-06  5.1520e-03  1.5545e-02  0:02:22  315
+<aaslistener> 
+   186  3.0995e-02  3.3292e-03  4.0579e-03  3.0528e-03  4.4375e-06  5.1410e-03  1.5632e-02  0:01:53  314
+<aaslistener> 
+   187  3.0828e-02  3.3139e-03  4.0082e-03  3.0372e-03  4.3934e-06  5.1219e-03  1.5517e-02  0:02:33  313
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   188  3.0561e-02  3.3011e-03  3.9537e-03  3.0198e-03  4.3398e-06  5.0872e-03  1.5222e-02  0:02:02  312
+<aaslistener> 
+   189  2.9963e-02  3.2827e-03  3.8914e-03  2.9978e-03  4.2013e-06  5.0358e-03  1.4812e-02  0:01:37  311
+<aaslistener> 
+   190  2.9429e-02  3.2639e-03  3.8269e-03  2.9726e-03  4.0791e-06  4.9820e-03  1.4394e-02  0:02:20  310
+<aaslistener> 
+   191  2.8950e-02  3.2475e-03  3.7591e-03  2.9399e-03  3.9940e-06  4.9399e-03  1.3895e-02  0:01:51  309
+<aaslistener> 
+   192  2.8438e-02  3.2308e-03  3.6935e-03  2.9024e-03  3.9020e-06  4.8871e-03  1.3347e-02  0:02:30  308
+<aaslistener> 
+   193  2.7913e-02  3.2142e-03  3.6274e-03  2.8624e-03  3.8223e-06  4.8313e-03  1.2763e-02  0:02:00  307
+<aaslistener> 
+   194  2.7517e-02  3.2028e-03  3.5656e-03  2.8165e-03  3.7559e-06  4.7808e-03  1.2198e-02  0:01:36  306
+<aaslistener> 
+   195  2.7141e-02  3.1961e-03  3.5060e-03  2.7692e-03  3.6900e-06  4.7266e-03  1.1616e-02  0:02:17  305
+<aaslistener> 
+   196  2.6716e-02  3.1917e-03  3.4542e-03  2.7196e-03  3.6269e-06  4.6702e-03  1.1133e-02  0:01:49  304
+<aaslistener> 
+   197  2.6286e-02  3.1910e-03  3.4069e-03  2.6634e-03  3.5553e-06  4.6285e-03  1.0698e-02  0:01:27  303
+<aaslistener> 
+   198  2.5871e-02  3.1908e-03  3.3647e-03  2.6073e-03  3.4767e-06  4.5993e-03  1.0291e-02  0:02:10  302
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   199  2.5575e-02  3.1924e-03  3.3269e-03  2.5525e-03  3.4083e-06  4.5701e-03  9.8594e-03  0:01:44  301
+<aaslistener> 
+   200  2.5252e-02  3.1930e-03  3.2917e-03  2.5011e-03  3.3441e-06  4.5284e-03  9.4350e-03  0:01:23  300
+<aaslistener> 
+   201  2.4977e-02  3.1960e-03  3.2575e-03  2.4503e-03  3.2856e-06  4.4739e-03  9.0768e-03  0:02:06  299
+<aaslistener> 
+   202  2.4715e-02  3.1977e-03  3.2244e-03  2.4079e-03  3.2410e-06  4.4179e-03  8.7534e-03  0:01:40  298
+<aaslistener> 
+   203  2.4554e-02  3.2030e-03  3.1926e-03  2.3730e-03  3.2198e-06  4.3606e-03  8.4314e-03  0:01:20  297
+<aaslistener> 
+   204  2.4380e-02  3.2057e-03  3.1589e-03  2.3435e-03  3.2194e-06  4.2922e-03  8.1095e-03  0:02:03  296
+<aaslistener> 
+   205  2.4192e-02  3.2091e-03  3.1230e-03  2.3207e-03  3.2263e-06  4.2155e-03  7.7829e-03  0:01:38  295
+<aaslistener> 
+   206  2.4070e-02  3.2099e-03  3.0880e-03  2.3032e-03  3.2347e-06  4.1332e-03  7.4075e-03  0:01:18  294
+<aaslistener> 
+   207  2.3907e-02  3.2065e-03  3.0555e-03  2.2882e-03  3.2469e-06  4.0515e-03  7.0397e-03  0:02:01  293
+<aaslistener> 
+   208  2.3815e-02  3.1984e-03  3.0275e-03  2.2736e-03  3.2470e-06  3.9710e-03  6.7027e-03  0:01:36  292
+<aaslistener> 
+   209  2.3632e-02  3.1870e-03  3.0001e-03  2.2595e-03  3.2523e-06  3.8906e-03  6.3889e-03  0:01:17  291
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   210  2.3408e-02  3.1702e-03  2.9776e-03  2.2463e-03  3.2505e-06  3.8139e-03  6.1197e-03  0:01:59  290
+<aaslistener> 
+   211  2.3044e-02  3.1524e-03  2.9545e-03  2.2309e-03  3.2296e-06  3.7455e-03  5.9126e-03  0:01:35  289
+<aaslistener> 
+   212  2.2775e-02  3.1314e-03  2.9344e-03  2.2140e-03  3.1910e-06  3.6898e-03  5.7629e-03  0:01:16  288
+<aaslistener> 
+   213  2.2448e-02  3.1026e-03  2.9163e-03  2.1962e-03  3.1334e-06  3.6396e-03  5.6623e-03  0:01:58  287
+<aaslistener> 
+   214  2.2157e-02  3.0714e-03  2.8985e-03  2.1765e-03  3.0658e-06  3.5902e-03  5.5971e-03  0:01:34  286
+<aaslistener> 
+   215  2.1841e-02  3.0358e-03  2.8800e-03  2.1556e-03  2.9959e-06  3.5391e-03  5.5229e-03  0:01:15  285
+<aaslistener> 
+   216  2.1388e-02  2.9956e-03  2.8602e-03  2.1360e-03  2.9344e-06  3.4873e-03  5.4529e-03  0:01:56  284
+<aaslistener> 
+   217  2.0988e-02  2.9547e-03  2.8415e-03  2.1130e-03  2.8842e-06  3.4374e-03  5.4171e-03  0:01:33  283
+<aaslistener> 
+   218  2.0588e-02  2.9160e-03  2.8219e-03  2.0862e-03  2.8464e-06  3.3871e-03  5.3730e-03  0:01:14  282
+<aaslistener> 
+   219  1.9072e-02  2.8723e-03  2.8096e-03  2.0648e-03  2.8052e-06  3.3383e-03  5.3021e-03  0:01:55  281
+<aaslistener> 
+   220  1.9977e-02  2.8471e-03  2.7938e-03  2.0175e-03  2.7475e-06  3.2912e-03  5.2906e-03  0:01:32  280
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   221  1.8354e-02  2.8054e-03  2.7826e-03  1.9919e-03  2.6993e-06  3.2417e-03  5.2286e-03  0:01:13  279
+<aaslistener> 
+   222  1.9139e-02  2.7827e-03  2.7675e-03  1.9432e-03  2.6516e-06  3.1957e-03  5.2589e-03  0:01:54  278
+<aaslistener> 
+   223  1.7615e-02  2.7462e-03  2.7540e-03  1.9150e-03  2.6094e-06  3.1543e-03  5.2755e-03  0:01:31  277
+<aaslistener> 
+   224  1.8389e-02  2.7248e-03  2.7340e-03  1.8678e-03  2.5737e-06  3.1198e-03  5.3560e-03  0:01:12  276
+<aaslistener> 
+   225  1.7884e-02  2.6914e-03  2.7143e-03  1.8352e-03  2.5334e-06  3.0898e-03  5.4286e-03  0:01:53  275
+<aaslistener> 
+   226  1.7475e-02  2.6643e-03  2.6912e-03  1.8011e-03  2.4957e-06  3.0653e-03  5.4994e-03  0:01:30  274
+<aaslistener> 
+   227  1.7194e-02  2.6386e-03  2.6662e-03  1.7718e-03  2.4724e-06  3.0474e-03  5.5444e-03  0:01:12  273
+<aaslistener> 
+   228  1.6926e-02  2.6144e-03  2.6384e-03  1.7456e-03  2.4499e-06  3.0348e-03  5.5619e-03  0:01:51  272
+<aaslistener> 
+   229  1.6719e-02  2.5897e-03  2.6106e-03  1.7250e-03  2.4440e-06  3.0262e-03  5.5469e-03  0:01:29  271
+<aaslistener> 
+   230  1.6548e-02  2.5652e-03  2.5838e-03  1.7096e-03  2.4294e-06  3.0221e-03  5.5232e-03  0:01:11  270
+<aaslistener> 
+   231  1.6479e-02  2.5426e-03  2.5583e-03  1.6982e-03  2.4149e-06  3.0198e-03  5.4576e-03  0:01:50  269
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   232  1.6438e-02  2.5217e-03  2.5395e-03  1.6895e-03  2.3953e-06  3.0194e-03  5.3568e-03  0:01:28  268
+<aaslistener> 
+   233  1.6365e-02  2.5035e-03  2.5241e-03  1.6863e-03  2.3798e-06  3.0149e-03  5.2042e-03  0:01:10  267
+<aaslistener> 
+   234  1.6303e-02  2.4827e-03  2.5138e-03  1.6860e-03  2.3575e-06  3.0035e-03  5.0293e-03  0:01:49  266
+<aaslistener> 
+   235  1.6284e-02  2.4608e-03  2.5073e-03  1.6873e-03  2.3308e-06  2.9913e-03  4.9004e-03  0:01:27  265
+<aaslistener> 
+   236  1.6251e-02  2.4384e-03  2.5038e-03  1.6903e-03  2.2973e-06  2.9728e-03  4.7589e-03  0:01:09  264
+<aaslistener> 
+   237  1.6219e-02  2.4145e-03  2.5029e-03  1.6943e-03  2.2652e-06  2.9466e-03  4.6147e-03  0:01:48  263
+<aaslistener> 
+   238  1.6182e-02  2.3888e-03  2.5040e-03  1.6969e-03  2.2318e-06  2.9115e-03  4.4508e-03  0:01:26  262
+<aaslistener> 
+   239  1.6199e-02  2.3617e-03  2.5053e-03  1.6996e-03  2.2065e-06  2.8702e-03  4.2883e-03  0:01:08  261
+<aaslistener> 
+   240  1.6186e-02  2.3364e-03  2.5055e-03  1.7021e-03  2.1985e-06  2.8227e-03  4.1622e-03  0:01:47  260
+<aaslistener> 
+   241  1.6231e-02  2.3138e-03  2.5054e-03  1.7021e-03  2.2047e-06  2.7688e-03  4.0637e-03  0:01:25  259
+<aaslistener> 
+   242  1.6338e-02  2.2915e-03  2.5081e-03  1.7018e-03  2.2151e-06  2.7135e-03  4.0318e-03  0:01:08  258
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   243  1.6425e-02  2.2736e-03  2.5078e-03  1.7017e-03  2.2258e-06  2.6635e-03  4.0803e-03  0:01:45  257
+<aaslistener> 
+   244  1.6492e-02  2.2572e-03  2.5091e-03  1.7012e-03  2.2319e-06  2.6284e-03  4.2754e-03  0:01:24  256
+<aaslistener> 
+   245  1.6565e-02  2.2406e-03  2.5101e-03  1.7032e-03  2.2457e-06  2.6147e-03  4.6775e-03  0:01:07  255
+<aaslistener> 
+   246  1.6561e-02  2.2243e-03  2.5129e-03  1.7059e-03  2.2598e-06  2.6193e-03  5.1274e-03  0:01:44  254
+<aaslistener> 
+   247  1.6548e-02  2.2088e-03  2.5164e-03  1.7091e-03  2.2724e-06  2.6410e-03  5.7028e-03  0:01:23  253
+<aaslistener> 
+   248  1.6506e-02  2.1955e-03  2.5214e-03  1.7118e-03  2.2808e-06  2.6797e-03  6.3239e-03  0:01:06  252
+<aaslistener> 
+   249  1.6380e-02  2.1827e-03  2.5293e-03  1.7136e-03  2.2824e-06  2.7231e-03  6.8564e-03  0:01:43  251
+<aaslistener> 
+   250  1.6239e-02  2.1719e-03  2.5374e-03  1.7138e-03  2.2833e-06  2.7757e-03  7.3415e-03  0:01:22  250
+<aaslistener> 
+   251  1.6109e-02  2.1634e-03  2.5483e-03  1.7121e-03  2.2812e-06  2.8278e-03  7.7753e-03  0:01:05  249
+<aaslistener> 
+   252  1.5941e-02  2.1540e-03  2.5606e-03  1.7107e-03  2.2770e-06  2.8760e-03  8.1236e-03  0:01:42  248
+<aaslistener> 
+   253  1.5763e-02  2.1467e-03  2.5710e-03  1.7101e-03  2.2719e-06  2.9254e-03  8.3997e-03  0:01:21  247
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   254  1.5597e-02  2.1412e-03  2.5803e-03  1.7075e-03  2.2489e-06  2.9708e-03  8.6204e-03  0:01:05  246
+<aaslistener> 
+   255  1.5374e-02  2.1373e-03  2.5872e-03  1.7037e-03  2.2289e-06  3.0125e-03  8.7490e-03  0:01:40  245
+<aaslistener> 
+   256  1.5177e-02  2.1347e-03  2.5925e-03  1.7007e-03  2.2138e-06  3.0470e-03  8.8549e-03  0:01:20  244
+<aaslistener> 
+   257  1.4968e-02  2.1342e-03  2.5977e-03  1.6966e-03  2.1967e-06  3.0789e-03  8.9831e-03  0:01:04  243
+<aaslistener> 
+   258  1.4752e-02  2.1354e-03  2.5983e-03  1.6911e-03  2.1787e-06  3.1069e-03  9.1550e-03  0:01:39  242
+<aaslistener> 
+   259  1.4576e-02  2.1375e-03  2.5981e-03  1.6854e-03  2.1606e-06  3.1344e-03  9.3750e-03  0:01:19  241
+<aaslistener> 
+   260  1.4463e-02  2.1406e-03  2.5954e-03  1.6820e-03  2.1395e-06  3.1562e-03  9.5434e-03  0:01:03  240
+<aaslistener> 
+   261  1.4329e-02  2.1446e-03  2.5891e-03  1.6791e-03  2.1165e-06  3.1707e-03  9.6271e-03  0:01:38  239
+<aaslistener> 
+   262  1.4310e-02  2.1487e-03  2.5806e-03  1.6759e-03  2.0961e-06  3.1815e-03  9.6146e-03  0:01:18  238
+<aaslistener> 
+   263  1.4256e-02  2.1536e-03  2.5707e-03  1.6738e-03  2.0832e-06  3.1905e-03  9.5705e-03  0:01:02  237
+<aaslistener> 
+   264  1.3548e-02  2.1569e-03  2.5589e-03  1.6836e-03  2.0666e-06  3.1955e-03  9.4406e-03  0:01:37  236
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   265  1.4456e-02  2.1614e-03  2.5494e-03  1.6701e-03  2.0577e-06  3.1965e-03  9.3420e-03  0:01:17  235
+<aaslistener> 
+   266  1.3655e-02  2.1608e-03  2.5303e-03  1.6847e-03  2.0546e-06  3.1930e-03  9.1829e-03  0:01:01  234
+<aaslistener> 
+   267  1.4547e-02  2.1609e-03  2.5176e-03  1.6744e-03  2.0538e-06  3.1895e-03  9.1332e-03  0:01:35  233
+<aaslistener> 
+   268  1.3790e-02  2.1546e-03  2.4968e-03  1.6912e-03  2.0590e-06  3.1831e-03  9.0812e-03  0:01:16  232
+<aaslistener> 
+   269  1.4650e-02  2.1523e-03  2.4802e-03  1.6821e-03  2.0575e-06  3.1798e-03  9.1458e-03  0:01:01  231
+<aaslistener> 
+   270  1.4633e-02  2.1450e-03  2.4579e-03  1.6901e-03  2.0640e-06  3.1757e-03  9.1778e-03  0:01:34  230
+<aaslistener> 
+   271  1.4647e-02  2.1365e-03  2.4375e-03  1.6966e-03  2.0738e-06  3.1794e-03  9.2211e-03  0:01:15  229
+<aaslistener> 
+   272  1.4696e-02  2.1272e-03  2.4175e-03  1.7034e-03  2.0818e-06  3.1937e-03  9.2636e-03  0:01:00  228
+<aaslistener> 
+   273  1.4817e-02  2.1176e-03  2.3994e-03  1.7068e-03  2.0875e-06  3.2141e-03  9.3355e-03  0:01:33  227
+<aaslistener> 
+   274  1.4849e-02  2.1082e-03  2.3835e-03  1.7080e-03  2.0912e-06  3.2368e-03  9.3987e-03  0:01:14  226
+<aaslistener> 
+   275  1.4866e-02  2.0972e-03  2.3688e-03  1.7100e-03  2.0946e-06  3.2592e-03  9.3857e-03  0:00:59  225
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   276  1.4853e-02  2.0876e-03  2.3569e-03  1.7092e-03  2.0909e-06  3.2763e-03  9.3023e-03  0:01:32  224
+<aaslistener> 
+   277  1.4826e-02  2.0790e-03  2.3467e-03  1.7077e-03  2.0866e-06  3.2866e-03  9.1172e-03  0:01:13  223
+<aaslistener> 
+   278  1.4834e-02  2.0737e-03  2.3393e-03  1.7029e-03  2.0763e-06  3.2879e-03  8.8738e-03  0:00:58  222
+<aaslistener> 
+   279  1.4780e-02  2.0672e-03  2.3350e-03  1.6999e-03  2.0730e-06  3.2868e-03  8.6062e-03  0:01:31  221
+<aaslistener> 
+   280  1.4686e-02  2.0626e-03  2.3298e-03  1.6969e-03  2.0696e-06  3.2851e-03  8.3894e-03  0:01:12  220
+<aaslistener> 
+   281  1.4558e-02  2.0569e-03  2.3260e-03  1.6936e-03  2.0671e-06  3.2835e-03  8.2252e-03  0:00:57  219
+<aaslistener> 
+   282  1.4423e-02  2.0535e-03  2.3228e-03  1.6896e-03  2.0642e-06  3.2857e-03  8.1325e-03  0:01:29  218
+<aaslistener> 
+   283  1.4317e-02  2.0511e-03  2.3195e-03  1.6859e-03  2.0595e-06  3.2944e-03  8.0965e-03  0:01:11  217
+<aaslistener> 
+   284  1.4227e-02  2.0456e-03  2.3177e-03  1.6823e-03  2.0577e-06  3.3064e-03  8.0906e-03  0:00:57  216
+<aaslistener> 
+   285  1.4173e-02  2.0400e-03  2.3171e-03  1.6785e-03  2.0606e-06  3.3230e-03  8.0583e-03  0:01:28  215
+<aaslistener> 
+   286  1.4100e-02  2.0341e-03  2.3160e-03  1.6752e-03  2.0660e-06  3.3377e-03  8.0118e-03  0:01:10  214
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   287  1.4035e-02  2.0300e-03  2.3168e-03  1.6714e-03  2.0738e-06  3.3463e-03  7.9703e-03  0:00:56  213
+<aaslistener> 
+   288  1.3899e-02  2.0241e-03  2.3165e-03  1.6690e-03  2.0784e-06  3.3491e-03  7.9084e-03  0:01:27  212
+<aaslistener> 
+   289  1.3833e-02  2.0178e-03  2.3162e-03  1.6658e-03  2.0811e-06  3.3443e-03  7.7936e-03  0:01:09  211
+<aaslistener> 
+   290  1.3711e-02  2.0106e-03  2.3173e-03  1.6604e-03  2.0821e-06  3.3315e-03  7.6301e-03  0:00:55  210
+<aaslistener> 
+   291  1.3671e-02  2.0051e-03  2.3178e-03  1.6555e-03  2.0746e-06  3.3087e-03  7.4482e-03  0:01:26  209
+<aaslistener> 
+   292  1.3593e-02  1.9996e-03  2.3184e-03  1.6483e-03  2.0686e-06  3.2769e-03  7.2810e-03  0:01:08  208
+<aaslistener> 
+   293  1.3487e-02  1.9936e-03  2.3186e-03  1.6407e-03  2.0546e-06  3.2359e-03  7.1275e-03  0:00:54  207
+<aaslistener> 
+   294  1.3405e-02  1.9881e-03  2.3179e-03  1.6312e-03  2.0414e-06  3.1914e-03  6.9955e-03  0:01:24  206
+<aaslistener> 
+   295  1.3338e-02  1.9848e-03  2.3149e-03  1.6224e-03  2.0269e-06  3.1439e-03  6.9133e-03  0:01:07  205
+<aaslistener> 
+   296  1.3283e-02  1.9805e-03  2.3115e-03  1.6151e-03  2.0019e-06  3.1009e-03  6.8830e-03  0:00:54  204
+<aaslistener> 
+   297  1.3196e-02  1.9757e-03  2.3051e-03  1.6070e-03  1.9788e-06  3.0628e-03  6.9003e-03  0:01:23  203
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   298  1.3112e-02  1.9721e-03  2.2963e-03  1.5988e-03  1.9564e-06  3.0277e-03  6.9681e-03  0:01:06  202
+<aaslistener> 
+   299  1.3059e-02  1.9686e-03  2.2842e-03  1.5931e-03  1.9399e-06  2.9960e-03  7.0581e-03  0:00:53  201
+<aaslistener> 
+   300  1.3028e-02  1.9644e-03  2.2711e-03  1.5872e-03  1.9309e-06  2.9717e-03  7.2123e-03  0:01:22  200
+<aaslistener> 
+   301  1.3012e-02  1.9596e-03  2.2543e-03  1.5832e-03  1.9275e-06  2.9589e-03  7.3788e-03  0:01:05  199
+<aaslistener> 
+   302  1.2999e-02  1.9536e-03  2.2374e-03  1.5809e-03  1.9213e-06  2.9485e-03  7.5121e-03  0:00:52  198
+<aaslistener> 
+   303  1.3007e-02  1.9477e-03  2.2191e-03  1.5780e-03  1.9196e-06  2.9391e-03  7.6508e-03  0:01:21  197
+<aaslistener> 
+   304  1.3057e-02  1.9390e-03  2.1998e-03  1.5796e-03  1.9201e-06  2.9271e-03  7.7525e-03  0:01:04  196
+<aaslistener> 
+   305  1.3067e-02  1.9291e-03  2.1818e-03  1.5803e-03  1.9196e-06  2.9140e-03  7.8672e-03  0:00:51  195
+<aaslistener> 
+   306  1.3114e-02  1.9165e-03  2.1659e-03  1.5815e-03  1.9197e-06  2.9002e-03  7.9783e-03  0:01:20  194
+<aaslistener> 
+   307  1.3135e-02  1.9025e-03  2.1509e-03  1.5817e-03  1.9084e-06  2.8868e-03  8.0380e-03  0:01:03  193
+<aaslistener> 
+   308  1.3119e-02  1.8863e-03  2.1367e-03  1.5821e-03  1.8965e-06  2.8742e-03  8.0691e-03  0:00:50  192
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   309  1.3148e-02  1.8665e-03  2.1265e-03  1.5809e-03  1.8860e-06  2.8572e-03  8.0394e-03  0:01:18  191
+<aaslistener> 
+   310  1.3149e-02  1.8446e-03  2.1206e-03  1.5778e-03  1.8721e-06  2.8395e-03  7.9755e-03  0:01:02  190
+<aaslistener> 
+   311  1.3124e-02  1.8216e-03  2.1130e-03  1.5752e-03  1.8582e-06  2.8209e-03  7.9113e-03  0:00:50  189
+<aaslistener> 
+   312  1.3089e-02  1.7962e-03  2.1053e-03  1.5712e-03  1.8426e-06  2.7984e-03  7.8012e-03  0:01:17  188
+<aaslistener> 
+   313  1.2411e-02  1.7714e-03  2.0942e-03  1.5713e-03  1.8298e-06  2.7679e-03  7.6019e-03  0:01:01  187
+<aaslistener> 
+   314  1.3174e-02  1.7450e-03  2.0952e-03  1.5543e-03  1.7994e-06  2.7361e-03  7.4235e-03  0:00:49  186
+<aaslistener> 
+   315  1.2341e-02  1.7154e-03  2.0825e-03  1.5527e-03  1.7801e-06  2.6960e-03  7.1938e-03  0:01:16  185
+<aaslistener> 
+   316  1.2978e-02  1.6873e-03  2.0779e-03  1.5354e-03  1.7520e-06  2.6517e-03  6.9474e-03  0:01:00  184
+<aaslistener> 
+   317  1.2118e-02  1.6622e-03  2.0626e-03  1.5309e-03  1.7302e-06  2.6032e-03  6.6598e-03  0:00:48  183
+<aaslistener> 
+   318  1.2736e-02  1.6398e-03  2.0530e-03  1.5104e-03  1.6980e-06  2.5543e-03  6.3867e-03  0:01:15  182
+<aaslistener> 
+   319  1.2476e-02  1.6185e-03  2.0361e-03  1.4976e-03  1.6662e-06  2.5016e-03  6.0733e-03  0:00:59  181
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   320  1.2222e-02  1.6025e-03  2.0190e-03  1.4849e-03  1.6367e-06  2.4448e-03  5.7580e-03  0:00:47  180
+<aaslistener> 
+   321  1.2016e-02  1.5897e-03  2.0028e-03  1.4698e-03  1.6038e-06  2.3879e-03  5.4514e-03  0:01:13  179
+<aaslistener> 
+   322  1.1816e-02  1.5796e-03  1.9866e-03  1.4540e-03  1.5697e-06  2.3353e-03  5.1408e-03  0:00:58  178
+<aaslistener> 
+   323  1.1635e-02  1.5731e-03  1.9685e-03  1.4390e-03  1.5325e-06  2.2826e-03  4.8179e-03  0:01:22  177
+<aaslistener> 
+   324  1.1470e-02  1.5698e-03  1.9516e-03  1.4230e-03  1.4958e-06  2.2349e-03  4.4975e-03  0:01:05  176
+<aaslistener> 
+   325  1.1282e-02  1.5697e-03  1.9342e-03  1.4085e-03  1.4666e-06  2.1936e-03  4.2078e-03  0:01:27  175
+<aaslistener> 
+   326  1.1117e-02  1.5714e-03  1.9169e-03  1.3947e-03  1.4438e-06  2.1562e-03  3.9398e-03  0:01:09  174
+<aaslistener> 
+   327  1.0411e-02  1.5761e-03  1.8977e-03  1.3876e-03  1.4306e-06  2.1252e-03  3.7092e-03  0:00:55  173
+<aaslistener> 
+   328  1.0936e-02  1.5815e-03  1.8839e-03  1.3687e-03  1.4140e-06  2.0959e-03  3.5034e-03  0:01:18  172
+<aaslistener> 
+   329  1.0229e-02  1.5874e-03  1.8658e-03  1.3636e-03  1.4082e-06  2.0715e-03  3.3269e-03  0:01:02  171
+<aaslistener> 
+   330  1.0800e-02  1.5951e-03  1.8534e-03  1.3486e-03  1.4051e-06  2.0500e-03  3.2079e-03  0:00:49  170
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   331  1.0148e-02  1.6030e-03  1.8388e-03  1.3452e-03  1.4111e-06  2.0326e-03  3.1184e-03  0:01:13  169
+<aaslistener> 
+   332  1.0785e-02  1.6113e-03  1.8305e-03  1.3322e-03  1.4177e-06  2.0203e-03  3.0841e-03  0:00:58  168
+<aaslistener> 
+   333  1.0180e-02  1.6186e-03  1.8174e-03  1.3322e-03  1.4295e-06  2.0101e-03  3.0692e-03  0:01:20  167
+<aaslistener> 
+   334  1.0844e-02  1.6273e-03  1.8120e-03  1.3206e-03  1.4413e-06  2.0014e-03  3.1069e-03  0:01:03  166
+<aaslistener> 
+   335  1.0833e-02  1.6340e-03  1.8050e-03  1.3154e-03  1.4515e-06  1.9916e-03  3.1341e-03  0:00:50  165
+<aaslistener> 
+   336  1.0837e-02  1.6407e-03  1.7989e-03  1.3116e-03  1.4596e-06  1.9793e-03  3.1514e-03  0:01:13  164
+<aaslistener> 
+   337  1.0907e-02  1.6481e-03  1.7946e-03  1.3068e-03  1.4660e-06  1.9659e-03  3.1713e-03  0:00:58  163
+<aaslistener> 
+   338  1.1017e-02  1.6533e-03  1.7915e-03  1.3020e-03  1.4740e-06  1.9521e-03  3.1875e-03  0:00:46  162
+<aaslistener> 
+   339  1.1105e-02  1.6569e-03  1.7884e-03  1.2997e-03  1.4831e-06  1.9380e-03  3.2120e-03  0:01:09  161
+<aaslistener> 
+   340  1.1217e-02  1.6590e-03  1.7863e-03  1.2976e-03  1.4881e-06  1.9217e-03  3.1992e-03  0:00:55  160
+<aaslistener> 
+   341  1.1292e-02  1.6607e-03  1.7838e-03  1.2948e-03  1.4929e-06  1.9042e-03  3.1793e-03  0:01:15  159
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   342  1.1355e-02  1.6590e-03  1.7820e-03  1.2932e-03  1.5016e-06  1.8852e-03  3.1548e-03  0:01:00  158
+<aaslistener> 
+   343  1.1490e-02  1.6569e-03  1.7819e-03  1.2909e-03  1.5088e-06  1.8659e-03  3.1317e-03  0:00:48  157
+<aaslistener> 
+   344  1.1569e-02  1.6517e-03  1.7833e-03  1.2859e-03  1.5155e-06  1.8460e-03  3.1107e-03  0:01:09  156
+<aaslistener> 
+   345  1.1623e-02  1.6439e-03  1.7847e-03  1.2807e-03  1.5249e-06  1.8271e-03  3.1139e-03  0:00:55  155
+<aaslistener> 
+   346  1.1678e-02  1.6350e-03  1.7858e-03  1.2733e-03  1.5311e-06  1.8079e-03  3.1229e-03  0:01:14  154
+<aaslistener> 
+   347  1.1679e-02  1.6243e-03  1.7885e-03  1.2646e-03  1.5329e-06  1.7892e-03  3.1342e-03  0:00:59  153
+<aaslistener> 
+   348  1.1707e-02  1.6131e-03  1.7926e-03  1.2525e-03  1.5336e-06  1.7728e-03  3.1611e-03  0:01:17  152
+<aaslistener> 
+   349  1.1650e-02  1.5984e-03  1.7968e-03  1.2406e-03  1.5299e-06  1.7569e-03  3.2043e-03  0:01:02  151
+<aaslistener> 
+   350  1.1623e-02  1.5840e-03  1.7992e-03  1.2260e-03  1.5227e-06  1.7413e-03  3.2618e-03  0:00:49  150
+<aaslistener> 
+   351  1.1567e-02  1.5658e-03  1.8025e-03  1.2116e-03  1.5112e-06  1.7265e-03  3.3323e-03  0:01:09  149
+<aaslistener> 
+   352  1.1468e-02  1.5479e-03  1.8035e-03  1.1957e-03  1.4959e-06  1.7124e-03  3.4088e-03  0:00:55  148
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   353  1.1300e-02  1.5269e-03  1.8034e-03  1.1801e-03  1.4795e-06  1.6997e-03  3.4874e-03  0:01:13  147
+<aaslistener> 
+   354  1.1170e-02  1.5053e-03  1.8021e-03  1.1639e-03  1.4573e-06  1.6879e-03  3.5626e-03  0:00:58  146
+<aaslistener> 
+   355  1.1010e-02  1.4834e-03  1.8001e-03  1.1490e-03  1.4290e-06  1.6767e-03  3.6259e-03  0:01:15  145
+<aaslistener> 
+   356  1.0883e-02  1.4623e-03  1.7969e-03  1.1348e-03  1.4042e-06  1.6646e-03  3.6645e-03  0:01:00  144
+<aaslistener> 
+   357  1.0743e-02  1.4419e-03  1.7940e-03  1.1221e-03  1.3811e-06  1.6523e-03  3.6818e-03  0:00:47  143
+<aaslistener> 
+   358  1.0625e-02  1.4225e-03  1.7918e-03  1.1115e-03  1.3621e-06  1.6407e-03  3.6895e-03  0:01:06  142
+<aaslistener> 
+   359  1.0458e-02  1.4041e-03  1.7898e-03  1.1021e-03  1.3485e-06  1.6289e-03  3.6742e-03  0:00:52  141
+<aaslistener> 
+   360  1.0310e-02  1.3885e-03  1.7883e-03  1.0941e-03  1.3303e-06  1.6178e-03  3.6478e-03  0:00:42  140
+<aaslistener> 
+   361  1.0205e-02  1.3732e-03  1.7863e-03  1.0872e-03  1.3145e-06  1.6096e-03  3.6095e-03  0:01:01  139
+<aaslistener> 
+   362  1.0103e-02  1.3602e-03  1.7847e-03  1.0814e-03  1.3077e-06  1.6021e-03  3.5448e-03  0:00:48  138
+<aaslistener> 
+   363  9.9989e-03  1.3485e-03  1.7837e-03  1.0760e-03  1.3103e-06  1.5943e-03  3.4652e-03  0:01:06  137
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   364  9.9273e-03  1.3374e-03  1.7816e-03  1.0722e-03  1.3101e-06  1.5871e-03  3.3774e-03  0:00:52  136
+<aaslistener> 
+   365  9.8185e-03  1.3264e-03  1.7787e-03  1.0680e-03  1.3033e-06  1.5801e-03  3.2927e-03  0:00:41  135
+<aaslistener> 
+   366  9.7283e-03  1.3160e-03  1.7726e-03  1.0654e-03  1.3056e-06  1.5720e-03  3.2112e-03  0:01:00  134
+<aaslistener> 
+   367  9.6837e-03  1.3071e-03  1.7644e-03  1.0637e-03  1.3177e-06  1.5646e-03  3.1476e-03  0:00:47  133
+<aaslistener> 
+   368  9.6453e-03  1.2995e-03  1.7544e-03  1.0618e-03  1.3196e-06  1.5585e-03  3.1115e-03  0:00:38  132
+<aaslistener> 
+   369  9.6146e-03  1.2935e-03  1.7422e-03  1.0612e-03  1.3168e-06  1.5559e-03  3.1098e-03  0:00:56  131
+<aaslistener> 
+   370  9.5584e-03  1.2903e-03  1.7271e-03  1.0618e-03  1.3274e-06  1.5568e-03  3.1218e-03  0:00:45  130
+<aaslistener> 
+   371  9.5306e-03  1.2908e-03  1.7110e-03  1.0618e-03  1.3334e-06  1.5622e-03  3.1811e-03  0:01:01  129
+<aaslistener> 
+   372  9.4939e-03  1.2948e-03  1.6935e-03  1.0622e-03  1.3298e-06  1.5709e-03  3.2481e-03  0:00:49  128
+<aaslistener> 
+   373  9.4913e-03  1.3015e-03  1.6757e-03  1.0622e-03  1.3432e-06  1.5829e-03  3.3218e-03  0:00:39  127
+<aaslistener> 
+   374  9.4993e-03  1.3107e-03  1.6572e-03  1.0623e-03  1.3508e-06  1.5954e-03  3.3858e-03  0:00:56  126
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   375  9.5273e-03  1.3228e-03  1.6409e-03  1.0618e-03  1.3526e-06  1.6104e-03  3.4646e-03  0:00:44  125
+<aaslistener> 
+   376  9.5917e-03  1.3368e-03  1.6249e-03  1.0620e-03  1.3671e-06  1.6277e-03  3.5767e-03  0:01:00  124
+<aaslistener> 
+   377  9.6280e-03  1.3524e-03  1.6097e-03  1.0626e-03  1.3762e-06  1.6468e-03  3.6996e-03  0:00:48  123
+<aaslistener> 
+   378  9.7015e-03  1.3700e-03  1.5963e-03  1.0638e-03  1.3867e-06  1.6679e-03  3.8488e-03  0:00:38  122
+<aaslistener> 
+   379  9.7512e-03  1.3889e-03  1.5833e-03  1.0655e-03  1.3947e-06  1.6909e-03  4.0308e-03  0:00:54  121
+<aaslistener> 
+   380  9.8254e-03  1.4073e-03  1.5707e-03  1.0695e-03  1.4051e-06  1.7149e-03  4.2103e-03  0:00:43  120
+<aaslistener> 
+   381  9.9075e-03  1.4258e-03  1.5574e-03  1.0737e-03  1.4168e-06  1.7394e-03  4.3878e-03  0:00:34  119
+<aaslistener> 
+   382  9.9377e-03  1.4455e-03  1.5454e-03  1.0785e-03  1.4180e-06  1.7624e-03  4.5626e-03  0:00:51  118
+<aaslistener> 
+   383  9.9941e-03  1.4641e-03  1.5337e-03  1.0832e-03  1.4278e-06  1.7856e-03  4.7675e-03  0:00:40  117
+<aaslistener> 
+   384  1.0043e-02  1.4809e-03  1.5231e-03  1.0893e-03  1.4353e-06  1.8049e-03  4.9403e-03  0:00:32  116
+<aaslistener> 
+   385  1.0047e-02  1.4951e-03  1.5124e-03  1.0965e-03  1.4447e-06  1.8203e-03  5.0935e-03  0:00:25  115
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   386  1.0094e-02  1.5098e-03  1.5012e-03  1.1022e-03  1.4510e-06  1.8323e-03  5.2136e-03  0:00:43  114
+<aaslistener> 
+   387  1.0155e-02  1.5217e-03  1.4906e-03  1.1097e-03  1.4616e-06  1.8402e-03  5.2967e-03  0:00:34  113
+<aaslistener> 
+   388  1.0213e-02  1.5318e-03  1.4811e-03  1.1159e-03  1.4663e-06  1.8429e-03  5.3396e-03  0:00:27  112
+<aaslistener> 
+   389  1.0298e-02  1.5410e-03  1.4718e-03  1.1206e-03  1.4651e-06  1.8417e-03  5.3385e-03  0:00:44  111
+<aaslistener> 
+   390  1.0342e-02  1.5464e-03  1.4628e-03  1.1260e-03  1.4678e-06  1.8353e-03  5.2908e-03  0:00:35  110
+<aaslistener> 
+   391  1.0408e-02  1.5495e-03  1.4559e-03  1.1307e-03  1.4709e-06  1.8244e-03  5.1847e-03  0:00:27  109
+<aaslistener> 
+   392  1.0450e-02  1.5494e-03  1.4501e-03  1.1354e-03  1.4695e-06  1.8114e-03  5.0533e-03  0:00:43  108
+<aaslistener> 
+   393  1.0475e-02  1.5466e-03  1.4446e-03  1.1388e-03  1.4656e-06  1.7950e-03  4.9196e-03  0:00:34  107
+<aaslistener> 
+   394  1.0500e-02  1.5411e-03  1.4400e-03  1.1416e-03  1.4617e-06  1.7763e-03  4.7665e-03  0:00:27  106
+<aaslistener> 
+   395  1.0499e-02  1.5328e-03  1.4367e-03  1.1439e-03  1.4609e-06  1.7556e-03  4.5942e-03  0:00:43  105
+<aaslistener> 
+   396  1.0552e-02  1.5217e-03  1.4354e-03  1.1451e-03  1.4605e-06  1.7334e-03  4.4071e-03  0:00:34  104
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   397  1.0551e-02  1.5100e-03  1.4342e-03  1.1455e-03  1.4598e-06  1.7123e-03  4.2138e-03  0:00:27  103
+<aaslistener> 
+   398  1.0571e-02  1.4984e-03  1.4342e-03  1.1452e-03  1.4595e-06  1.6979e-03  4.0287e-03  0:00:42  102
+<aaslistener> 
+   399  1.0616e-02  1.4856e-03  1.4351e-03  1.1450e-03  1.4644e-06  1.6854e-03  3.8707e-03  0:00:33  101
+<aaslistener> 
+   400  1.0606e-02  1.4744e-03  1.4383e-03  1.1438e-03  1.4628e-06  1.6731e-03  3.7270e-03  0:00:46  100
+<aaslistener> 
+   401  1.0589e-02  1.4629e-03  1.4407e-03  1.1431e-03  1.4572e-06  1.6599e-03  3.5698e-03  0:00:36   99
+<aaslistener> 
+   402  1.0576e-02  1.4524e-03  1.4442e-03  1.1407e-03  1.4551e-06  1.6486e-03  3.4203e-03  0:00:29   98
+<aaslistener> 
+   403  1.0568e-02  1.4423e-03  1.4480e-03  1.1380e-03  1.4581e-06  1.6366e-03  3.2855e-03  0:00:23   97
+<aaslistener> 
+   404  1.0572e-02  1.4334e-03  1.4523e-03  1.1337e-03  1.4582e-06  1.6258e-03  3.1725e-03  0:00:37   96
+<aaslistener> 
+   405  1.0618e-02  1.4250e-03  1.4565e-03  1.1299e-03  1.4555e-06  1.6186e-03  3.1045e-03  0:00:30   95
+<aaslistener> 
+   406  1.0630e-02  1.4168e-03  1.4605e-03  1.1261e-03  1.4570e-06  1.6165e-03  3.0741e-03  0:00:23   94
+<aaslistener> 
+   407  1.0121e-02  1.4081e-03  1.4669e-03  1.1280e-03  1.4581e-06  1.6162e-03  3.0711e-03  0:00:37   93
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   408  1.0772e-02  1.4078e-03  1.4677e-03  1.1182e-03  1.4509e-06  1.6196e-03  3.1208e-03  0:00:29   92
+<aaslistener> 
+   409  1.0721e-02  1.4000e-03  1.4690e-03  1.1166e-03  1.4476e-06  1.6278e-03  3.1833e-03  0:00:23   91
+<aaslistener> 
+   410  1.0170e-02  1.3926e-03  1.4708e-03  1.1229e-03  1.4469e-06  1.6351e-03  3.2368e-03  0:00:36   90
+<aaslistener> 
+   411  1.0858e-02  1.3913e-03  1.4704e-03  1.1181e-03  1.4391e-06  1.6438e-03  3.3313e-03  0:00:29   89
+<aaslistener> 
+   412  1.0803e-02  1.3848e-03  1.4710e-03  1.1203e-03  1.4313e-06  1.6536e-03  3.4650e-03  0:00:23   88
+<aaslistener> 
+   413  1.0777e-02  1.3791e-03  1.4706e-03  1.1241e-03  1.4258e-06  1.6664e-03  3.6025e-03  0:00:35   87
+<aaslistener> 
+   414  1.0775e-02  1.3757e-03  1.4700e-03  1.1292e-03  1.4233e-06  1.6807e-03  3.7558e-03  0:00:28   86
+<aaslistener> 
+   415  1.0775e-02  1.3742e-03  1.4699e-03  1.1346e-03  1.4241e-06  1.6957e-03  3.9356e-03  0:00:22   85
+<aaslistener> 
+   416  1.0821e-02  1.3713e-03  1.4713e-03  1.1399e-03  1.4283e-06  1.7101e-03  4.1427e-03  0:00:34   84
+<aaslistener> 
+   417  1.0854e-02  1.3709e-03  1.4725e-03  1.1457e-03  1.4369e-06  1.7254e-03  4.3725e-03  0:00:27   83
+<aaslistener> 
+   418  1.0878e-02  1.3701e-03  1.4750e-03  1.1510e-03  1.4488e-06  1.7411e-03  4.6103e-03  0:00:21   82
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   419  1.0927e-02  1.3720e-03  1.4771e-03  1.1570e-03  1.4652e-06  1.7585e-03  4.8723e-03  0:00:33   81
+<aaslistener> 
+   420  1.0992e-02  1.3729e-03  1.4808e-03  1.1634e-03  1.4798e-06  1.7779e-03  5.1345e-03  0:00:26   80
+<aaslistener> 
+   421  1.1056e-02  1.3731e-03  1.4861e-03  1.1701e-03  1.4985e-06  1.8011e-03  5.4309e-03  0:00:21   79
+<aaslistener> 
+   422  1.1091e-02  1.3765e-03  1.4926e-03  1.1755e-03  1.5185e-06  1.8267e-03  5.7256e-03  0:00:32   78
+<aaslistener> 
+   423  1.1168e-02  1.3798e-03  1.5014e-03  1.1801e-03  1.5416e-06  1.8523e-03  6.0228e-03  0:00:25   77
+<aaslistener> 
+   424  1.1223e-02  1.3846e-03  1.5097e-03  1.1851e-03  1.5607e-06  1.8759e-03  6.3348e-03  0:00:20   76
+<aaslistener> 
+   425  1.1301e-02  1.3905e-03  1.5182e-03  1.1894e-03  1.5740e-06  1.8981e-03  6.6212e-03  0:00:31   75
+<aaslistener> 
+   426  1.1365e-02  1.3968e-03  1.5272e-03  1.1931e-03  1.5872e-06  1.9186e-03  6.8663e-03  0:00:24   74
+<aaslistener> 
+   427  1.1418e-02  1.4026e-03  1.5374e-03  1.1966e-03  1.6033e-06  1.9436e-03  7.1214e-03  0:00:34   73
+<aaslistener> 
+   428  1.1498e-02  1.4103e-03  1.5467e-03  1.1997e-03  1.6195e-06  1.9695e-03  7.3982e-03  0:00:27   72
+<aaslistener> 
+   429  1.1575e-02  1.4202e-03  1.5557e-03  1.2020e-03  1.6348e-06  1.9961e-03  7.7115e-03  0:00:21   71
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   430  1.1703e-02  1.4303e-03  1.5642e-03  1.2042e-03  1.6554e-06  2.0245e-03  7.9668e-03  0:00:17   70
+<aaslistener> 
+   431  1.1771e-02  1.4426e-03  1.5718e-03  1.2067e-03  1.6836e-06  2.0581e-03  8.2344e-03  0:00:27   69
+<aaslistener> 
+   432  1.1824e-02  1.4576e-03  1.5786e-03  1.2099e-03  1.7088e-06  2.0947e-03  8.5310e-03  0:00:21   68
+<aaslistener> 
+   433  1.1934e-02  1.4743e-03  1.5874e-03  1.2120e-03  1.7308e-06  2.1360e-03  8.8126e-03  0:00:17   67
+<aaslistener> 
+   434  1.1978e-02  1.4918e-03  1.5950e-03  1.2149e-03  1.7497e-06  2.1787e-03  9.0924e-03  0:00:26   66
+<aaslistener> 
+   435  1.2060e-02  1.5129e-03  1.6001e-03  1.2177e-03  1.7641e-06  2.2218e-03  9.3645e-03  0:00:21   65
+<aaslistener> 
+   436  1.2151e-02  1.5353e-03  1.6051e-03  1.2212e-03  1.7831e-06  2.2697e-03  9.6619e-03  0:00:16   64
+<aaslistener> 
+   437  1.2197e-02  1.5598e-03  1.6071e-03  1.2277e-03  1.7980e-06  2.3145e-03  9.9587e-03  0:00:25   63
+<aaslistener> 
+   438  1.2242e-02  1.5858e-03  1.6080e-03  1.2354e-03  1.8052e-06  2.3595e-03  1.0234e-02  0:00:20   62
+<aaslistener> 
+   439  1.2290e-02  1.6114e-03  1.6093e-03  1.2453e-03  1.8106e-06  2.4015e-03  1.0465e-02  0:00:28   61
+<aaslistener> 
+   440  1.2341e-02  1.6371e-03  1.6088e-03  1.2564e-03  1.8072e-06  2.4399e-03  1.0644e-02  0:00:22   60
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   441  1.2356e-02  1.6624e-03  1.6033e-03  1.2697e-03  1.8052e-06  2.4751e-03  1.0750e-02  0:00:29   59
+<aaslistener> 
+   442  1.2355e-02  1.6881e-03  1.5958e-03  1.2826e-03  1.7960e-06  2.5010e-03  1.0726e-02  0:00:23   58
+<aaslistener> 
+   443  1.2318e-02  1.7115e-03  1.5862e-03  1.2963e-03  1.7833e-06  2.5212e-03  1.0598e-02  0:00:18   57
+<aaslistener> 
+   444  1.2305e-02  1.7336e-03  1.5744e-03  1.3091e-03  1.7698e-06  2.5377e-03  1.0438e-02  0:00:14   56
+<aaslistener> 
+   445  1.2264e-02  1.7538e-03  1.5608e-03  1.3209e-03  1.7539e-06  2.5502e-03  1.0225e-02  0:00:22   55
+<aaslistener> 
+   446  1.2202e-02  1.7716e-03  1.5463e-03  1.3323e-03  1.7413e-06  2.5584e-03  9.9170e-03  0:00:17   54
+<aaslistener> 
+   447  1.2140e-02  1.7880e-03  1.5321e-03  1.3412e-03  1.7285e-06  2.5631e-03  9.5830e-03  0:00:14   53
+<aaslistener> 
+   448  1.2049e-02  1.8025e-03  1.5189e-03  1.3495e-03  1.7202e-06  2.5676e-03  9.2429e-03  0:00:21   52
+<aaslistener> 
+   449  1.1983e-02  1.8150e-03  1.5091e-03  1.3544e-03  1.7109e-06  2.5659e-03  8.8625e-03  0:00:17   51
+<aaslistener> 
+   450  1.1882e-02  1.8259e-03  1.5005e-03  1.3575e-03  1.7033e-06  2.5599e-03  8.4183e-03  0:00:13   50
+<aaslistener> 
+   451  1.1788e-02  1.8345e-03  1.4966e-03  1.3602e-03  1.6931e-06  2.5451e-03  7.9544e-03  0:00:10   49
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   452  1.1760e-02  1.8415e-03  1.4963e-03  1.3616e-03  1.6861e-06  2.5281e-03  7.5110e-03  0:00:18   48
+<aaslistener> 
+   453  1.1702e-02  1.8466e-03  1.4996e-03  1.3608e-03  1.6867e-06  2.5095e-03  7.0693e-03  0:00:14   47
+<aaslistener> 
+   454  1.1636e-02  1.8494e-03  1.5069e-03  1.3592e-03  1.6945e-06  2.4844e-03  6.6351e-03  0:00:11   46
+<aaslistener> 
+   455  1.1590e-02  1.8509e-03  1.5168e-03  1.3579e-03  1.7001e-06  2.4556e-03  6.2337e-03  0:00:17   45
+<aaslistener> 
+   456  1.1539e-02  1.8526e-03  1.5291e-03  1.3562e-03  1.7017e-06  2.4267e-03  5.8850e-03  0:00:14   44
+<aaslistener> 
+   457  1.1501e-02  1.8541e-03  1.5441e-03  1.3535e-03  1.7043e-06  2.3972e-03  5.6099e-03  0:00:11   43
+<aaslistener> 
+   458  1.1512e-02  1.8531e-03  1.5631e-03  1.3510e-03  1.7039e-06  2.3676e-03  5.4061e-03  0:00:17   42
+<aaslistener> 
+   459  1.1507e-02  1.8497e-03  1.5845e-03  1.3479e-03  1.7013e-06  2.3406e-03  5.2422e-03  0:00:13   41
+<aaslistener> 
+   460  1.1478e-02  1.8446e-03  1.6066e-03  1.3450e-03  1.6956e-06  2.3198e-03  5.1336e-03  0:00:10   40
+<aaslistener> 
+   461  1.1462e-02  1.8406e-03  1.6310e-03  1.3406e-03  1.6914e-06  2.3079e-03  5.0561e-03  0:00:08   39
+<aaslistener> 
+   462  1.1471e-02  1.8342e-03  1.6570e-03  1.3384e-03  1.6879e-06  2.2994e-03  5.0021e-03  0:00:14   38
+
+  iter  continuity  x-velocity  y-velocity  z-velocity      energy           k     epsilon     time/iter
+<aaslistener> 
+   463  1.1466e-02  1.8241e-03  1.6854e-03  1.3356e-03  1.6829e-06  2.2921e-03  4.9585e-03  0:00:11   37
+<aaslistener> 
+   464  1.1487e-02  1.8143e-03  1.7131e-03  1.3322e-03  1.6779e-06  2.2872e-03  4.9142e-03  0:00:08   36
+<aaslistener> 
+   465  1.1558e-02  1.8016e-03  1.7419e-03  1.3306e-03  1.6792e-06  2.2821e-03  4.9033e-03  0:00:14   35
+<aaslistener> 
+   466  1.1576e-02  1.7893e-03  1.7705e-03  1.3298e-03  1.6797e-06  2.2789e-03  4.9000e-03  0:00:10   34
+<aaslistener> 
+   467  1.1652e-02  1.7762e-03  1.7990e-03  1.3293e-03  1.6817e-06  2.2785e-03  4.9043e-03  0:00:08   33
