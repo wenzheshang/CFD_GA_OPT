@@ -6,6 +6,9 @@ from deap import algorithms
 from deap import base
 from deap import creator
 from deap import tools
+import matplotlib.pyplot as plt
+
+import networkx
 
 IND_INIT_SIZE = 5
 MAX_ITEM = 50
@@ -65,20 +68,25 @@ def mutSet(individual):
         individual.add(random.randrange(NBR_ITEMS))
     return individual,
 
+history = tools.History()
+
 toolbox.register("evaluate", evalKnapsack)
 toolbox.register("mate", cxSet)
 toolbox.register("mutate", mutSet)
 toolbox.register("select", tools.selNSGA2)
+toolbox.decorate("mate", history.decorator)
+toolbox.decorate("mutate", history.decorator)
 
 def main():
     random.seed(64)
-    NGEN = 200
-    MU = 50
-    LAMBDA = 100
+    NGEN = 5
+    MU = 5
+    LAMBDA = 10
     CXPB = 0.7
     MUTPB = 0.2
 
     pop = toolbox.population(n=MU)
+    hof = tools.ParetoFront()
     hof = tools.ParetoFront()
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("avg", numpy.mean, axis=0)
@@ -88,6 +96,12 @@ def main():
 
     algorithms.eaMuPlusLambda(pop, toolbox, MU, LAMBDA, CXPB, MUTPB, NGEN, stats,
                               halloffame=hof)
+    
+    graph = networkx.DiGraph(history.genealogy_tree)
+    graph = graph.reverse()     # Make the graph top-down
+    colors = [toolbox.evaluate(history.genealogy_history[i])[0] for i in graph]
+    networkx.draw(graph, node_color=colors)
+    plt.show()
 
     return pop, stats, hof
 

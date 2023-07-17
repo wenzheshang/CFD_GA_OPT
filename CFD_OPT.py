@@ -124,7 +124,7 @@ def CFD_simu(**kwargs):
     dict_energy['energy'].append(Energy)
     dict_flow['flow'].append(massflow)
 
-    return massflow, contam, Energy
+    return contam, Energy #,massflow
 
 def main():
     IND_size = 2
@@ -132,7 +132,7 @@ def main():
     # MAX = 10
     #random.seed(64)
 
-    creator.create('FitnessMin', base.Fitness, weights = (-1.0, -1.0, -1.0))
+    creator.create('FitnessMin', base.Fitness, weights = (-1.0, -1.0))
     creator.create('Individual', list, fitness = creator.FitnessMin)   
 
     toolbox = base.Toolbox()
@@ -148,13 +148,18 @@ def main():
     def evaluate(individual):
         cfdv = individual[0]*2 + 0.367  #0.367m/s~2.367m/s  (1.367m/s ± 1m/s)
         cfdt = individual[1]*10 + 290.35 #290.35K~300.35K (295.35K ± 5K)
-        flow, contam, Energy = CFD_simu(velocity=cfdv, temperature = cfdt)           
-        return flow, contam, Energy
+        contam, Energy = CFD_simu(velocity=cfdv, temperature = cfdt)           
+        return contam, Energy #flow
+    
+    # history = tools.History()
 
     toolbox.register("evaluate", evaluate)
     toolbox.register('mate', tools.cxTwoPoint)
     toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)
     toolbox.register("select", tools.selNSGA2)
+
+    # toolbox.decorate("mate", history.decorator)
+    # toolbox.decorate("mutate", history.decorator)
 
     # toolbox.decorate("mate", decorate.checkBounds(MIN, MAX))
     # toolbox.decorate("mutate", decorate.checkBounds(MIN, MAX))
@@ -167,15 +172,24 @@ def main():
 
     CXPB = 0.6
     MUTPB = 0.3
-    NGEN = 15
-    MU = 30
+    NGEN = 10
+    MU = 25
     LAMBDA = 50
 
     pop = toolbox.population(n=MU)
+
+    # history.update(pop)
+
     hof = tools.ParetoFront()
 
     algorithms.eaMuPlusLambda(pop, toolbox, MU, LAMBDA, CXPB, MUTPB, NGEN, mstats,
                               halloffame=hof)
+
+    # graph = networkx.DiGraph(history.genealogy_tree)
+    # graph = graph.reverse()     # Make the graph top-down
+    # colors = [toolbox.evaluate(history.genealogy_history[i])[0] for i in graph]
+    # networkx.draw(graph, node_color=colors)
+    # plt.savefig(os.path.join(workPath,'history.svg'), dpi=900, format = 'svg')
 
     return pop, mstats, hof
 
@@ -243,7 +257,7 @@ if __name__=='__main__':
     fluentUnit = orb.string_to_object(aasFilePath.open("r").read())
     scheme = fluentUnit.getSchemeControllerInstance()
 
-    casename = 'F:/Thinking/CFD_study/case3/a/FFF.msh'
+    casename = 'F:/Thinking/CFD_study/case3/a/FFB.msh'
     scheme.execScheme(f'(read-case "{casename}")')
     # udf_name1 = 'calculate_N_avg.c '
     # user_name2 = 'calculate_vd.c'
@@ -264,7 +278,7 @@ if __name__=='__main__':
     (p, sta, hof) = main()
     i = 0
     gen = []
-    fit_flow = []
+    #fit_flow = []
     fit_contam = []
     fit_energy = []
 
@@ -274,18 +288,18 @@ if __name__=='__main__':
 
     for ind in hof:
         i += 1
-        fit_flow += [ind.fitness.values[0]]
-        fit_contam += [ind.fitness.values[1]]
-        fit_energy += [ind.fitness.values[2]]
+        #fit_flow += [ind.fitness.values[0]]
+        fit_contam += [ind.fitness.values[0]]
+        fit_energy += [ind.fitness.values[1]]
         gen += [i]
     
-    mydataframe_flow = pd.DataFrame({'fit_flow': fit_flow, 'fit_contam': fit_contam, 'fit_energy': fit_energy})
+    mydataframe_flow = pd.DataFrame({'fit_contam': fit_contam, 'fit_energy': fit_energy})
     mydataframe_flow.to_csv(os.path.join(workPath,'fit.csv'))
 
-    fig, ax = plt.subplots(3, 1,figsize=(8,18), gridspec_kw={'height_ratios': [1,1,1]})
+    fig, ax = plt.subplots(2, 1,figsize=(8,12), gridspec_kw={'height_ratios': [1,1]})
     ax1 = ax[0]
-    line1 = ax1.plot(fit_flow, fit_contam, "b-", label="CFD Paerto front1")
-    ax1.set_xlabel("flow")
+    line1 = ax1.plot(fit_energy, fit_contam, "b-", label="CFD Paerto front1")
+    ax1.set_xlabel("energy")
     ax1.set_ylabel("contam", color="b")
     for tl in ax1.get_yticklabels():
         tl.set_color("b")
@@ -293,27 +307,5 @@ if __name__=='__main__':
     lns = line1
     labs = [l.get_label() for l in lns]
     ax1.legend(lns, labs, loc="center right")
- ################################################################################
-    ax2 = ax[1]
-    line2 = ax2.plot(fit_flow, fit_energy, "b-", label="CFD Paerto front2")
-    ax2.set_xlabel("flow")
-    ax2.set_ylabel("energy", color="b")
-    for tl in ax2.get_yticklabels():
-        tl.set_color("b")
-
-    lns2 = line2
-    labs2 = [l.get_label() for l in lns2]
-    ax2.legend(lns2, labs2, loc="center right")
- ################################################################################
-    ax3 = ax[2]
-    line3 = ax3.plot(fit_energy, fit_contam, "b-", label="CFD Paerto front3")
-    ax3.set_xlabel("energy")
-    ax3.set_ylabel("contam", color="b")
-    for tl in ax3.get_yticklabels():
-        tl.set_color("b")
-
-    lns3 = line3
-    labs3 = [l.get_label() for l in lns3]
-    ax3.legend(lns3, labs3, loc="center right")
  ################################################################################
     plt.show()

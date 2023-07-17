@@ -1,0 +1,1367 @@
+,VarName,Value
+0,EnergyConsumption,67059.5390625
+1,PID_for_T.D.T,0.009999999776482582
+2,PID_for_T.D.der(x),-3.979039320256561e-11
+3,PID_for_T.D.initType,1.0
+4,PID_for_T.D.k,0.10000000149011612
+5,PID_for_T.D.u,-292.5295715332031
+6,PID_for_T.D.x,-292.5295715332031
+7,PID_for_T.D.x_start,0.0
+8,PID_for_T.D.y,-3.979039320256561e-12
+9,PID_for_T.D.y_start,0.0
+10,PID_for_T.I.der(y),-3.979039320256561e-12
+11,PID_for_T.I.initType,1.0
+12,PID_for_T.I.k,10.0
+13,PID_for_T.I.u,-3.979039320256561e-13
+14,PID_for_T.I.y,69.88616180419922
+15,PID_for_T.I.y_start,0.0
+16,PID_for_T.Nd,10.0
+17,PID_for_T.Ni,0.10000000149011612
+18,PID_for_T.P.k,1.0
+19,PID_for_T.P.u,-3.979039320256561e-13
+20,PID_for_T.P.y,-3.979039320256561e-13
+21,PID_for_T.Td,0.10000000149011612
+22,PID_for_T.Ti,0.10000000149011612
+23,PID_for_T.addD.k1,0.0
+24,PID_for_T.addD.k2,-1.0
+25,PID_for_T.addD.u1,292.5295715332031
+26,PID_for_T.addD.u2,292.5295715332031
+27,PID_for_T.addD.y,-292.5295715332031
+28,PID_for_T.addI.k1,1.0
+29,PID_for_T.addI.k2,-1.0
+30,PID_for_T.addI.k3,1.0
+31,PID_for_T.addI.u1,292.5295715332031
+32,PID_for_T.addI.u2,292.5295715332031
+33,PID_for_T.addI.u3,0.0
+34,PID_for_T.addI.y,-3.979039320256561e-13
+35,PID_for_T.addP.k1,1.0
+36,PID_for_T.addP.k2,-1.0
+37,PID_for_T.addP.u1,292.5295715332031
+38,PID_for_T.addP.u2,292.5295715332031
+39,PID_for_T.addP.y,-3.979039320256561e-13
+40,PID_for_T.addPID.k1,1.0
+41,PID_for_T.addPID.k2,1.0
+42,PID_for_T.addPID.k3,1.0
+43,PID_for_T.addPID.u1,-3.979039320256561e-13
+44,PID_for_T.addPID.u2,-3.979039320256561e-12
+45,PID_for_T.addPID.u3,69.88616180419922
+46,PID_for_T.addPID.y,69.88616180419922
+47,PID_for_T.addSat.k1,1.0
+48,PID_for_T.addSat.k2,-1.0
+49,PID_for_T.addSat.u1,6988.6162109375
+50,PID_for_T.addSat.u2,6988.6162109375
+51,PID_for_T.addSat.y,0.0
+52,PID_for_T.controlError,-3.979039320256561e-13
+53,PID_for_T.controllerType,4.0
+54,PID_for_T.gainPID.k,100.0
+55,PID_for_T.gainPID.u,69.88616180419922
+56,PID_for_T.gainPID.y,6988.6162109375
+57,PID_for_T.gainTrack.k,0.10000000149011612
+58,PID_for_T.gainTrack.u,0.0
+59,PID_for_T.gainTrack.y,0.0
+60,PID_for_T.initType,1.0
+61,PID_for_T.k,100.0
+62,PID_for_T.limiter.limitsAtInit,1.0
+63,PID_for_T.limiter.strict,0.0
+64,PID_for_T.limiter.u,6988.6162109375
+65,PID_for_T.limiter.uMax,8000.0
+66,PID_for_T.limiter.uMin,1000.0
+67,PID_for_T.limiter.y,6988.6162109375
+68,PID_for_T.limitsAtInit,1.0
+69,PID_for_T.strict,0.0
+70,PID_for_T.u_m,292.5295715332031
+71,PID_for_T.u_s,292.5295715332031
+72,PID_for_T.wd,0.0
+73,PID_for_T.wp,1.0
+74,PID_for_T.xd_start,0.0
+75,PID_for_T.xi_start,0.0
+76,PID_for_T.y,6988.6162109375
+77,PID_for_T.yMax,8000.0
+78,PID_for_T.yMin,1000.0
+79,PID_for_T.y_start,15000.0
+80,PID_for_m.Dzero.k,0.0
+81,PID_for_m.Dzero.y,0.0
+82,PID_for_m.I.der(y),0.0
+83,PID_for_m.I.initType,1.0
+84,PID_for_m.I.k,10.0
+85,PID_for_m.I.u,0.0
+86,PID_for_m.I.y,0.020019136369228363
+87,PID_for_m.I.y_start,0.0
+88,PID_for_m.Nd,10.0
+89,PID_for_m.Ni,0.10000000149011612
+90,PID_for_m.P.k,1.0
+91,PID_for_m.P.u,0.0
+92,PID_for_m.P.y,0.0
+93,PID_for_m.Td,0.10000000149011612
+94,PID_for_m.Ti,0.10000000149011612
+95,PID_for_m.addI.k1,1.0
+96,PID_for_m.addI.k2,-1.0
+97,PID_for_m.addI.k3,1.0
+98,PID_for_m.addI.u1,0.18615569174289703
+99,PID_for_m.addI.u2,0.18615569174289703
+100,PID_for_m.addI.u3,0.0
+101,PID_for_m.addI.y,0.0
+102,PID_for_m.addP.k1,1.0
+103,PID_for_m.addP.k2,-1.0
+104,PID_for_m.addP.u1,0.18615569174289703
+105,PID_for_m.addP.u2,0.18615569174289703
+106,PID_for_m.addP.y,0.0
+107,PID_for_m.addPID.k1,1.0
+108,PID_for_m.addPID.k2,1.0
+109,PID_for_m.addPID.k3,1.0
+110,PID_for_m.addPID.u1,0.0
+111,PID_for_m.addPID.u2,0.0
+112,PID_for_m.addPID.u3,0.020019136369228363
+113,PID_for_m.addPID.y,0.020019136369228363
+114,PID_for_m.addSat.k1,1.0
+115,PID_for_m.addSat.k2,-1.0
+116,PID_for_m.addSat.u1,100.0956802368164
+117,PID_for_m.addSat.u2,100.0956802368164
+118,PID_for_m.addSat.y,0.0
+119,PID_for_m.controlError,0.0
+120,PID_for_m.controllerType,2.0
+121,PID_for_m.gainPID.k,5000.0
+122,PID_for_m.gainPID.u,0.020019136369228363
+123,PID_for_m.gainPID.y,100.0956802368164
+124,PID_for_m.gainTrack.k,0.0020000000949949026
+125,PID_for_m.gainTrack.u,0.0
+126,PID_for_m.gainTrack.y,0.0
+127,PID_for_m.initType,1.0
+128,PID_for_m.k,5000.0
+129,PID_for_m.limiter.limitsAtInit,1.0
+130,PID_for_m.limiter.strict,0.0
+131,PID_for_m.limiter.u,100.0956802368164
+132,PID_for_m.limiter.uMax,1000.0
+133,PID_for_m.limiter.uMin,1.0
+134,PID_for_m.limiter.y,100.0956802368164
+135,PID_for_m.limitsAtInit,1.0
+136,PID_for_m.strict,0.0
+137,PID_for_m.u_m,0.18615569174289703
+138,PID_for_m.u_s,0.18615569174289703
+139,PID_for_m.wd,0.0
+140,PID_for_m.wp,1.0
+141,PID_for_m.xd_start,0.0
+142,PID_for_m.xi_start,0.0
+143,PID_for_m.y,100.0956802368164
+144,PID_for_m.yMax,1000.0
+145,PID_for_m.yMin,1.0
+146,PID_for_m.y_start,15000.0
+147,T_out_heatexchange.T,323.94268798828125
+148,T_out_heatexchange.port.X_outflow[1],0.0
+149,T_out_heatexchange.port.X_outflow[2],0.0
+150,T_out_heatexchange.port.X_outflow[3],0.0
+151,T_out_heatexchange.port.X_outflow[4],0.0
+152,T_out_heatexchange.port.h_outflow,0.0
+153,T_out_heatexchange.port.m_flow,0.0
+154,T_out_heatexchange.port.p,164164.140625
+155,T_out_heatexchange.state.T,323.94268798828125
+156,T_out_heatexchange.state.X[1],0.05000000074505806
+157,T_out_heatexchange.state.X[2],0.20999999344348907
+158,T_out_heatexchange.state.X[3],0.7300000190734863
+159,T_out_heatexchange.state.X[4],0.009999999776482582
+160,T_out_heatexchange.state.p,164164.140625
+161,T_out_heatexchange.y,323.94268798828125
+162,T_outcompressor.T,366.6391296386719
+163,T_outcompressor.port.X_outflow[1],0.0
+164,T_outcompressor.port.X_outflow[2],0.0
+165,T_outcompressor.port.X_outflow[3],0.0
+166,T_outcompressor.port.X_outflow[4],0.0
+167,T_outcompressor.port.h_outflow,0.0
+168,T_outcompressor.port.m_flow,0.0
+169,T_outcompressor.port.p,164221.015625
+170,T_outcompressor.state.T,366.6391296386719
+171,T_outcompressor.state.X[1],0.05000000074505806
+172,T_outcompressor.state.X[2],0.20999999344348907
+173,T_outcompressor.state.X[3],0.7300000190734863
+174,T_outcompressor.state.X[4],0.009999999776482582
+175,T_outcompressor.state.p,164221.015625
+176,T_outcompressor.y,366.6391296386719
+177,T_outcycle.T,292.5295715332031
+178,T_outcycle.port.X_outflow[1],0.0
+179,T_outcycle.port.X_outflow[2],0.0
+180,T_outcycle.port.X_outflow[3],0.0
+181,T_outcycle.port.X_outflow[4],0.0
+182,T_outcycle.port.h_outflow,0.0
+183,T_outcycle.port.m_flow,0.0
+184,T_outcycle.port.p,101325.0
+185,T_outcycle.state.T,292.5295715332031
+186,T_outcycle.state.X[1],0.05000000074505806
+187,T_outcycle.state.X[2],0.20999999344348907
+188,T_outcycle.state.X[3],0.7300000190734863
+189,T_outcycle.state.X[4],0.009999999776482582
+190,T_outcycle.state.p,101325.0
+191,T_outcycle.y,292.5295715332031
+192,compressor.T_start,298.1499938964844
+193,compressor.X_in[1].y,0.05000000074505806
+194,compressor.X_in[2].y,0.20999999344348907
+195,compressor.X_in[3].y,0.7300000190734863
+196,compressor.X_in[4].y,0.009999999776482582
+197,compressor.charMap.T_in,297.04022216796875
+198,compressor.charMap.T_ref,298.1499938964844
+199,compressor.charMap.Tc_flow,1.0
+200,compressor.charMap.X_in[1],0.05000000074505806
+201,compressor.charMap.X_in[2],0.20999999344348907
+202,compressor.charMap.X_in[3],0.7300000190734863
+203,compressor.charMap.X_in[4],0.009999999776482582
+204,compressor.charMap.correctedFlow.y,0.28877630829811096
+205,compressor.charMap.correctedSpeed.y,66860.921875
+206,compressor.charMap.der(m_flow),1.1102230246251565e-15
+207,"compressor.charMap.effMap[1, 1]",0.0
+208,"compressor.charMap.effMap[1, 2]",0.10000000149011612
+209,"compressor.charMap.effMap[1, 3]",0.15000000596046448
+210,"compressor.charMap.effMap[1, 4]",0.20000000298023224
+211,"compressor.charMap.effMap[2, 1]",40000.0
+212,"compressor.charMap.effMap[2, 2]",0.75
+213,"compressor.charMap.effMap[2, 3]",0.8500000238418579
+214,"compressor.charMap.effMap[2, 4]",0.800000011920929
+215,"compressor.charMap.effMap[3, 1]",50000.0
+216,"compressor.charMap.effMap[3, 2]",0.7699999809265137
+217,"compressor.charMap.effMap[3, 3]",0.8600000143051147
+218,"compressor.charMap.effMap[3, 4]",0.8199999928474426
+219,"compressor.charMap.effMap[4, 1]",60000.0
+220,"compressor.charMap.effMap[4, 2]",0.7699999809265137
+221,"compressor.charMap.effMap[4, 3]",0.8399999737739563
+222,"compressor.charMap.effMap[4, 4]",0.7799999713897705
+223,compressor.charMap.effTable.extrapLower1,2.0
+224,compressor.charMap.effTable.extrapLower2,2.0
+225,compressor.charMap.effTable.extrapUpper1,2.0
+226,compressor.charMap.effTable.extrapUpper2,2.0
+227,compressor.charMap.effTable.interpMethod,1.0
+228,compressor.charMap.effTable.tableOnFile,0.0
+229,"compressor.charMap.effTable.table[1, 1]",0.0
+230,"compressor.charMap.effTable.table[1, 2]",0.10000000149011612
+231,"compressor.charMap.effTable.table[1, 3]",0.15000000596046448
+232,"compressor.charMap.effTable.table[1, 4]",0.20000000298023224
+233,"compressor.charMap.effTable.table[2, 1]",40000.0
+234,"compressor.charMap.effTable.table[2, 2]",0.75
+235,"compressor.charMap.effTable.table[2, 3]",0.8500000238418579
+236,"compressor.charMap.effTable.table[2, 4]",0.800000011920929
+237,"compressor.charMap.effTable.table[3, 1]",50000.0
+238,"compressor.charMap.effTable.table[3, 2]",0.7699999809265137
+239,"compressor.charMap.effTable.table[3, 3]",0.8600000143051147
+240,"compressor.charMap.effTable.table[3, 4]",0.8199999928474426
+241,"compressor.charMap.effTable.table[4, 1]",60000.0
+242,"compressor.charMap.effTable.table[4, 2]",0.7699999809265137
+243,"compressor.charMap.effTable.table[4, 3]",0.8399999737739563
+244,"compressor.charMap.effTable.table[4, 4]",0.7799999713897705
+245,compressor.charMap.effTable.u1,66860.921875
+246,compressor.charMap.effTable.u2,0.28877630829811096
+247,compressor.charMap.effTable.y,0.6216613054275513
+248,compressor.charMap.eff_max,1.0
+249,compressor.charMap.eff_min,0.10000000149011612
+250,compressor.charMap.efficiency,0.6216613054275513
+251,compressor.charMap.h_in,-672331.5
+252,compressor.charMap.isEfficiency,0.6216613054275513
+253,compressor.charMap.m_flow,0.2931486666202545
+254,compressor.charMap.massFlow,0.2931486666202545
+255,compressor.charMap.mflow_corr,0.28877630829811096
+256,compressor.charMap.mflow_start,0.15000000596046448
+257,compressor.charMap.normalizedCorrection,1.0
+258,compressor.charMap.p_in,101325.0
+259,compressor.charMap.p_out,164221.015625
+260,compressor.charMap.p_ref,100000.0
+261,compressor.charMap.pr,1.6207354068756104
+262,"compressor.charMap.prMap[1, 1]",0.0
+263,"compressor.charMap.prMap[1, 2]",0.10000000149011612
+264,"compressor.charMap.prMap[1, 3]",0.15000000596046448
+265,"compressor.charMap.prMap[1, 4]",0.20000000298023224
+266,"compressor.charMap.prMap[2, 1]",40000.0
+267,"compressor.charMap.prMap[2, 2]",2.200000047683716
+268,"compressor.charMap.prMap[2, 3]",1.7000000476837158
+269,"compressor.charMap.prMap[2, 4]",1.0
+270,"compressor.charMap.prMap[3, 1]",50000.0
+271,"compressor.charMap.prMap[3, 2]",2.799999952316284
+272,"compressor.charMap.prMap[3, 3]",2.0999999046325684
+273,"compressor.charMap.prMap[3, 4]",1.2999999523162842
+274,"compressor.charMap.prMap[4, 1]",60000.0
+275,"compressor.charMap.prMap[4, 2]",3.200000047683716
+276,"compressor.charMap.prMap[4, 3]",2.299999952316284
+277,"compressor.charMap.prMap[4, 4]",1.7999999523162842
+278,compressor.charMap.prTable.extrapLower1,2.0
+279,compressor.charMap.prTable.extrapLower2,2.0
+280,compressor.charMap.prTable.extrapUpper1,2.0
+281,compressor.charMap.prTable.extrapUpper2,2.0
+282,compressor.charMap.prTable.interpMethod,1.0
+283,compressor.charMap.prTable.tableOnFile,0.0
+284,"compressor.charMap.prTable.table[1, 1]",0.0
+285,"compressor.charMap.prTable.table[1, 2]",0.10000000149011612
+286,"compressor.charMap.prTable.table[1, 3]",0.15000000596046448
+287,"compressor.charMap.prTable.table[1, 4]",0.20000000298023224
+288,"compressor.charMap.prTable.table[2, 1]",40000.0
+289,"compressor.charMap.prTable.table[2, 2]",2.200000047683716
+290,"compressor.charMap.prTable.table[2, 3]",1.7000000476837158
+291,"compressor.charMap.prTable.table[2, 4]",1.0
+292,"compressor.charMap.prTable.table[3, 1]",50000.0
+293,"compressor.charMap.prTable.table[3, 2]",2.799999952316284
+294,"compressor.charMap.prTable.table[3, 3]",2.0999999046325684
+295,"compressor.charMap.prTable.table[3, 4]",1.2999999523162842
+296,"compressor.charMap.prTable.table[4, 1]",60000.0
+297,"compressor.charMap.prTable.table[4, 2]",3.200000047683716
+298,"compressor.charMap.prTable.table[4, 3]",2.299999952316284
+299,"compressor.charMap.prTable.table[4, 4]",1.7999999523162842
+300,compressor.charMap.prTable.u1,66860.921875
+301,compressor.charMap.prTable.u2,0.28877630829811096
+302,compressor.charMap.prTable.y,1.6207354068756104
+303,compressor.charMap.pr_char,1.6207354068756104
+304,compressor.charMap.speed,1112.2728271484375
+305,compressor.charMap.speed_corr,66860.921875
+306,compressor.charMap.speed_rpm,66736.3671875
+307,compressor.compressor.P_ext,21477.466796875
+308,compressor.compressor.T_in,297.04022216796875
+309,compressor.compressor.T_inlet,297.04022216796875
+310,compressor.compressor.T_out,366.6391296386719
+311,compressor.compressor.T_start,298.1499938964844
+312,compressor.compressor.Vd,0.05000000074505806
+313,compressor.compressor.dA_inflow,1.1509016752243042
+314,compressor.compressor.dp,62896.01171875
+315,compressor.compressor.dp0_leakage,2000000.0
+316,compressor.compressor.etaIs,0.6216613054275513
+317,compressor.compressor.etaMech,1.0
+318,compressor.compressor.eta_Vol,1.0
+319,compressor.compressor.eta_is,0.6216613054275513
+320,compressor.compressor.eta_mech,1.0
+321,compressor.compressor.flange.der(phi),6988.6162109375
+322,compressor.compressor.flange.phi,698932.3125
+323,compressor.compressor.flange.tau,3.073207378387451
+324,compressor.compressor.h_in,-672331.5
+325,compressor.compressor.h_inlet,-672331.5
+326,compressor.compressor.h_is,-626785.625
+327,compressor.compressor.h_is_lim,-626785.625
+328,compressor.compressor.h_out,-599066.75
+329,compressor.compressor.internalLeakage,0.0
+330,compressor.compressor.mFlow,0.2931486666202545
+331,compressor.compressor.m_flow,0.2931486666202545
+332,compressor.compressor.m_flow_compressor,0.2931486666202545
+333,compressor.compressor.m_flow_leakage,0.0
+334,compressor.compressor.mflow0_leakage,0.004999999888241291
+335,compressor.compressor.omega,6988.6162109375
+336,compressor.compressor.portA.X_outflow[1],0.05000000074505806
+337,compressor.compressor.portA.X_outflow[2],0.20999999344348907
+338,compressor.compressor.portA.X_outflow[3],0.7300000190734863
+339,compressor.compressor.portA.X_outflow[4],0.009999999776482582
+340,compressor.compressor.portA.h_outflow,-689884.0625
+341,compressor.compressor.portA.m_flow,0.2931486666202545
+342,compressor.compressor.portA.p,101325.0
+343,compressor.compressor.portB.X_outflow[1],0.05000000074505806
+344,compressor.compressor.portB.X_outflow[2],0.20999999344348907
+345,compressor.compressor.portB.X_outflow[3],0.7300000190734863
+346,compressor.compressor.portB.X_outflow[4],0.009999999776482582
+347,compressor.compressor.portB.h_outflow,-599066.75
+348,compressor.compressor.portB.m_flow,-0.2931486666202545
+349,compressor.compressor.portB.p,164221.015625
+350,compressor.compressor.positiveFlow,0.0
+351,compressor.compressor.pressureRatio,1.6207354068756104
+352,compressor.compressor.shaftPower,21477.466796875
+353,compressor.compressor.shaftTorque,3.073207378387451
+354,compressor.compressor.speed,1112.2728271484375
+355,compressor.compressor.stateA_inflow.T,297.04022216796875
+356,compressor.compressor.stateA_inflow.X[1],0.05000000074505806
+357,compressor.compressor.stateA_inflow.X[2],0.20999999344348907
+358,compressor.compressor.stateA_inflow.X[3],0.7300000190734863
+359,compressor.compressor.stateA_inflow.X[4],0.009999999776482582
+360,compressor.compressor.stateA_inflow.p,101325.0
+361,compressor.compressor.state_outflow.T,366.6391296386719
+362,compressor.compressor.state_outflow.X[1],0.05000000074505806
+363,compressor.compressor.state_outflow.X[2],0.20999999344348907
+364,compressor.compressor.state_outflow.X[3],0.7300000190734863
+365,compressor.compressor.state_outflow.X[4],0.009999999776482582
+366,compressor.compressor.state_outflow.p,164221.015625
+367,compressor.compressor.torqueFromDisplacement,0.0
+368,compressor.compressor.w_start,62.83190155029297
+369,compressor.dp0_leakage,2000000.0
+370,compressor.eff_max,1.0
+371,compressor.eff_min,0.10000000149011612
+372,compressor.etaMech.y,1.0
+373,compressor.eta_mech,1.0
+374,compressor.flange.phi,698932.3125
+375,compressor.flange.tau,3.073207378387451
+376,compressor.internalLeakage,0.0
+377,compressor.mflow0_leakage,0.004999999888241291
+378,compressor.portA.X_outflow[1],0.05000000074505806
+379,compressor.portA.X_outflow[2],0.20999999344348907
+380,compressor.portA.X_outflow[3],0.7300000190734863
+381,compressor.portA.X_outflow[4],0.009999999776482582
+382,compressor.portA.h_outflow,-689884.0625
+383,compressor.portA.m_flow,0.2931486666202545
+384,compressor.portA.p,101325.0
+385,compressor.portB.X_outflow[1],0.05000000074505806
+386,compressor.portB.X_outflow[2],0.20999999344348907
+387,compressor.portB.X_outflow[3],0.7300000190734863
+388,compressor.portB.X_outflow[4],0.009999999776482582
+389,compressor.portB.h_outflow,-599066.75
+390,compressor.portB.m_flow,-0.2931486666202545
+391,compressor.portB.p,164221.015625
+392,compressor.positiveFlow,0.0
+393,compressor.pressureSensor.p_scale,1.0
+394,compressor.pressureSensor.port.X_outflow[1],0.0
+395,compressor.pressureSensor.port.X_outflow[2],0.0
+396,compressor.pressureSensor.port.X_outflow[3],0.0
+397,compressor.pressureSensor.port.X_outflow[4],0.0
+398,compressor.pressureSensor.port.h_outflow,0.0
+399,compressor.pressureSensor.port.m_flow,0.0
+400,compressor.pressureSensor.port.p,101325.0
+401,compressor.pressureSensor.pressureUnit,1.0
+402,compressor.pressureSensor.y,101325.0
+403,compressor.pressureSensor1.p_scale,1.0
+404,compressor.pressureSensor1.port.X_outflow[1],0.0
+405,compressor.pressureSensor1.port.X_outflow[2],0.0
+406,compressor.pressureSensor1.port.X_outflow[3],0.0
+407,compressor.pressureSensor1.port.X_outflow[4],0.0
+408,compressor.pressureSensor1.port.h_outflow,0.0
+409,compressor.pressureSensor1.port.m_flow,0.0
+410,compressor.pressureSensor1.port.p,164221.015625
+411,compressor.pressureSensor1.pressureUnit,1.0
+412,compressor.pressureSensor1.y,164221.015625
+413,compressor.rotationalSpeedSensor.port.der(phi),6988.6162109375
+414,compressor.rotationalSpeedSensor.port.phi,698932.3125
+415,compressor.rotationalSpeedSensor.port.tau,0.0
+416,compressor.rotationalSpeedSensor.y,1112.2728271484375
+417,compressor.summary.T_dis,366.6391296386719
+418,compressor.summary.T_suc,297.04022216796875
+419,compressor.summary.correctedFlow,0.28877630829811096
+420,compressor.summary.correctedSpeed,66860.921875
+421,compressor.summary.efficiencyIsentropic,0.6216613054275513
+422,compressor.summary.m_flow,0.2931486666202545
+423,compressor.summary.p_dis,164221.015625
+424,compressor.summary.p_suc,101325.0
+425,compressor.summary.pr,1.6207354068756104
+426,compressor.summary.rotorSpeed,6988.6162109375
+427,compressor.summary.shaftPower,21477.466796875
+428,compressor.summary.shaftTorque,3.073207378387451
+429,compressor.w_start,62.83190155029297
+430,compressor_speed.a,-1.3714857516333723e-07
+431,compressor_speed.der(phi),6988.6162109375
+432,compressor_speed.der(w),-1.3714857516333723e-07
+433,compressor_speed.exact,0.0
+434,compressor_speed.f_crit,50.0
+435,compressor_speed.flange.phi,698932.3125
+436,compressor_speed.flange.tau,-3.073207378387451
+437,compressor_speed.phi,698932.3125
+438,compressor_speed.w,6988.6162109375
+439,compressor_speed.w_ref,6988.6162109375
+440,coolingCal.CoolingPower,-11.050456047058105
+441,coolingCal.c_p,1.2000000476837158
+442,coolingCal.m_port,0.2931486666202545
+443,coolingCal.portA,323.94268798828125
+444,coolingCal.portB,292.5295715332031
+445,epsNTUTableNu.A_heat,5.0
+446,epsNTUTableNu.A_heat_prim,0.10000000149011612
+447,epsNTUTableNu.A_heat_sec,0.10000000149011612
+448,epsNTUTableNu.A_prim,0.009999999776482582
+449,epsNTUTableNu.A_sec,0.004999999888241291
+450,epsNTUTableNu.C,0.6492599844932556
+451,epsNTUTableNu.CF_HeatTransfer,1.0
+452,epsNTUTableNu.CF_PrimarySidePressureLoss,1.0
+453,epsNTUTableNu.CF_SecondarySidePressureLoss,1.0
+454,epsNTUTableNu.Dhyd_prim,0.009999999776482582
+455,epsNTUTableNu.Dhyd_sec,0.009999999776482582
+456,epsNTUTableNu.L_prim,0.5
+457,epsNTUTableNu.L_sec,0.5
+458,epsNTUTableNu.Lc,0.5
+459,epsNTUTableNu.NTU,47.18470764160156
+460,epsNTUTableNu.Nu,37752.93359375
+461,"epsNTUTableNu.NuTable[1, 1]",0.0
+462,"epsNTUTableNu.NuTable[1, 2]",100.0
+463,"epsNTUTableNu.NuTable[1, 3]",200.0
+464,"epsNTUTableNu.NuTable[2, 1]",10000.0
+465,"epsNTUTableNu.NuTable[2, 2]",70.0
+466,"epsNTUTableNu.NuTable[2, 3]",200.0
+467,"epsNTUTableNu.NuTable[3, 1]",30000.0
+468,"epsNTUTableNu.NuTable[3, 2]",800.0
+469,"epsNTUTableNu.NuTable[3, 3]",1000.0
+470,epsNTUTableNu.Q_flow,-13189.2802734375
+471,epsNTUTableNu.Q_max,-13189.2802734375
+472,epsNTUTableNu.Re_prim,10859.68359375
+473,epsNTUTableNu.Re_primary.y,10859.68359375
+474,epsNTUTableNu.Re_sec,28407.546875
+475,epsNTUTableNu.Re_secondary.y,28407.546875
+476,epsNTUTableNu.T_prim_start,313.1499938964844
+477,epsNTUTableNu.T_sec_start,313.1499938964844
+478,epsNTUTableNu.Tprim_in,301.1499938964844
+479,epsNTUTableNu.Tsec_in,366.6391296386719
+480,epsNTUTableNu.U,1896.5382080078125
+481,epsNTUTableNu.V_prim,0.004999999888241291
+482,epsNTUTableNu.V_sec,0.0024999999441206455
+483,epsNTUTableNu.dp_prim,8.712185859680176
+484,epsNTUTableNu.dp_prim_start,1000.0
+485,epsNTUTableNu.dp_sec,56.86553192138672
+486,epsNTUTableNu.dp_sec_start,1000.0
+487,epsNTUTableNu.dp_smooth,10.0
+488,epsNTUTableNu.effectivenessStreamChoice,3.0
+489,epsNTUTableNu.eps,1.0
+490,epsNTUTableNu.etaA_prim,1.8416743841953576e-05
+491,epsNTUTableNu.etaA_sec,2.063878855551593e-05
+492,epsNTUTableNu.etaB_prim,1.771578172338195e-05
+493,epsNTUTableNu.etaB_sec,1.8724413166637532e-05
+494,epsNTUTableNu.eta_prim,1.8416743841953576e-05
+495,epsNTUTableNu.eta_sec,2.063878855551593e-05
+496,epsNTUTableNu.extrapLower1,2.0
+497,epsNTUTableNu.extrapLower2,2.0
+498,epsNTUTableNu.extrapUpper1,2.0
+499,epsNTUTableNu.extrapUpper2,2.0
+500,epsNTUTableNu.friction_prim.A,0.009999999776482582
+501,epsNTUTableNu.friction_prim.Dhyd,0.009999999776482582
+502,epsNTUTableNu.friction_prim.F_user,1.0
+503,epsNTUTableNu.friction_prim.L,0.5
+504,epsNTUTableNu.friction_prim.d,1.1720163822174072
+505,epsNTUTableNu.friction_prim.dA,1.1720163822174072
+506,epsNTUTableNu.friction_prim.dB,1.1350833177566528
+507,epsNTUTableNu.friction_prim.dp,8.712185859680176
+508,epsNTUTableNu.friction_prim.dpFraction0,1.0
+509,epsNTUTableNu.friction_prim.dp_smooth,10.0
+510,epsNTUTableNu.friction_prim.f_D,0.0010000000474974513
+511,epsNTUTableNu.friction_prim.flowFraction0,1.0
+512,epsNTUTableNu.friction_prim.from_dp,1.0
+513,epsNTUTableNu.friction_prim.lengthFraction,1.0
+514,epsNTUTableNu.friction_prim.m_flow,0.20000000298023224
+515,epsNTUTableNu.friction_prim.mflow_smooth,9.999999747378752e-05
+516,epsNTUTableNu.friction_prim.n_channels,1.0
+517,epsNTUTableNu.friction_prim.nexp,2.0
+518,epsNTUTableNu.friction_prim.positiveFlow,0.0
+519,epsNTUTableNu.friction_prim.reference_d,1.0
+520,epsNTUTableNu.friction_prim.stateA_inflow.T,301.1499938964844
+521,epsNTUTableNu.friction_prim.stateA_inflow.X[1],0.0
+522,epsNTUTableNu.friction_prim.stateA_inflow.X[2],0.23199999332427979
+523,epsNTUTableNu.friction_prim.stateA_inflow.X[3],0.7549999952316284
+524,epsNTUTableNu.friction_prim.stateA_inflow.X[4],0.013000000268220901
+525,epsNTUTableNu.friction_prim.stateA_inflow.p,101323.7109375
+526,epsNTUTableNu.friction_prim.stateB_inflow.T,301.1499938964844
+527,epsNTUTableNu.friction_prim.stateB_inflow.X[1],0.05000000074505806
+528,epsNTUTableNu.friction_prim.stateB_inflow.X[2],0.20999999344348907
+529,epsNTUTableNu.friction_prim.stateB_inflow.X[3],0.7300000190734863
+530,epsNTUTableNu.friction_prim.stateB_inflow.X[4],0.009999999776482582
+531,epsNTUTableNu.friction_prim.stateB_inflow.p,101315.0
+532,epsNTUTableNu.friction_prim.useFixedDensity,0.0
+533,epsNTUTableNu.friction_prim.zeta,0.05000000074505806
+534,epsNTUTableNu.friction_sec.A,0.004999999888241291
+535,epsNTUTableNu.friction_sec.Dhyd,0.009999999776482582
+536,epsNTUTableNu.friction_sec.F_user,1.0
+537,epsNTUTableNu.friction_sec.L,0.5
+538,epsNTUTableNu.friction_sec.d,1.511216640472412
+539,epsNTUTableNu.friction_sec.dA,1.511216640472412
+540,epsNTUTableNu.friction_sec.dB,1.7140007019042969
+541,epsNTUTableNu.friction_sec.dp,56.86553192138672
+542,epsNTUTableNu.friction_sec.dpFraction0,1.0
+543,epsNTUTableNu.friction_sec.dp_smooth,10.0
+544,epsNTUTableNu.friction_sec.f_D,0.0010000000474974513
+545,epsNTUTableNu.friction_sec.flowFraction0,1.0
+546,epsNTUTableNu.friction_sec.from_dp,1.0
+547,epsNTUTableNu.friction_sec.lengthFraction,1.0
+548,epsNTUTableNu.friction_sec.m_flow,0.2931486666202545
+549,epsNTUTableNu.friction_sec.mflow_smooth,9.999999747378752e-05
+550,epsNTUTableNu.friction_sec.n_channels,1.0
+551,epsNTUTableNu.friction_sec.nexp,2.0
+552,epsNTUTableNu.friction_sec.positiveFlow,0.0
+553,epsNTUTableNu.friction_sec.reference_d,1.0
+554,epsNTUTableNu.friction_sec.stateA_inflow.T,366.6391296386719
+555,epsNTUTableNu.friction_sec.stateA_inflow.X[1],0.05000000074505806
+556,epsNTUTableNu.friction_sec.stateA_inflow.X[2],0.20999999344348907
+557,epsNTUTableNu.friction_sec.stateA_inflow.X[3],0.7300000190734863
+558,epsNTUTableNu.friction_sec.stateA_inflow.X[4],0.009999999776482582
+559,epsNTUTableNu.friction_sec.stateA_inflow.p,164221.015625
+560,epsNTUTableNu.friction_sec.stateB_inflow.T,323.1499938964844
+561,epsNTUTableNu.friction_sec.stateB_inflow.X[1],0.05000000074505806
+562,epsNTUTableNu.friction_sec.stateB_inflow.X[2],0.20999999344348907
+563,epsNTUTableNu.friction_sec.stateB_inflow.X[3],0.7300000190734863
+564,epsNTUTableNu.friction_sec.stateB_inflow.X[4],0.009999999776482582
+565,epsNTUTableNu.friction_sec.stateB_inflow.p,164164.140625
+566,epsNTUTableNu.friction_sec.useFixedDensity,0.0
+567,epsNTUTableNu.friction_sec.zeta,0.05000000074505806
+568,epsNTUTableNu.from_dp_prim,1.0
+569,epsNTUTableNu.from_dp_sec,1.0
+570,epsNTUTableNu.generateEventForReversal_prim,0.0
+571,epsNTUTableNu.generateEventForReversal_sec,0.0
+572,epsNTUTableNu.hprim_in,3014.323974609375
+573,epsNTUTableNu.hsec_in,-599066.75
+574,epsNTUTableNu.interpMethod,1.0
+575,epsNTUTableNu.interpolation.extrapLower1,2.0
+576,epsNTUTableNu.interpolation.extrapLower2,2.0
+577,epsNTUTableNu.interpolation.extrapUpper1,2.0
+578,epsNTUTableNu.interpolation.extrapUpper2,2.0
+579,epsNTUTableNu.interpolation.interpMethod,1.0
+580,epsNTUTableNu.interpolation.tableOnFile,0.0
+581,"epsNTUTableNu.interpolation.table[1, 1]",0.0
+582,"epsNTUTableNu.interpolation.table[1, 2]",100.0
+583,"epsNTUTableNu.interpolation.table[1, 3]",200.0
+584,"epsNTUTableNu.interpolation.table[2, 1]",10000.0
+585,"epsNTUTableNu.interpolation.table[2, 2]",70.0
+586,"epsNTUTableNu.interpolation.table[2, 3]",200.0
+587,"epsNTUTableNu.interpolation.table[3, 1]",30000.0
+588,"epsNTUTableNu.interpolation.table[3, 2]",800.0
+589,"epsNTUTableNu.interpolation.table[3, 3]",1000.0
+590,epsNTUTableNu.interpolation.u1,10859.68359375
+591,epsNTUTableNu.interpolation.u2,28407.546875
+592,epsNTUTableNu.interpolation.y,37752.93359375
+593,epsNTUTableNu.kA_prim,0.02511776052415371
+594,epsNTUTableNu.kB_prim,0.025092387571930885
+595,epsNTUTableNu.k_prim,0.02511776052415371
+596,epsNTUTableNu.m_flow_prim,0.20000000298023224
+597,epsNTUTableNu.m_flow_sec,0.2931486666202545
+598,epsNTUTableNu.mflow_prim_start,0.10000000149011612
+599,epsNTUTableNu.mflow_sec_start,0.10000000149011612
+600,epsNTUTableNu.mflow_smooth,9.999999747378752e-05
+601,epsNTUTableNu.n_channels_prim,1.0
+602,epsNTUTableNu.n_channels_sec,1.0
+603,epsNTUTableNu.pAprim,101323.7109375
+604,epsNTUTableNu.pAsec,164221.015625
+605,epsNTUTableNu.pBprim,101315.0
+606,epsNTUTableNu.pBsec,164164.140625
+607,epsNTUTableNu.portA_primary.X_outflow[1],0.05000000074505806
+608,epsNTUTableNu.portA_primary.X_outflow[2],0.20999999344348907
+609,epsNTUTableNu.portA_primary.X_outflow[3],0.7300000190734863
+610,epsNTUTableNu.portA_primary.X_outflow[4],0.009999999776482582
+611,epsNTUTableNu.portA_primary.h_outflow,-602068.875
+612,epsNTUTableNu.portA_primary.m_flow,0.20000000298023224
+613,epsNTUTableNu.portA_primary.p,101323.7109375
+614,epsNTUTableNu.portA_secondary.X_outflow[1],0.05000000074505806
+615,epsNTUTableNu.portA_secondary.X_outflow[2],0.20999999344348907
+616,epsNTUTableNu.portA_secondary.X_outflow[3],0.7300000190734863
+617,epsNTUTableNu.portA_secondary.X_outflow[4],0.009999999776482582
+618,epsNTUTableNu.portA_secondary.h_outflow,-689884.0625
+619,epsNTUTableNu.portA_secondary.m_flow,0.2931486666202545
+620,epsNTUTableNu.portA_secondary.p,164221.015625
+621,epsNTUTableNu.portB_primary.X_outflow[1],0.0
+622,epsNTUTableNu.portB_primary.X_outflow[2],0.23199999332427979
+623,epsNTUTableNu.portB_primary.X_outflow[3],0.7549999952316284
+624,epsNTUTableNu.portB_primary.X_outflow[4],0.013000000268220901
+625,epsNTUTableNu.portB_primary.h_outflow,68960.7265625
+626,epsNTUTableNu.portB_primary.m_flow,-0.20000000298023224
+627,epsNTUTableNu.portB_primary.p,101315.0
+628,epsNTUTableNu.portB_secondary.X_outflow[1],0.05000000074505806
+629,epsNTUTableNu.portB_secondary.X_outflow[2],0.20999999344348907
+630,epsNTUTableNu.portB_secondary.X_outflow[3],0.7300000190734863
+631,epsNTUTableNu.portB_secondary.X_outflow[4],0.009999999776482582
+632,epsNTUTableNu.portB_secondary.h_outflow,-644058.5
+633,epsNTUTableNu.portB_secondary.m_flow,-0.2931486666202545
+634,epsNTUTableNu.portB_secondary.p,164164.140625
+635,epsNTUTableNu.positiveFlow_prim,0.0
+636,epsNTUTableNu.positiveFlow_sec,0.0
+637,epsNTUTableNu.pprim_out,101315.0
+638,epsNTUTableNu.psec_out,164164.140625
+639,epsNTUTableNu.summary.Q_flow,-13189.2802734375
+640,epsNTUTableNu.summary.Tin_prim,301.1499938964844
+641,epsNTUTableNu.summary.Tin_sec,366.6391296386719
+642,epsNTUTableNu.summary.Tout_prim,366.6391296386719
+643,epsNTUTableNu.summary.Tout_sec,323.94268798828125
+644,epsNTUTableNu.summary.Tpinch_prim_in,-22.792680740356445
+645,epsNTUTableNu.summary.Tpinch_prim_out,-1.488051225351228e-06
+646,epsNTUTableNu.summary.dp_prim,8.712185859680176
+647,epsNTUTableNu.summary.dp_sec,56.86553192138672
+648,epsNTUTableNu.summary.effectiveness,1.0
+649,epsNTUTableNu.summary.hin_prim,3014.323974609375
+650,epsNTUTableNu.summary.hin_sec,-599066.75
+651,epsNTUTableNu.summary.hout_prim,68960.7265625
+652,epsNTUTableNu.summary.hout_sec,-644058.5
+653,epsNTUTableNu.summary.lmtd,-11.396341323852539
+654,epsNTUTableNu.summary.m_flow_prim,0.20000000298023224
+655,epsNTUTableNu.summary.m_flow_sec,0.2931486666202545
+656,epsNTUTableNu.summary.pin_prim,101323.7109375
+657,epsNTUTableNu.summary.pin_sec,164221.015625
+658,epsNTUTableNu.summary.pout_prim,101315.0
+659,epsNTUTableNu.summary.pout_sec,164164.140625
+660,epsNTUTableNu.tableOnFile,0.0
+661,fan.T_start,293.1499938964844
+662,fan.Tau,0.30000001192092896
+663,fan.add.k1,-1.0
+664,fan.add.k2,1.0
+665,fan.add.u1,101315.0
+666,fan.add.u2,101315.0
+667,fan.add.y,0.0
+668,fan.characteristics.D,0.15000000596046448
+669,fan.characteristics.D_nom,0.15000000596046448
+670,fan.characteristics.Pfan,37795.25390625
+671,fan.characteristics.Vflow,0.15930722653865814
+672,fan.characteristics.d,1.1685326099395752
+673,fan.characteristics.d_nom,1.0
+674,fan.characteristics.dp,0.0
+675,fan.characteristics.dp0,0.0
+676,fan.characteristics.dp0_vs_PFan0.columns[1],2.0
+677,fan.characteristics.dp0_vs_PFan0.nout,1.0
+678,fan.characteristics.dp0_vs_PFan0.smoothness,1.0
+679,fan.characteristics.dp0_vs_PFan0.tableOnFile,0.0
+680,"fan.characteristics.dp0_vs_PFan0.table[1, 1]",300.0
+681,"fan.characteristics.dp0_vs_PFan0.table[1, 2]",8000.0
+682,fan.characteristics.dp0_vs_PFan0.u,0.0
+683,fan.characteristics.dp0_vs_PFan0.verboseRead,1.0
+684,fan.characteristics.dp0_vs_PFan0.y[1],8000.0
+685,fan.characteristics.dp0_vs_V_flow0.columns[1],2.0
+686,fan.characteristics.dp0_vs_V_flow0.nout,1.0
+687,fan.characteristics.dp0_vs_V_flow0.smoothness,1.0
+688,fan.characteristics.dp0_vs_V_flow0.tableOnFile,0.0
+689,"fan.characteristics.dp0_vs_V_flow0.table[1, 1]",300.0
+690,"fan.characteristics.dp0_vs_V_flow0.table[1, 2]",0.10000000149011612
+691,fan.characteristics.dp0_vs_V_flow0.u,0.0
+692,fan.characteristics.dp0_vs_V_flow0.verboseRead,1.0
+693,fan.characteristics.dp0_vs_V_flow0.y[1],0.10000000149011612
+694,fan.characteristics.dp_adjusted.y,0.0
+695,"fan.characteristics.mapPfan[1, 1]",300.0
+696,"fan.characteristics.mapPfan[1, 2]",8000.0
+697,"fan.characteristics.mapVflow[1, 1]",300.0
+698,"fan.characteristics.mapVflow[1, 2]",0.10000000149011612
+699,fan.characteristics.n_nom,10.0
+700,fan.characteristics.speed,15.930723190307617
+701,fan.checkPowerConsumption,0.0
+702,fan.densitySensor.T,292.5295715332031
+703,fan.densitySensor.d,1.1685326099395752
+704,fan.densitySensor.port.X_outflow[1],0.0
+705,fan.densitySensor.port.X_outflow[2],0.0
+706,fan.densitySensor.port.X_outflow[3],0.0
+707,fan.densitySensor.port.X_outflow[4],0.0
+708,fan.densitySensor.port.h_outflow,0.0
+709,fan.densitySensor.port.m_flow,0.0
+710,fan.densitySensor.port.p,101315.0
+711,fan.densitySensor.state.T,292.5295715332031
+712,fan.densitySensor.state.X[1],0.05000000074505806
+713,fan.densitySensor.state.X[2],0.20999999344348907
+714,fan.densitySensor.state.X[3],0.7300000190734863
+715,fan.densitySensor.state.X[4],0.009999999776482582
+716,fan.densitySensor.state.p,101315.0
+717,fan.densitySensor.y,1.1685326099395752
+718,fan.dynamicModel,1.0
+719,fan.fan.P,37795.25390625
+720,fan.fan.P_ext,37795.25390625
+721,fan.fan.P_fan_in,37795.25390625
+722,fan.fan.T_in,292.5295715332031
+723,fan.fan.T_out,484.1055603027344
+724,fan.fan.T_start,293.1499938964844
+725,fan.fan.Tau,0.30000001192092896
+726,fan.fan.V_flow_in,0.15930722653865814
+727,fan.fan.W,0.0
+728,fan.fan.checkPowerConsumption,0.0
+729,fan.fan.dA_inflow,1.1685326099395752
+730,fan.fan.der(P),-2.425319112209223e-10
+731,fan.fan.der(m_flow),-1.0177044745327663e-15
+732,fan.fan.dp,0.0
+733,fan.fan.dynamicModel,1.0
+734,fan.fan.flange.der(phi),100.0956802368164
+735,fan.fan.flange.phi,10036.810546875
+736,fan.fan.flange.tau,358.711669921875
+737,fan.fan.h_is,-677067.625
+738,fan.fan.h_out,-474037.28125
+739,fan.fan.m_flow,0.18615569174289703
+740,fan.fan.m_flow_start,0.009999999776482582
+741,fan.fan.mechanicalLoss,5.0
+742,fan.fan.omega,100.0956802368164
+743,fan.fan.portA.X_outflow[1],0.05000000074505806
+744,fan.fan.portA.X_outflow[2],0.20999999344348907
+745,fan.fan.portA.X_outflow[3],0.7300000190734863
+746,fan.fan.portA.X_outflow[4],0.009999999776482582
+747,fan.fan.portA.h_outflow,-660661.4375
+748,fan.fan.portA.m_flow,0.18615569174289703
+749,fan.fan.portA.p,101315.0
+750,fan.fan.portB.X_outflow[1],0.05000000074505806
+751,fan.fan.portB.X_outflow[2],0.20999999344348907
+752,fan.fan.portB.X_outflow[3],0.7300000190734863
+753,fan.fan.portB.X_outflow[4],0.009999999776482582
+754,fan.fan.portB.h_outflow,-474037.28125
+755,fan.fan.portB.m_flow,-0.18615569174289703
+756,fan.fan.portB.p,101315.0
+757,fan.fan.positiveFlow,1.0
+758,fan.fan.pressureRatio,1.0
+759,fan.fan.shaftPower,35905.4921875
+760,fan.fan.shaftTorque,358.711669921875
+761,fan.fan.speed,15.930723190307617
+762,fan.fan.stateA_inflow.T,292.5295715332031
+763,fan.fan.stateA_inflow.X[1],0.05000000074505806
+764,fan.fan.stateA_inflow.X[2],0.20999999344348907
+765,fan.fan.stateA_inflow.X[3],0.7300000190734863
+766,fan.fan.stateA_inflow.X[4],0.009999999776482582
+767,fan.fan.stateA_inflow.p,101315.0
+768,fan.fan.state_outflow.T,484.1055603027344
+769,fan.fan.state_outflow.X[1],0.05000000074505806
+770,fan.fan.state_outflow.X[2],0.20999999344348907
+771,fan.fan.state_outflow.X[3],0.7300000190734863
+772,fan.fan.state_outflow.X[4],0.009999999776482582
+773,fan.fan.state_outflow.p,101315.0
+774,fan.fan.steady_state_initflow,0.0
+775,fan.flange.phi,10036.810546875
+776,fan.flange.tau,358.711669921875
+777,fan.m_flow_start,0.009999999776482582
+778,fan.mechanicalLoss,5.0
+779,fan.portA.X_outflow[1],0.0
+780,fan.portA.X_outflow[2],0.0
+781,fan.portA.X_outflow[3],0.0
+782,fan.portA.X_outflow[4],0.0
+783,fan.portA.h_outflow,0.0
+784,fan.portA.m_flow,0.18615569174289703
+785,fan.portA.p,101315.0
+786,fan.portB.X_outflow[1],0.05000000074505806
+787,fan.portB.X_outflow[2],0.20999999344348907
+788,fan.portB.X_outflow[3],0.7300000190734863
+789,fan.portB.X_outflow[4],0.009999999776482582
+790,fan.portB.h_outflow,-474037.28125
+791,fan.portB.m_flow,-0.18615569174289703
+792,fan.portB.p,101315.0
+793,fan.positiveFlow,1.0
+794,fan.pressureSensor.p_scale,1.0
+795,fan.pressureSensor.port.X_outflow[1],0.0
+796,fan.pressureSensor.port.X_outflow[2],0.0
+797,fan.pressureSensor.port.X_outflow[3],0.0
+798,fan.pressureSensor.port.X_outflow[4],0.0
+799,fan.pressureSensor.port.h_outflow,0.0
+800,fan.pressureSensor.port.m_flow,0.0
+801,fan.pressureSensor.port.p,101315.0
+802,fan.pressureSensor.pressureUnit,1.0
+803,fan.pressureSensor.y,101315.0
+804,fan.pressureSensor1.p_scale,1.0
+805,fan.pressureSensor1.port.X_outflow[1],0.0
+806,fan.pressureSensor1.port.X_outflow[2],0.0
+807,fan.pressureSensor1.port.X_outflow[3],0.0
+808,fan.pressureSensor1.port.X_outflow[4],0.0
+809,fan.pressureSensor1.port.h_outflow,0.0
+810,fan.pressureSensor1.port.m_flow,0.0
+811,fan.pressureSensor1.port.p,101315.0
+812,fan.pressureSensor1.pressureUnit,1.0
+813,fan.pressureSensor1.y,101315.0
+814,fan.rotationalSpeedSensor.port.der(phi),100.0956802368164
+815,fan.rotationalSpeedSensor.port.phi,10036.810546875
+816,fan.rotationalSpeedSensor.port.tau,0.0
+817,fan.rotationalSpeedSensor.y,15.930723190307617
+818,fan.steady_state_initflow,0.0
+819,fan.summary.P,37795.25390625
+820,fan.summary.T_in,292.5295715332031
+821,fan.summary.T_out,484.1055603027344
+822,fan.summary.V_flow,0.15930722653865814
+823,fan.summary.W,0.0
+824,fan.summary.m_flow,0.18615569174289703
+825,fan_in.N,1.0
+826,fan_in.T,301.1499938964844
+827,fan_in.T_in,292.5295715332031
+828,fan_in.T_set,292.5295715332031
+829,fan_in.Tc_port_state,0.10000000149011612
+830,fan_in.X[1],0.05000000074505806
+831,fan_in.X[2],0.20999999344348907
+832,fan_in.X[3],0.7300000190734863
+833,fan_in.X[4],0.009999999776482582
+834,"fan_in.X_port[1, 1]",0.05000000074505806
+835,"fan_in.X_port[1, 2]",0.20999999344348907
+836,"fan_in.X_port[1, 3]",0.7300000190734863
+837,"fan_in.X_port[1, 4]",0.009999999776482582
+838,fan_in.enable_m_flow_iv[1],1.0
+839,fan_in.enable_p_res,0.0
+840,fan_in.filter_port_state,0.0
+841,fan_in.fluidPort[1].X_outflow[1],0.05000000074505806
+842,fan_in.fluidPort[1].X_outflow[2],0.20999999344348907
+843,fan_in.fluidPort[1].X_outflow[3],0.7300000190734863
+844,fan_in.fluidPort[1].X_outflow[4],0.009999999776482582
+845,fan_in.fluidPort[1].h_outflow,-677067.625
+846,fan_in.fluidPort[1].m_flow,-0.18615569174289703
+847,fan_in.fluidPort[1].p,101315.0
+848,fan_in.h,200000.0
+849,fan_in.h_port[1],-677067.625
+850,fan_in.h_set,-677067.625
+851,fan_in.m_flow[1],-0.18615569174289703
+852,fan_in.p,101315.0
+853,fan_in.p_scale,1.0
+854,fan_in.p_set,101315.0
+855,fan_in.state.T,292.5295715332031
+856,fan_in.state.X[1],0.05000000074505806
+857,fan_in.state.X[2],0.20999999344348907
+858,fan_in.state.X[3],0.7300000190734863
+859,fan_in.state.X[4],0.009999999776482582
+860,fan_in.state.p,101315.0
+861,fan_in.steady_state_port_init,0.0
+862,fan_out.N,1.0
+863,fan_out.T,308.1499938964844
+864,fan_out.T_set,308.1499938964844
+865,fan_out.Tc_port_state,0.10000000149011612
+866,fan_out.X[1],0.05000000074505806
+867,fan_out.X[2],0.20999999344348907
+868,fan_out.X[3],0.7300000190734863
+869,fan_out.X[4],0.009999999776482582
+870,"fan_out.X_port[1, 1]",0.05000000074505806
+871,"fan_out.X_port[1, 2]",0.20999999344348907
+872,"fan_out.X_port[1, 3]",0.7300000190734863
+873,"fan_out.X_port[1, 4]",0.009999999776482582
+874,fan_out.enable_m_flow_iv[1],1.0
+875,fan_out.enable_p_res,0.0
+876,fan_out.filter_port_state,0.0
+877,fan_out.fluidPort[1].X_outflow[1],0.05000000074505806
+878,fan_out.fluidPort[1].X_outflow[2],0.20999999344348907
+879,fan_out.fluidPort[1].X_outflow[3],0.7300000190734863
+880,fan_out.fluidPort[1].X_outflow[4],0.009999999776482582
+881,fan_out.fluidPort[1].h_outflow,-660661.4375
+882,fan_out.fluidPort[1].m_flow,0.18615569174289703
+883,fan_out.fluidPort[1].p,101315.0
+884,fan_out.h,200000.0
+885,fan_out.h_port[1],-474037.28125
+886,fan_out.h_set,-660661.4375
+887,fan_out.m_flow[1],0.18615569174289703
+888,fan_out.p,101315.0
+889,fan_out.p_scale,1.0
+890,fan_out.p_set,101315.0
+891,fan_out.state.T,308.1499938964844
+892,fan_out.state.X[1],0.05000000074505806
+893,fan_out.state.X[2],0.20999999344348907
+894,fan_out.state.X[3],0.7300000190734863
+895,fan_out.state.X[4],0.009999999776482582
+896,fan_out.state.p,101315.0
+897,fan_out.steady_state_port_init,0.0
+898,fan_speed.a,-4.46447176102871e-12
+899,fan_speed.der(phi),100.0956802368164
+900,fan_speed.der(w),-4.46447176102871e-12
+901,fan_speed.exact,0.0
+902,fan_speed.f_crit,50.0
+903,fan_speed.flange.phi,10036.810546875
+904,fan_speed.flange.tau,-358.711669921875
+905,fan_speed.phi,10036.810546875
+906,fan_speed.w,100.0956802368164
+907,fan_speed.w_ref,100.0956802368164
+908,haetex_out.T,366.6391296386719
+909,haetex_out.port.X_outflow[1],0.0
+910,haetex_out.port.X_outflow[2],0.0
+911,haetex_out.port.X_outflow[3],0.0
+912,haetex_out.port.X_outflow[4],0.0
+913,haetex_out.port.h_outflow,0.0
+914,haetex_out.port.m_flow,0.0
+915,haetex_out.port.p,101315.0
+916,haetex_out.state.T,366.6391296386719
+917,haetex_out.state.X[1],0.0
+918,haetex_out.state.X[2],0.23199999332427979
+919,haetex_out.state.X[3],0.7549999952316284
+920,haetex_out.state.X[4],0.013000000268220901
+921,haetex_out.state.p,101315.0
+922,haetex_out.y,366.6391296386719
+923,heatex_in.T,301.1499938964844
+924,heatex_in.port.X_outflow[1],0.0
+925,heatex_in.port.X_outflow[2],0.0
+926,heatex_in.port.X_outflow[3],0.0
+927,heatex_in.port.X_outflow[4],0.0
+928,heatex_in.port.h_outflow,0.0
+929,heatex_in.port.m_flow,0.0
+930,heatex_in.port.p,101323.7109375
+931,heatex_in.state.T,301.1499938964844
+932,heatex_in.state.X[1],0.0
+933,heatex_in.state.X[2],0.23199999332427979
+934,heatex_in.state.X[3],0.7549999952316284
+935,heatex_in.state.X[4],0.013000000268220901
+936,heatex_in.state.p,101323.7109375
+937,heatex_in.y,301.1499938964844
+938,in_environment.T,301.1499938964844
+939,in_environment.T_set,301.1499938964844
+940,in_environment.V_flow,0.0
+941,in_environment.Vflow_scale,1.0
+942,in_environment.X[1],0.0
+943,in_environment.X[2],0.23199999332427979
+944,in_environment.X[3],0.7549999952316284
+945,in_environment.X[4],0.013000000268220901
+946,in_environment.d,1.1720163822174072
+947,in_environment.enable_p_iv,1.0
+948,in_environment.fluidPort.X_outflow[1],0.0
+949,in_environment.fluidPort.X_outflow[2],0.23199999332427979
+950,in_environment.fluidPort.X_outflow[3],0.7549999952316284
+951,in_environment.fluidPort.X_outflow[4],0.013000000268220901
+952,in_environment.fluidPort.h_outflow,3014.323974609375
+953,in_environment.fluidPort.m_flow,-0.20000000298023224
+954,in_environment.fluidPort.p,101323.7109375
+955,in_environment.h,200000.0
+956,in_environment.h_set,3014.323974609375
+957,in_environment.m_flow,0.20000000298023224
+958,in_environment.p,101323.7109375
+959,in_environment.state.T,301.1499938964844
+960,in_environment.state.X[1],0.0
+961,in_environment.state.X[2],0.23199999332427979
+962,in_environment.state.X[3],0.7549999952316284
+963,in_environment.state.X[4],0.013000000268220901
+964,in_environment.state.p,101323.7109375
+965,inlet.N,1.0
+966,inlet.T,297.04022216796875
+967,inlet.T_set,297.04022216796875
+968,inlet.Tc_port_state,0.10000000149011612
+969,inlet.X[1],0.05000000074505806
+970,inlet.X[2],0.20999999344348907
+971,inlet.X[3],0.7300000190734863
+972,inlet.X[4],0.009999999776482582
+973,"inlet.X_port[1, 1]",0.05000000074505806
+974,"inlet.X_port[1, 2]",0.20999999344348907
+975,"inlet.X_port[1, 3]",0.7300000190734863
+976,"inlet.X_port[1, 4]",0.009999999776482582
+977,inlet.enable_m_flow_iv[1],1.0
+978,inlet.enable_p_res,0.0
+979,inlet.filter_port_state,0.0
+980,inlet.fluidPort[1].X_outflow[1],0.05000000074505806
+981,inlet.fluidPort[1].X_outflow[2],0.20999999344348907
+982,inlet.fluidPort[1].X_outflow[3],0.7300000190734863
+983,inlet.fluidPort[1].X_outflow[4],0.009999999776482582
+984,inlet.fluidPort[1].h_outflow,-672331.5
+985,inlet.fluidPort[1].m_flow,-0.2931486666202545
+986,inlet.fluidPort[1].p,101325.0
+987,inlet.h,200000.0
+988,inlet.h_port[1],-672331.5
+989,inlet.h_set,-672331.5
+990,inlet.m_flow[1],-0.2931486666202545
+991,inlet.p,101325.0
+992,inlet.p_scale,1.0
+993,inlet.p_set,101325.0
+994,inlet.state.T,297.04022216796875
+995,inlet.state.X[1],0.05000000074505806
+996,inlet.state.X[2],0.20999999344348907
+997,inlet.state.X[3],0.7300000190734863
+998,inlet.state.X[4],0.009999999776482582
+999,inlet.state.p,101325.0
+1000,inlet.steady_state_port_init,0.0
+1001,massflow.absOut,0.0
+1002,massflow.portA.X_outflow[1],0.05000000074505806
+1003,massflow.portA.X_outflow[2],0.20999999344348907
+1004,massflow.portA.X_outflow[3],0.7300000190734863
+1005,massflow.portA.X_outflow[4],0.009999999776482582
+1006,massflow.portA.h_outflow,-644892.3125
+1007,massflow.portA.m_flow,0.2931486666202545
+1008,massflow.portA.p,164164.140625
+1009,massflow.portB.X_outflow[1],0.05000000074505806
+1010,massflow.portB.X_outflow[2],0.20999999344348907
+1011,massflow.portB.X_outflow[3],0.7300000190734863
+1012,massflow.portB.X_outflow[4],0.009999999776482582
+1013,massflow.portB.h_outflow,-644058.5
+1014,massflow.portB.m_flow,-0.2931486666202545
+1015,massflow.portB.p,164164.140625
+1016,massflow.y,0.2931486666202545
+1017,massflow1.absOut,0.0
+1018,massflow1.portA.X_outflow[1],0.05000000074505806
+1019,massflow1.portA.X_outflow[2],0.20999999344348907
+1020,massflow1.portA.X_outflow[3],0.7300000190734863
+1021,massflow1.portA.X_outflow[4],0.009999999776482582
+1022,massflow1.portA.h_outflow,-644892.3125
+1023,massflow1.portA.m_flow,0.2931486666202545
+1024,massflow1.portA.p,101325.0
+1025,massflow1.portB.X_outflow[1],0.05000000074505806
+1026,massflow1.portB.X_outflow[2],0.20999999344348907
+1027,massflow1.portB.X_outflow[3],0.7300000190734863
+1028,massflow1.portB.X_outflow[4],0.009999999776482582
+1029,massflow1.portB.h_outflow,-677067.625
+1030,massflow1.portB.m_flow,-0.2931486666202545
+1031,massflow1.portB.p,101325.0
+1032,massflow1.y,0.2931486666202545
+1033,massflow2.absOut,0.0
+1034,massflow2.portA.X_outflow[1],0.05000000074505806
+1035,massflow2.portA.X_outflow[2],0.20999999344348907
+1036,massflow2.portA.X_outflow[3],0.7300000190734863
+1037,massflow2.portA.X_outflow[4],0.009999999776482582
+1038,massflow2.portA.h_outflow,-660661.4375
+1039,massflow2.portA.m_flow,0.18615569174289703
+1040,massflow2.portA.p,101315.0
+1041,massflow2.portB.X_outflow[1],0.05000000074505806
+1042,massflow2.portB.X_outflow[2],0.20999999344348907
+1043,massflow2.portB.X_outflow[3],0.7300000190734863
+1044,massflow2.portB.X_outflow[4],0.009999999776482582
+1045,massflow2.portB.h_outflow,-474037.28125
+1046,massflow2.portB.m_flow,-0.18615569174289703
+1047,massflow2.portB.p,101315.0
+1048,massflow2.y,0.18615569174289703
+1049,out.N,1.0
+1050,out.T,323.1499938964844
+1051,out.T_set,323.1499938964844
+1052,out.Tc_port_state,0.10000000149011612
+1053,out.X[1],0.05000000074505806
+1054,out.X[2],0.20999999344348907
+1055,out.X[3],0.7300000190734863
+1056,out.X[4],0.009999999776482582
+1057,"out.X_port[1, 1]",0.05000000074505806
+1058,"out.X_port[1, 2]",0.20999999344348907
+1059,"out.X_port[1, 3]",0.7300000190734863
+1060,"out.X_port[1, 4]",0.009999999776482582
+1061,out.enable_m_flow_iv[1],1.0
+1062,out.enable_p_res,0.0
+1063,out.filter_port_state,0.0
+1064,out.fluidPort[1].X_outflow[1],0.05000000074505806
+1065,out.fluidPort[1].X_outflow[2],0.20999999344348907
+1066,out.fluidPort[1].X_outflow[3],0.7300000190734863
+1067,out.fluidPort[1].X_outflow[4],0.009999999776482582
+1068,out.fluidPort[1].h_outflow,-644892.3125
+1069,out.fluidPort[1].m_flow,0.2931486666202545
+1070,out.fluidPort[1].p,101325.0
+1071,out.h,200000.0
+1072,out.h_port[1],-677067.625
+1073,out.h_set,-644892.3125
+1074,out.m_flow[1],0.2931486666202545
+1075,out.p,101325.0
+1076,out.p_scale,1.0
+1077,out.p_set,101325.0
+1078,out.state.T,323.1499938964844
+1079,out.state.X[1],0.05000000074505806
+1080,out.state.X[2],0.20999999344348907
+1081,out.state.X[3],0.7300000190734863
+1082,out.state.X[4],0.009999999776482582
+1083,out.state.p,101325.0
+1084,out.steady_state_port_init,0.0
+1085,out_environment.N,1.0
+1086,out_environment.T,301.1499938964844
+1087,out_environment.T_set,301.1499938964844
+1088,out_environment.Tc_port_state,0.10000000149011612
+1089,out_environment.X[1],0.05000000074505806
+1090,out_environment.X[2],0.20999999344348907
+1091,out_environment.X[3],0.7300000190734863
+1092,out_environment.X[4],0.009999999776482582
+1093,"out_environment.X_port[1, 1]",0.0
+1094,"out_environment.X_port[1, 2]",0.23199999332427979
+1095,"out_environment.X_port[1, 3]",0.7549999952316284
+1096,"out_environment.X_port[1, 4]",0.013000000268220901
+1097,out_environment.enable_m_flow_iv[1],1.0
+1098,out_environment.enable_p_res,0.0
+1099,out_environment.filter_port_state,0.0
+1100,out_environment.fluidPort[1].X_outflow[1],0.05000000074505806
+1101,out_environment.fluidPort[1].X_outflow[2],0.20999999344348907
+1102,out_environment.fluidPort[1].X_outflow[3],0.7300000190734863
+1103,out_environment.fluidPort[1].X_outflow[4],0.009999999776482582
+1104,out_environment.fluidPort[1].h_outflow,-668015.3125
+1105,out_environment.fluidPort[1].m_flow,0.20000000298023224
+1106,out_environment.fluidPort[1].p,101315.0
+1107,out_environment.h,200000.0
+1108,out_environment.h_port[1],68960.7265625
+1109,out_environment.h_set,-668015.3125
+1110,out_environment.m_flow[1],0.20000000298023224
+1111,out_environment.p,101315.0
+1112,out_environment.p_scale,1.0
+1113,out_environment.p_set,101315.0
+1114,out_environment.state.T,301.1499938964844
+1115,out_environment.state.X[1],0.05000000074505806
+1116,out_environment.state.X[2],0.20999999344348907
+1117,out_environment.state.X[3],0.7300000190734863
+1118,out_environment.state.X[4],0.009999999776482582
+1119,out_environment.state.p,101315.0
+1120,out_environment.steady_state_port_init,0.0
+1121,set_T.k,292.5295715332031
+1122,set_T.y,292.5295715332031
+1123,set_mflow.k,0.18615569174289703
+1124,set_mflow.y,0.18615569174289703
+1125,turbine.T_start,298.1499938964844
+1126,turbine.X_in[1].y,0.05000000074505806
+1127,turbine.X_in[2].y,0.20999999344348907
+1128,turbine.X_in[3].y,0.7300000190734863
+1129,turbine.X_in[4].y,0.009999999776482582
+1130,turbine.charMap.T_in,323.94268798828125
+1131,turbine.charMap.T_ref,298.1499938964844
+1132,turbine.charMap.X_in[1],0.05000000074505806
+1133,turbine.charMap.X_in[2],0.20999999344348907
+1134,turbine.charMap.X_in[3],0.7300000190734863
+1135,turbine.charMap.X_in[4],0.009999999776482582
+1136,turbine.charMap.correctedSpeed.y,64024.45703125
+1137,"turbine.charMap.effMap[1, 1]",0.0
+1138,"turbine.charMap.effMap[1, 2]",1.0
+1139,"turbine.charMap.effMap[1, 3]",2.0
+1140,"turbine.charMap.effMap[1, 4]",3.0
+1141,"turbine.charMap.effMap[2, 1]",40000.0
+1142,"turbine.charMap.effMap[2, 2]",0.699999988079071
+1143,"turbine.charMap.effMap[2, 3]",0.800000011920929
+1144,"turbine.charMap.effMap[2, 4]",0.6000000238418579
+1145,"turbine.charMap.effMap[3, 1]",50000.0
+1146,"turbine.charMap.effMap[3, 2]",0.699999988079071
+1147,"turbine.charMap.effMap[3, 3]",0.800000011920929
+1148,"turbine.charMap.effMap[3, 4]",0.6000000238418579
+1149,"turbine.charMap.effMap[4, 1]",60000.0
+1150,"turbine.charMap.effMap[4, 2]",0.699999988079071
+1151,"turbine.charMap.effMap[4, 3]",0.800000011920929
+1152,"turbine.charMap.effMap[4, 4]",0.6000000238418579
+1153,turbine.charMap.effTable.extrapLower1,2.0
+1154,turbine.charMap.effTable.extrapLower2,2.0
+1155,turbine.charMap.effTable.extrapUpper1,2.0
+1156,turbine.charMap.effTable.extrapUpper2,2.0
+1157,turbine.charMap.effTable.interpMethod,1.0
+1158,turbine.charMap.effTable.tableOnFile,0.0
+1159,"turbine.charMap.effTable.table[1, 1]",0.0
+1160,"turbine.charMap.effTable.table[1, 2]",1.0
+1161,"turbine.charMap.effTable.table[1, 3]",2.0
+1162,"turbine.charMap.effTable.table[1, 4]",3.0
+1163,"turbine.charMap.effTable.table[2, 1]",40000.0
+1164,"turbine.charMap.effTable.table[2, 2]",0.699999988079071
+1165,"turbine.charMap.effTable.table[2, 3]",0.800000011920929
+1166,"turbine.charMap.effTable.table[2, 4]",0.6000000238418579
+1167,"turbine.charMap.effTable.table[3, 1]",50000.0
+1168,"turbine.charMap.effTable.table[3, 2]",0.699999988079071
+1169,"turbine.charMap.effTable.table[3, 3]",0.800000011920929
+1170,"turbine.charMap.effTable.table[3, 4]",0.6000000238418579
+1171,"turbine.charMap.effTable.table[4, 1]",60000.0
+1172,"turbine.charMap.effTable.table[4, 2]",0.699999988079071
+1173,"turbine.charMap.effTable.table[4, 3]",0.800000011920929
+1174,"turbine.charMap.effTable.table[4, 4]",0.6000000238418579
+1175,turbine.charMap.effTable.u1,64024.45703125
+1176,turbine.charMap.effTable.u2,1.6201741695404053
+1177,turbine.charMap.effTable.y,0.7620174288749695
+1178,turbine.charMap.eff_max,1.0
+1179,turbine.charMap.eff_min,0.10000000149011612
+1180,turbine.charMap.efficiency,0.7620174288749695
+1181,"turbine.charMap.flowMap[1, 1]",0.0
+1182,"turbine.charMap.flowMap[1, 2]",1.0
+1183,"turbine.charMap.flowMap[1, 3]",2.0
+1184,"turbine.charMap.flowMap[1, 4]",3.0
+1185,"turbine.charMap.flowMap[2, 1]",40000.0
+1186,"turbine.charMap.flowMap[2, 2]",0.10000000149011612
+1187,"turbine.charMap.flowMap[2, 3]",0.18000000715255737
+1188,"turbine.charMap.flowMap[2, 4]",0.20000000298023224
+1189,"turbine.charMap.flowMap[3, 1]",50000.0
+1190,"turbine.charMap.flowMap[3, 2]",0.11999999731779099
+1191,"turbine.charMap.flowMap[3, 3]",0.1899999976158142
+1192,"turbine.charMap.flowMap[3, 4]",0.20999999344348907
+1193,"turbine.charMap.flowMap[4, 1]",60000.0
+1194,"turbine.charMap.flowMap[4, 2]",0.12999999523162842
+1195,"turbine.charMap.flowMap[4, 3]",0.20999999344348907
+1196,"turbine.charMap.flowMap[4, 4]",0.2199999988079071
+1197,turbine.charMap.flowTable.extrapLower1,2.0
+1198,turbine.charMap.flowTable.extrapLower2,2.0
+1199,turbine.charMap.flowTable.extrapUpper1,2.0
+1200,turbine.charMap.flowTable.extrapUpper2,2.0
+1201,turbine.charMap.flowTable.interpMethod,1.0
+1202,turbine.charMap.flowTable.tableOnFile,0.0
+1203,"turbine.charMap.flowTable.table[1, 1]",0.0
+1204,"turbine.charMap.flowTable.table[1, 2]",1.0
+1205,"turbine.charMap.flowTable.table[1, 3]",2.0
+1206,"turbine.charMap.flowTable.table[1, 4]",3.0
+1207,"turbine.charMap.flowTable.table[2, 1]",40000.0
+1208,"turbine.charMap.flowTable.table[2, 2]",0.10000000149011612
+1209,"turbine.charMap.flowTable.table[2, 3]",0.18000000715255737
+1210,"turbine.charMap.flowTable.table[2, 4]",0.20000000298023224
+1211,"turbine.charMap.flowTable.table[3, 1]",50000.0
+1212,"turbine.charMap.flowTable.table[3, 2]",0.11999999731779099
+1213,"turbine.charMap.flowTable.table[3, 3]",0.1899999976158142
+1214,"turbine.charMap.flowTable.table[3, 4]",0.20999999344348907
+1215,"turbine.charMap.flowTable.table[4, 1]",60000.0
+1216,"turbine.charMap.flowTable.table[4, 2]",0.12999999523162842
+1217,"turbine.charMap.flowTable.table[4, 3]",0.20999999344348907
+1218,"turbine.charMap.flowTable.table[4, 4]",0.2199999988079071
+1219,turbine.charMap.flowTable.u1,64024.45703125
+1220,turbine.charMap.flowTable.u2,1.6201741695404053
+1221,turbine.charMap.flowTable.y,0.1861342489719391
+1222,turbine.charMap.flow_corr,0.1861342489719391
+1223,turbine.charMap.h_in,-644058.5
+1224,turbine.charMap.isEfficiency,0.7620174288749695
+1225,turbine.charMap.massFlow,0.2931486666202545
+1226,turbine.charMap.mflow_corr,0.1861342489719391
+1227,turbine.charMap.normalizedCorrection,1.0
+1228,turbine.charMap.p_in,164164.140625
+1229,turbine.charMap.p_out,101325.0
+1230,turbine.charMap.p_ref,100000.0
+1231,turbine.charMap.pr,1.6201741695404053
+1232,turbine.charMap.pressureRatio.y,1.6201741695404053
+1233,turbine.charMap.speed,1112.2728271484375
+1234,turbine.charMap.speed_corr,64024.45703125
+1235,turbine.charMap.speed_rpm,66736.3671875
+1236,turbine.eff_max,1.0
+1237,turbine.eff_min,0.10000000149011612
+1238,turbine.etaMech.y,1.0
+1239,turbine.eta_mech,1.0
+1240,turbine.flange.phi,698932.3125
+1241,turbine.flange.tau,-1.384619951248169
+1242,turbine.portA.X_outflow[1],0.05000000074505806
+1243,turbine.portA.X_outflow[2],0.20999999344348907
+1244,turbine.portA.X_outflow[3],0.7300000190734863
+1245,turbine.portA.X_outflow[4],0.009999999776482582
+1246,turbine.portA.h_outflow,-644892.3125
+1247,turbine.portA.m_flow,0.2931486666202545
+1248,turbine.portA.p,164164.140625
+1249,turbine.portB.X_outflow[1],0.05000000074505806
+1250,turbine.portB.X_outflow[2],0.20999999344348907
+1251,turbine.portB.X_outflow[3],0.7300000190734863
+1252,turbine.portB.X_outflow[4],0.009999999776482582
+1253,turbine.portB.h_outflow,-677067.625
+1254,turbine.portB.m_flow,-0.2931486666202545
+1255,turbine.portB.p,101325.0
+1256,turbine.pressureSensor.p_scale,1.0
+1257,turbine.pressureSensor.port.X_outflow[1],0.0
+1258,turbine.pressureSensor.port.X_outflow[2],0.0
+1259,turbine.pressureSensor.port.X_outflow[3],0.0
+1260,turbine.pressureSensor.port.X_outflow[4],0.0
+1261,turbine.pressureSensor.port.h_outflow,0.0
+1262,turbine.pressureSensor.port.m_flow,0.0
+1263,turbine.pressureSensor.port.p,164164.140625
+1264,turbine.pressureSensor.pressureUnit,1.0
+1265,turbine.pressureSensor.y,164164.140625
+1266,turbine.pressureSensor1.p_scale,1.0
+1267,turbine.pressureSensor1.port.X_outflow[1],0.0
+1268,turbine.pressureSensor1.port.X_outflow[2],0.0
+1269,turbine.pressureSensor1.port.X_outflow[3],0.0
+1270,turbine.pressureSensor1.port.X_outflow[4],0.0
+1271,turbine.pressureSensor1.port.h_outflow,0.0
+1272,turbine.pressureSensor1.port.m_flow,0.0
+1273,turbine.pressureSensor1.port.p,101325.0
+1274,turbine.pressureSensor1.pressureUnit,1.0
+1275,turbine.pressureSensor1.y,101325.0
+1276,turbine.rotationalSpeedSensor.port.der(phi),6988.6162109375
+1277,turbine.rotationalSpeedSensor.port.phi,698932.3125
+1278,turbine.rotationalSpeedSensor.port.tau,0.0
+1279,turbine.rotationalSpeedSensor.y,1112.2728271484375
+1280,turbine.summary.T_in,323.94268798828125
+1281,turbine.summary.T_out,292.5295715332031
+1282,turbine.summary.correctedFlow,0.1861342489719391
+1283,turbine.summary.correctedSpeed,64024.45703125
+1284,turbine.summary.efficiencyIsentropic,0.7620174288749695
+1285,turbine.summary.m_flow,0.2931486666202545
+1286,turbine.summary.p_in,164164.140625
+1287,turbine.summary.p_out,101325.0
+1288,turbine.summary.pr,1.6201741695404053
+1289,turbine.summary.shaftPower,9676.578125
+1290,turbine.summary.shaftSpeed,6988.6162109375
+1291,turbine.summary.shaftTorque,1.384619951248169
+1292,turbine.turbine.P_ext,-9676.578125
+1293,turbine.turbine.T_in,323.94268798828125
+1294,turbine.turbine.T_inlet,323.94268798828125
+1295,turbine.turbine.T_out,292.5295715332031
+1296,turbine.turbine.T_start,298.1499938964844
+1297,turbine.turbine.dA_inflow,1.7098065614700317
+1298,turbine.turbine.dp,62839.14453125
+1299,turbine.turbine.etaIs,0.7620174288749695
+1300,turbine.turbine.etaMech,1.0
+1301,turbine.turbine.eta_is,0.7620174288749695
+1302,turbine.turbine.eta_mech,1.0
+1303,turbine.turbine.flange.der(phi),6988.6162109375
+1304,turbine.turbine.flange.phi,698932.3125
+1305,turbine.turbine.flange.tau,-1.384619951248169
+1306,turbine.turbine.h_in,-644058.5
+1307,turbine.turbine.h_inlet,-644058.5
+1308,turbine.turbine.h_is,-687376.5625
+1309,turbine.turbine.h_out,-677067.625
+1310,turbine.turbine.mFlow,0.2931486666202545
+1311,turbine.turbine.m_flow,0.2931486666202545
+1312,turbine.turbine.omega,6988.6162109375
+1313,turbine.turbine.portA.X_outflow[1],0.05000000074505806
+1314,turbine.turbine.portA.X_outflow[2],0.20999999344348907
+1315,turbine.turbine.portA.X_outflow[3],0.7300000190734863
+1316,turbine.turbine.portA.X_outflow[4],0.009999999776482582
+1317,turbine.turbine.portA.h_outflow,-644892.3125
+1318,turbine.turbine.portA.m_flow,0.2931486666202545
+1319,turbine.turbine.portA.p,164164.140625
+1320,turbine.turbine.portB.X_outflow[1],0.05000000074505806
+1321,turbine.turbine.portB.X_outflow[2],0.20999999344348907
+1322,turbine.turbine.portB.X_outflow[3],0.7300000190734863
+1323,turbine.turbine.portB.X_outflow[4],0.009999999776482582
+1324,turbine.turbine.portB.h_outflow,-677067.625
+1325,turbine.turbine.portB.m_flow,-0.2931486666202545
+1326,turbine.turbine.portB.p,101325.0
+1327,turbine.turbine.positiveFlow,0.0
+1328,turbine.turbine.pressureRatio,1.6201741695404053
+1329,turbine.turbine.shaftPower,-9676.578125
+1330,turbine.turbine.shaftTorque,-1.384619951248169
+1331,turbine.turbine.speed,1112.2728271484375
+1332,turbine.turbine.stateA_inflow.T,323.94268798828125
+1333,turbine.turbine.stateA_inflow.X[1],0.05000000074505806
+1334,turbine.turbine.stateA_inflow.X[2],0.20999999344348907
+1335,turbine.turbine.stateA_inflow.X[3],0.7300000190734863
+1336,turbine.turbine.stateA_inflow.X[4],0.009999999776482582
+1337,turbine.turbine.stateA_inflow.p,164164.140625
+1338,turbine.turbine.state_outflow.T,292.5295715332031
+1339,turbine.turbine.state_outflow.X[1],0.05000000074505806
+1340,turbine.turbine.state_outflow.X[2],0.20999999344348907
+1341,turbine.turbine.state_outflow.X[3],0.7300000190734863
+1342,turbine.turbine.state_outflow.X[4],0.009999999776482582
+1343,turbine.turbine.state_outflow.p,101325.0
+1344,turbine.turbine.summary.T_in,323.94268798828125
+1345,turbine.turbine.summary.T_out,292.5295715332031
+1346,turbine.turbine.summary.efficiencyIsentropic,0.7620174288749695
+1347,turbine.turbine.summary.m_flow,0.2931486666202545
+1348,turbine.turbine.summary.p_in,164164.140625
+1349,turbine.turbine.summary.p_out,101325.0
+1350,turbine.turbine.summary.pr,1.6201741695404053
+1351,turbine.turbine.summary.shaftPower,-9676.578125
+1352,turbine.turbine.summary.shaftSpeed,6988.6162109375
+1353,turbine.turbine.summary.shaftTorque,-1.384619951248169
+1354,turbine.turbine.w_start,1000.0
+1355,turbine.w_start,1000.0
+1356,turbine_speed.a,-1.3714857516333723e-07
+1357,turbine_speed.der(phi),6988.6162109375
+1358,turbine_speed.der(w),-1.3714857516333723e-07
+1359,turbine_speed.exact,0.0
+1360,turbine_speed.f_crit,50.0
+1361,turbine_speed.flange.phi,698932.3125
+1362,turbine_speed.flange.tau,1.384619951248169
+1363,turbine_speed.phi,698932.3125
+1364,turbine_speed.w,6988.6162109375
+1365,turbine_speed.w_ref,6988.6162109375

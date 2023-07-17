@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 from matplotlib import cm
+from scipy.interpolate import griddata
+
 
 #预整理数据部分
 
@@ -29,18 +31,18 @@ from matplotlib import cm
 
 # 作图部分
 
-data = pd.read_excel('F:/Thinking/Aircraft/opt/opt_test/VT.xlsx')
-data2 = pd.read_excel('F:/Thinking/Aircraft/opt/opt_test/fit.xlsx')
+data = pd.read_excel('F:/Thinking/Aircraft/opt/opt_test_3/VTTCEM.xlsx')
+data2 = pd.read_excel('F:/Thinking/Aircraft/opt/opt_test_3/fit.xlsx')
 
-fit_flow = list(data2['fit_flow'])
+#fit_flow = list(data2['fit_flow'])
 fit_contam = list(data2['fit_contam'])
 fit_energy = list(data2['fit_energy'])
 
-fit_flow2 = list(data['flow'])
-fit_contam2 = list(data['contam'])
+fit_flow2 = list(data['Massflow'])
+fit_contam2 = list(data['Contam'])
 fit_energy2 = list(data['Energy'])
 
-tem = list(data['Temperature'])
+tem = list(data['inletT'])
 
 colormap = []
 map_vir = cm.get_cmap('Reds',128)
@@ -50,52 +52,52 @@ for i in range(len(tem)):
     colormap += [color]
 
 colormap = map_vir(colormap)
-nor = plt.Normalize(min(tem)-0.5,max(tem)+0.5)    
+nor = plt.Normalize(min(tem)-0.5,max(tem)+1)    
 
-# fig, ax = plt.subplots(3, 1,figsize=(8,18), gridspec_kw={'height_ratios': [1,1,1]})
+fig, ax = plt.subplots(2, 1,figsize=(12,24))#, gridspec_kw={'height_ratios': [1,1,1]})
 
-# ax1 = ax[0]
-# line1 = ax1.scatter(fit_flow2, fit_contam2, color = colormap)#, "b-", label="CFD Paerto front 1")
-# line2 = ax1.plot(fit_flow, fit_contam, "r-", label="CFD")
+ax1 = ax[0]
+line1 = ax1.scatter(fit_flow2, fit_contam2, color = colormap)#, "b-", label="CFD Paerto front 1")
+#line2 = ax1.plot(fit_flow, fit_contam, "r-", label="CFD")
 
-# ax1.set_xlabel("flow(kg/s)")
-# ax1.set_ylabel("contam(kg/m3)", color="black")
-# for tl in ax1.get_yticklabels():
-#     tl.set_color("black")
+ax1.set_xlabel("flow(kg/s)")
+ax1.set_ylabel("contam(kg/m3)", color="black")
+for tl in ax1.get_yticklabels():
+    tl.set_color("black")
 
 # lns = line2
 # labs = [l.get_label() for l in lns]
 # ax1.legend(lns, labs, loc="center right")
 
-# sm = cm.ScalarMappable(norm=nor, cmap=map_vir)
-# plt.sca(ax[0])
-# cb = plt.colorbar(sm)
-# cb.ax.tick_params(labelsize = 12)
-# cb.set_label('Temperature(K)')
-# ################################################################################
-# ax2 = ax[1]
-# line3 = ax2.scatter(fit_flow2, fit_energy2, color = colormap)#, "b-", label="CFD Paerto front2")
-# line4 = ax2.plot(fit_flow, fit_energy, "r-", label="CFD 2")
-# ax2.set_xlabel("flow(kg/s)")
-# ax2.set_ylabel("energy(W)", color="black")
-# for tl in ax2.get_yticklabels():
-#     tl.set_color("black")
+sm = cm.ScalarMappable(norm=nor, cmap=map_vir)
+plt.sca(ax[0])
+cb = plt.colorbar(sm)
+cb.ax.tick_params(labelsize = 12)
+cb.set_label('Temperature(K)')
+###############################################################################
+ax2 = ax[1]
+line3 = ax2.scatter(fit_flow2, fit_energy2, color = colormap)#, "b-", label="CFD Paerto front2")
+#line4 = ax2.plot(fit_flow, fit_energy, "r-", label="CFD 2")
+ax2.set_xlabel("flow(kg/s)")
+ax2.set_ylabel("energy(W)", color="black")
+for tl in ax2.get_yticklabels():
+    tl.set_color("black")
 
 # lns4 = line4
 # labs4 = [l.get_label() for l in lns4]
 # ax2.legend(lns4, labs4, loc="center right")
 
-# sm = cm.ScalarMappable(norm=nor, cmap=map_vir)
-# plt.sca(ax[1])
-# cb = plt.colorbar(sm)
-# cb.ax.tick_params(labelsize = 12)
-# cb.set_label('Temperature(K)')
-# ################################################################################
-# ax3 = ax[2]
-# line5 = ax3.scatter(fit_contam2, fit_energy2, color = colormap)#, "b-", label="CFD Paerto front3")
-# line6 = ax3.plot(fit_contam, fit_energy, "r-", label="CFD 3")
-# ax3.set_xlabel("contam(kg/m3)")
-# ax3.set_ylabel("energy(W)", color="black")
+sm = cm.ScalarMappable(norm=nor, cmap=map_vir)
+plt.sca(ax[1])
+cb = plt.colorbar(sm)
+cb.ax.tick_params(labelsize = 12)
+cb.set_label('Temperature(K)')
+################################################################################
+# ax3 = ax
+# line5 = ax3.scatter(fit_energy2, fit_contam2, color = colormap)#, "b-", label="CFD Paerto front3")
+# line6 = ax3.plot(fit_energy, fit_contam, "r-", label="Pareto Front")
+# ax3.set_xlabel("energy(W)")
+# ax3.set_ylabel("contam(kg/m3)", color="black")
 # for tl in ax3.get_yticklabels():
 #     tl.set_color("black")
 
@@ -104,38 +106,57 @@ nor = plt.Normalize(min(tem)-0.5,max(tem)+0.5)
 # ax3.legend(lns6, labs6, loc="center right")
 
 # sm = cm.ScalarMappable(norm=nor, cmap=map_vir)
-# plt.sca(ax[2])
+# plt.sca(ax3)#[2])
 # cb = plt.colorbar(sm)
 # cb.ax.tick_params(labelsize = 12)
 # cb.set_label('Temperature(K)')
-# ################################################################################
-# plt.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=0.5)
-# plt.savefig('F:/Thinking/Aircraft/opt/opt_test/Figure_4.svg', dpi=900, format = 'svg')
-# plt.show()
+################################################################################
+plt.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=0.5)
+plt.savefig('F:/Thinking/Aircraft/opt/opt_test_3/Figure_3.svg', dpi=900, format = 'svg')
+plt.show()
 
 #三维数据
-fitF = np.array(fit_flow)
-fitC = np.array(fit_contam)
-fitF,fitC = np.meshgrid(fitF,fitC)
-fitE = np.zeros(fitF.shape)
-for i in range(fitF.shape[0]):
-    for j in range(fitF.shape[1]):
-        fitE[i,j] = fit_energy[i]
+# fitF = np.array(fit_flow)
+# fitC = np.array(fit_contam)
+# fitE = np.array(fit_energy)
+# #fitF,fitC = np.meshgrid(fitF,fitC)
+# #fitE = np.zeros(fitF.shape)
+# N = 10
+# [X,Y]=np.meshgrid(np.linspace(min(fitF),max(fitF),N),np.linspace(min(fitC),max(fitC),N))
+# Z = griddata((fitF,fitC),fitE,(X,Y), method='cubic')
 
-fig = plt.figure(figsize=(12,5))
-ax = fig.add_subplot(1, 1, 1, projection='3d')
-ax.scatter(fit_flow2, fit_contam2, fit_energy2, color = colormap)
-ax.plot(fit_flow, fit_contam, fit_energy, c='r')
-ax.set_xlabel('Flow(kg/s)')
-ax.set_ylabel('Contam(kg/m3)')
-ax.set_zlabel('Energy(W)')
+# # for i in range(fitF.shape[0]):
+# #     for j in range(fitF.shape[1]):
+# #         fitE[i,j] = fit_energy[i]
 
-sm = cm.ScalarMappable(norm=nor, cmap=map_vir)
-plt.sca(ax)
-cb = plt.colorbar(sm)
-cb.ax.tick_params(labelsize = 12)
-cb.set_label('Temperature(K)')
+# fig = plt.figure(figsize=(12,5))
+# ax = fig.add_subplot(1, 1, 1, projection='3d')
+# ax.scatter(fit_flow2, fit_contam2, fit_energy2, color = colormap)
+# ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=cm.rainbow)
+# ax.set_xlabel('Flow(kg/s)')
+# ax.set_ylabel('Contam(kg/m3)')
+# ax.set_zlabel('Energy(W)')
 
-plt.savefig('F:/Thinking/Aircraft/opt/opt_test/Figure_5.svg', dpi=900, format = 'svg')
+# sm = cm.ScalarMappable(norm=nor, cmap=map_vir)
+# plt.sca(ax)
+# cb = plt.colorbar(sm)
+# cb.ax.tick_params(labelsize = 12)
+# cb.set_label('Temperature(K)')
 
-plt.show()
+# plt.savefig('F:/Thinking/Aircraft/opt/opt_test_new/Figure_3.svg', dpi=900, format = 'svg')
+
+# plt.show()
+
+#判断front序号
+# number = []
+
+# for i in range(len(fit_energy2)):
+#     for j in range(len(fit_energy)):
+#         if fit_energy2[i] == fit_energy[j]:
+#             if fit_contam2[i] == fit_contam[j]:
+#                 if fit_flow2[i] == fit_flow[j]:
+#                     number += [i]
+# dataframe = pd.DataFrame({'liteartion':number})
+# dataframe.to_csv('F:/Thinking/Aircraft/opt/opt_test_new/literation.csv')
+# print(number,len(number))
+
