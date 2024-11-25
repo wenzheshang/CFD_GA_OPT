@@ -1,4 +1,4 @@
-# CFD_GA_OPT
+# CoupleOpt
 ## Introduction
 This program developed a method to optimize the supply air flow rate and temperature by combine CFD with Modelica model. The calculate method could achieve:
 
