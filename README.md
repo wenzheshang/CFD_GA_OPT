@@ -14,23 +14,28 @@ You have to get the below preparations on your machine:
 
 ### Case we used in this project
 *    The reverse Brayton cycle we developed in Modelica is:
-![Modelica files](https://github.com/wenzheshang/CFD_GA_OPT/tree/master/data/modelica.jpg)
+>    ![Modelica files](https://github.com/wenzheshang/CFD_GA_OPT/blob/master/data/modelica.jpg)
 *    The room model we developed in Fluent is:
-![CFD files](https://github.com/wenzheshang/CFD_GA_OPT/tree/master/data/msh.jpg)
+>    ![CFD files](https://github.com/wenzheshang/CFD_GA_OPT/blob/master/data/msh.jpg)
 *    The CFD simulation data has been validated, and the simulation results are as follows:
-![CFD validation](https://github.com/wenzheshang/CFD_GA_OPT/tree/master/data/valdition.jpg)
+>    ![CFD validation](https://github.com/wenzheshang/CFD_GA_OPT/blob/master/data/valdition.jpg)
 
 *    The Modelica simulation data has been validated, and the simulation results are as follows:
-![Modelica validation1](https://github.com/wenzheshang/CFD_GA_OPT/tree/master/data/flowrate.jpg)
-![Modelica validation2](https://github.com/wenzheshang/CFD_GA_OPT/tree/master/data/temp.jpg)
+*    The flow rate:
+>    ![Modelica validation1](https://github.com/wenzheshang/CFD_GA_OPT/blob/master/data/flowrate.jpg)
+*    The temperature:
+>    ![Modelica validation2](https://github.com/wenzheshang/CFD_GA_OPT/blob/master/data/temp.jpg)
 
 ### Result
 The simulation result was shown below:
 We utilized a genetic algorithm to rapidly simulate various design parameters. The variations in velocity and pollutant distribution within the room under different supply air temperatures and velocities are shown in the figure：
 *     velocity:
-![velocity](https://github.com/wenzheshang/CFD_GA_OPT/tree/master/data/velocity.gif)
+
+>    ![velocity](https://github.com/wenzheshang/CFD_GA_OPT/blob/master/data/velocity.gif)
 *     dpm:
-![dpm](http://github.com/wenzheshang/CFD_GA_OPT/tree/master/data/dpm.gif)
+
+>    ![dpm](https://github.com/wenzheshang/CFD_GA_OPT/blob/master/data/dpm.gif)
 
 *    The final design point and the Pareto front is shown below:
-![opt](http://github.com/wenzheshang/CFD_GA_OPT/tree/master/data/opt.jpg)
+
+>    ![opt](https://github.com/wenzheshang/CFD_GA_OPT/blob/master/data/opt.jpg)
